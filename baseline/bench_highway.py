@@ -8,6 +8,7 @@ Runs four measurements:
 4) Full PPO rollout time per step.
 """
 
+import os
 import time
 import numpy as np
 import gymnasium as gym
@@ -16,12 +17,14 @@ from gymnasium.wrappers import FlattenObservation
 
 from ppo import PPO
 from network import FeedForwardNN
+from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
 
 
 def make_env(flatten: bool):
+    config_name = os.environ.get("HIGHWAY_CONFIG", DEFAULT_HIGHWAY_CONFIG)
     env = gym.make(
         "highway-v0",
-        config={"action": {"type": "ContinuousAction"}},
+        config=get_highway_config(config_name),
     )
     if flatten:
         env = FlattenObservation(env)
@@ -109,6 +112,9 @@ def bench_full_rollout(warmup_rollouts: int = 1) -> float:
 
 
 def main():
+    config_name = os.environ.get("HIGHWAY_CONFIG", DEFAULT_HIGHWAY_CONFIG)
+    print(f"Using highway config: {config_name}")
+
     num_steps = 1000
     warmup = 100
 
