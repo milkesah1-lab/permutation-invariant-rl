@@ -14,9 +14,10 @@ hyperparameters = {
     "n_updates_per_iteration": 10,
     "lr": 3e-4,
     "clip": 0.2,
+    "dropout_p": 0.1,
+    "mc_samples": 5,
 }
 
-# Select config via env var `HIGHWAY_CONFIG` or edit DEFAULT_HIGHWAY_CONFIG.
 config_name = os.environ.get("HIGHWAY_CONFIG", DEFAULT_HIGHWAY_CONFIG)
 env = gym.make("highway-v0", config=get_highway_config(config_name))
 env = FlattenObservation(env)

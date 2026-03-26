@@ -8,11 +8,11 @@ import gymnasium as gym
 import time
 
 import numpy as np
-import time
 import torch
 import torch.nn as nn
 from torch.optim import Adam
 from torch.distributions import MultivariateNormal
+from network import FeedForwardNN, DropoutCritic
 
 class PPO:
 	"""
@@ -23,7 +23,7 @@ class PPO:
 			Initializes the PPO model, including hyperparameters.
 
 			Parameters:
-				policy_class - the policy class to use for our actor/critic networks.
+				policy_class - retained for backward compatibility (unused in current implementation).
 				env - the environment to train on.
 				hyperparameters - all extra arguments passed into PPO that should be hyperparameters.
 
@@ -43,8 +43,8 @@ class PPO:
 		self.act_dim = env.action_space.shape[0]
 
 		 # Initialize actor and critic networks
-		self.actor = policy_class(self.obs_dim, self.act_dim)                                                   # ALG STEP 1
-		self.critic = policy_class(self.obs_dim, 1)
+		self.actor = FeedForwardNN(self.obs_dim, self.act_dim)                                                                   # ALG STEP 1
+		self.critic = DropoutCritic(self.obs_dim, hidden_dim=64, dropout_p=self.dropout_p)                                      # ALG STEP 1
 
 		# Initialize optimizers for actor and critic
 		self.actor_optim = Adam(self.actor.parameters(), lr=self.lr)
@@ -62,6 +62,7 @@ class PPO:
 			'batch_lens': [],       # episodic lengths in batch
 			'batch_rews': [],       # episodic returns in batch
 			'actor_losses': [],     # losses of actor network in current iteration
+			'critic_uncertainties': [], # mean critic uncertainty per update
 		}
 
 	def learn(self, total_timesteps):
@@ -93,8 +94,8 @@ class PPO:
 			self.logger['i_so_far'] = i_so_far
 
 			# Calculate advantage at k-th iteration
-			V, _ = self.evaluate(batch_obs, batch_acts)
-			A_k = batch_rtgs - V.detach()                                                                       # ALG STEP 5
+			V_mean, V_var, _ = self.evaluate(batch_obs, batch_acts, training=False)
+			A_k = batch_rtgs - V_mean.detach()                                                                  # ALG STEP 5
 
 			# One of the only tricks I use that isn't in the pseudocode. Normalizing advantages
 			# isn't theoretically necessary, but in practice it decreases the variance of 
@@ -105,7 +106,7 @@ class PPO:
 			# This is the loop where we update our network for some n epochs
 			for _ in range(self.n_updates_per_iteration):                                                       # ALG STEP 6 & 7
 				# Calculate V_phi and pi_theta(a_t | s_t)
-				V, curr_log_probs = self.evaluate(batch_obs, batch_acts)
+				V_mean, V_var, curr_log_probs = self.evaluate(batch_obs, batch_acts, training=True)
 
 				# Calculate the ratio pi_theta(a_t | s_t) / pi_theta_k(a_t | s_t)
 				# NOTE: we just subtract the logs, which is the same as
@@ -125,11 +126,11 @@ class PPO:
 				# the performance function, but Adam minimizes the loss. So minimizing the negative
 				# performance function maximizes it.
 				actor_loss = (-torch.min(surr1, surr2)).mean()
-				critic_loss = nn.MSELoss()(V, batch_rtgs)
+				critic_loss = nn.MSELoss()(V_mean, batch_rtgs)
 
 				# Calculate gradients and perform backward propagation for actor network
 				self.actor_optim.zero_grad()
-				actor_loss.backward(retain_graph=True)
+				actor_loss.backward()
 				self.actor_optim.step()
 
 				# Calculate gradients and perform backward propagation for critic network
@@ -139,6 +140,7 @@ class PPO:
 
 				# Log actor loss
 				self.logger['actor_losses'].append(actor_loss.detach())
+				self.logger['critic_uncertainties'].append(V_var.mean().detach())
 
 			# Print a summary of our training so far
 			self._log_summary()
@@ -286,7 +288,43 @@ class PPO:
 		# Return the sampled action and the log probability of that action in our distribution
 		return action.detach().numpy(), log_prob.detach()
 
-	def evaluate(self, batch_obs, batch_acts):
+	def critic_mc(self, obs, n_samples=5, training=True):
+		"""
+			Perform Monte Carlo Dropout sampling to estimate value mean and variance.
+
+			Parameters:
+				obs - observation(s), as tensor or numpy array
+				n_samples - number of MC dropout samples
+				training - if False, wraps sampling in torch.no_grad()
+
+			Return:
+				V_mean - mean value prediction across samples
+				V_var - variance of value prediction across samples
+		"""
+		# Convert observation to tensor if it's a numpy array or non-tensor
+		if isinstance(obs, np.ndarray):
+			obs = torch.tensor(obs, dtype=torch.float32)
+		elif not torch.is_tensor(obs):
+			obs = torch.tensor(obs, dtype=torch.float32)
+
+		# Keep dropout active during sampling
+		self.critic.train()
+
+		def _forward_once():
+			return self.critic(obs).squeeze(-1)
+
+		if training:
+			samples = torch.stack([_forward_once() for _ in range(n_samples)], dim=0)
+		else:
+			with torch.no_grad():
+				samples = torch.stack([_forward_once() for _ in range(n_samples)], dim=0)
+
+		V_mean = samples.mean(dim=0)
+		V_var = samples.var(dim=0, unbiased=False)
+
+		return V_mean, V_var
+
+	def evaluate(self, batch_obs, batch_acts, mc_samples=None, training=True):
 		"""
 			Estimate the values of each observation, and the log probs of
 			each action in the most recent batch with the most recent
@@ -299,11 +337,14 @@ class PPO:
 							Shape: (number of timesteps in batch, dimension of action)
 
 			Return:
-				V - the predicted values of batch_obs
+				V_mean - the mean predicted values of batch_obs
+				V_var - the predicted variance of batch_obs
 				log_probs - the log probabilities of the actions taken in batch_acts given batch_obs
 		"""
-		# Query critic network for a value V for each batch_obs. Shape of V should be same as batch_rtgs
-		V = self.critic(batch_obs).squeeze()
+		# Query critic network for MC mean and variance. Shape should match batch_rtgs
+		if mc_samples is None:
+			mc_samples = self.mc_samples
+		V_mean, V_var = self.critic_mc(batch_obs, n_samples=mc_samples, training=training)
 
 		# Calculate the log probabilities of batch actions using most recent actor network.
 		# This segment of code is similar to that in get_action()
@@ -313,7 +354,7 @@ class PPO:
 
 		# Return the value vector V of each observation in the batch
 		# and log probabilities log_probs of each action in the batch
-		return V, log_probs
+		return V_mean, V_var, log_probs
 
 	def _init_hyperparameters(self, hyperparameters):
 		"""
@@ -340,6 +381,10 @@ class PPO:
 		self.render_every_i = 10                        # Only render every n iterations
 		self.save_freq = 10                             # How often we save in number of iterations
 		self.seed = None                                # Sets the seed of our program, used for reproducibility of results
+
+		# MC huperparameters
+		self.dropout_p = 0.1
+		self.mc_samples = 5
 
 		# Change any default values to custom values for specified hyperparameters
 		for param, val in hyperparameters.items():
@@ -377,11 +422,13 @@ class PPO:
 		avg_ep_lens = np.mean(self.logger['batch_lens'])
 		avg_ep_rews = np.mean([np.sum(ep_rews) for ep_rews in self.logger['batch_rews']])
 		avg_actor_loss = np.mean([losses.float().mean() for losses in self.logger['actor_losses']])
+		avg_critic_uncertainty = np.mean([uncertainty.float().mean() for uncertainty in self.logger['critic_uncertainties']])
 
 		# Round decimal places for more aesthetic logging messages
 		avg_ep_lens = str(round(avg_ep_lens, 2))
 		avg_ep_rews = str(round(avg_ep_rews, 2))
 		avg_actor_loss = str(round(avg_actor_loss, 5))
+		avg_critic_uncertainty = str(round(avg_critic_uncertainty, 5))
 
 		# Print logging statements
 		print(flush=True)
@@ -389,6 +436,7 @@ class PPO:
 		print(f"Average Episodic Length: {avg_ep_lens}", flush=True)
 		print(f"Average Episodic Return: {avg_ep_rews}", flush=True)
 		print(f"Average Loss: {avg_actor_loss}", flush=True)
+		print(f"Average Critic Uncertainty: {avg_critic_uncertainty}", flush=True)
 		print(f"Timesteps So Far: {t_so_far}", flush=True)
 		print(f"Iteration took: {delta_t} secs", flush=True)
 		print(f"------------------------------------------------------", flush=True)
@@ -398,3 +446,4 @@ class PPO:
 		self.logger['batch_lens'] = []
 		self.logger['batch_rews'] = []
 		self.logger['actor_losses'] = []
+		self.logger['critic_uncertainties'] = []
