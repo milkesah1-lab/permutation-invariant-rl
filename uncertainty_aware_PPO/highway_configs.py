@@ -11,7 +11,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         "action": {"type": "ContinuousAction"},
         "lanes_count": 3,  # fewer lanes reduces sim cost while preserving lane changes
         "vehicles_count": 30,  # lower density speeds up dynamics without losing traffic context
-        "duration": 40,
+        "duration": 400,
         "simulation_frequency": 15,
         "policy_frequency": 5,
         "observation": {
@@ -25,7 +25,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         "action": {"type": "ContinuousAction"},
         "lanes_count": 2,  # fewer lanes -> fewer neighbors to simulate
         "vehicles_count": 12,  # smaller traffic pool for faster steps
-        "duration": 25,
+        "duration": 250,
         "simulation_frequency": 10,
         "policy_frequency": 2,
         "observation": {

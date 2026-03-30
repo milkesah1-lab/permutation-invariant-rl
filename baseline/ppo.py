@@ -331,7 +331,7 @@ class PPO:
 		self.timesteps_per_batch = 4800                 # Number of timesteps to run per batch
 		self.max_timesteps_per_episode = 1600           # Max number of timesteps per episode
 		self.n_updates_per_iteration = 5                # Number of times to update actor/critic per iteration
-		self.lr = 0.005                                 # Learning rate of actor optimizer
+		self.lr = 3e-4                                 # Learning rate of actor optimizer
 		self.gamma = 0.95                               # Discount factor to be applied when calculating Rewards-To-Go
 		self.clip = 0.2                                 # Recommended 0.2, helps define the threshold to clip the ratio during SGA
 

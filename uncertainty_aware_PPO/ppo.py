@@ -42,16 +42,21 @@ class PPO:
 		self.obs_dim = env.observation_space.shape[0]
 		self.act_dim = env.action_space.shape[0]
 
+		# Set device for all tensors and networks
+		self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 		 # Initialize actor and critic networks
 		self.actor = FeedForwardNN(self.obs_dim, self.act_dim)                                                                   # ALG STEP 1
 		self.critic = DropoutCritic(self.obs_dim, hidden_dim=64, dropout_p=self.dropout_p)                                      # ALG STEP 1
+		self.actor.to(self.device)
+		self.critic.to(self.device)
 
 		# Initialize optimizers for actor and critic
 		self.actor_optim = Adam(self.actor.parameters(), lr=self.lr)
 		self.critic_optim = Adam(self.critic.parameters(), lr=self.lr)
 
 		# Initialize the covariance matrix used to query the actor for actions
-		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.5)
+		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.5, device=self.device)
 		self.cov_mat = torch.diag(self.cov_var)
 
 		# This logger will help us with printing out summaries of each iteration
@@ -80,7 +85,6 @@ class PPO:
 		t_so_far = 0 # Timesteps simulated so far
 		i_so_far = 0 # Iterations ran so far
 		while t_so_far < total_timesteps:                                                                       # ALG STEP 2
-			# Autobots, roll out (just kidding, we're collecting our batch simulations here)
 			batch_obs, batch_acts, batch_log_probs, batch_rtgs, batch_lens = self.rollout()                     # ALG STEP 3
 
 			# Calculate how many timesteps we collected this batch
@@ -221,9 +225,9 @@ class PPO:
 			batch_rews.append(ep_rews)
 
 		# Reshape data as tensors in the shape specified in function description, before returning
-		batch_obs = torch.tensor(np.array(batch_obs), dtype=torch.float)
-		batch_acts = torch.tensor(batch_acts, dtype=torch.float)
-		batch_log_probs = torch.tensor(batch_log_probs, dtype=torch.float)
+		batch_obs = torch.from_numpy(np.array(batch_obs, dtype=np.float32)).to(self.device)
+		batch_acts = torch.from_numpy(np.array(batch_acts, dtype=np.float32)).to(self.device)
+		batch_log_probs = torch.stack(batch_log_probs).to(self.device)
 		batch_rtgs = self.compute_rtgs(batch_rews)                                                              # ALG STEP 4
 
 		# Log the episodic returns and episodic lengths in this batch.
@@ -258,7 +262,7 @@ class PPO:
 				batch_rtgs.insert(0, discounted_reward)
 
 		# Convert the rewards-to-go into a tensor
-		batch_rtgs = torch.tensor(batch_rtgs, dtype=torch.float)
+		batch_rtgs = torch.tensor(batch_rtgs, dtype=torch.float32, device=self.device)
 
 		return batch_rtgs
 
@@ -273,6 +277,13 @@ class PPO:
 				action - the action to take, as a numpy array
 				log_prob - the log probability of the selected action in the distribution
 		"""
+		# Convert observation to tensor if needed and move to device
+		if isinstance(obs, np.ndarray):
+			obs = torch.tensor(obs, dtype=torch.float32)
+		elif not torch.is_tensor(obs):
+			obs = torch.tensor(obs, dtype=torch.float32)
+		obs = obs.to(self.device)
+
 		# Query the actor network for a mean action
 		mean = self.actor(obs)
 
@@ -286,42 +297,64 @@ class PPO:
 		log_prob = dist.log_prob(action)
 
 		# Return the sampled action and the log probability of that action in our distribution
-		return action.detach().numpy(), log_prob.detach()
+		return action.detach().cpu().numpy(), log_prob.detach()
 
-	def critic_mc(self, obs, n_samples=5, training=True):
+	def estimate_critic_uncertainty(self, obs, mc_samples=10, return_samples=False, require_grad=False):
 		"""
-			Perform Monte Carlo Dropout sampling to estimate value mean and variance.
+			Estimate predictive mean and variance of the critic using MC Dropout.
 
 			Parameters:
-				obs - observation(s), as tensor or numpy array
-				n_samples - number of MC dropout samples
-				training - if False, wraps sampling in torch.no_grad()
+				obs - observation(s), single state or batch (numpy or torch)
+				mc_samples - number of MC dropout samples
+				return_samples - if True, also return raw MC predictions
+				require_grad - if True, allow gradients through MC sampling (used during training)
 
 			Return:
-				V_mean - mean value prediction across samples
-				V_var - variance of value prediction across samples
+				V_mean - predictive mean
+				V_var - predictive variance
+				samples (optional) - raw MC predictions
 		"""
-		# Convert observation to tensor if it's a numpy array or non-tensor
+		# Convert observation to tensor if needed
 		if isinstance(obs, np.ndarray):
 			obs = torch.tensor(obs, dtype=torch.float32)
 		elif not torch.is_tensor(obs):
 			obs = torch.tensor(obs, dtype=torch.float32)
 
-		# Keep dropout active during sampling
+		# Move to device and ensure batch dimension
+		obs = obs.to(self.device)
+		single_input = False
+		if obs.dim() == 1:
+			obs = obs.unsqueeze(0)
+			single_input = True
+
+		# Preferred Stage 3 design: one official MC Dropout pathway, used everywhere for clarity and reporting
+		# Preserve original mode and keep dropout active during sampling
+		was_training = self.critic.training
 		self.critic.train()
 
-		def _forward_once():
-			return self.critic(obs).squeeze(-1)
+		grad_context = torch.enable_grad() if require_grad else torch.no_grad()
+		with grad_context:
+			samples = []
+			for _ in range(mc_samples):
+				pred = self.critic(obs).squeeze(-1)
+				samples.append(pred)
+			samples = torch.stack(samples, dim=0)
+			V_mean = samples.mean(dim=0)
+			V_var = samples.var(dim=0, unbiased=False)
 
-		if training:
-			samples = torch.stack([_forward_once() for _ in range(n_samples)], dim=0)
+		# Restore original mode
+		if was_training:
+			self.critic.train()
 		else:
-			with torch.no_grad():
-				samples = torch.stack([_forward_once() for _ in range(n_samples)], dim=0)
+			self.critic.eval()
 
-		V_mean = samples.mean(dim=0)
-		V_var = samples.var(dim=0, unbiased=False)
+		if single_input:
+			V_mean = V_mean.squeeze(0)
+			V_var = V_var.squeeze(0)
+			samples = samples.squeeze(1)
 
+		if return_samples:
+			return V_mean, V_var, samples
 		return V_mean, V_var
 
 	def evaluate(self, batch_obs, batch_acts, mc_samples=None, training=True):
@@ -341,10 +374,28 @@ class PPO:
 				V_var - the predicted variance of batch_obs
 				log_probs - the log probabilities of the actions taken in batch_acts given batch_obs
 		"""
+		# Convert inputs to tensors if needed and move to device
+		if isinstance(batch_obs, np.ndarray):
+			batch_obs = torch.tensor(batch_obs, dtype=torch.float32)
+		elif not torch.is_tensor(batch_obs):
+			batch_obs = torch.tensor(batch_obs, dtype=torch.float32)
+		batch_obs = batch_obs.to(self.device)
+
+		if isinstance(batch_acts, np.ndarray):
+			batch_acts = torch.tensor(batch_acts, dtype=torch.float32)
+		elif not torch.is_tensor(batch_acts):
+			batch_acts = torch.tensor(batch_acts, dtype=torch.float32)
+		batch_acts = batch_acts.to(self.device)
+
 		# Query critic network for MC mean and variance. Shape should match batch_rtgs
 		if mc_samples is None:
 			mc_samples = self.mc_samples
-		V_mean, V_var = self.critic_mc(batch_obs, n_samples=mc_samples, training=training)
+		V_mean, V_var = self.estimate_critic_uncertainty(
+			batch_obs,
+			mc_samples=mc_samples,
+			return_samples=False,
+			require_grad=training
+		)
 
 		# Calculate the log probabilities of batch actions using most recent actor network.
 		# This segment of code is similar to that in get_action()
@@ -355,6 +406,61 @@ class PPO:
 		# Return the value vector V of each observation in the batch
 		# and log probabilities log_probs of each action in the batch
 		return V_mean, V_var, log_probs
+
+	def inspect_uncertainty_on_states(self, states, mc_samples=10, state_labels=None, verbose=True):
+		"""
+			Run a simple per-state uncertainty inspection using MC Dropout.
+
+			Parameters:
+				states - iterable of states (numpy or torch)
+				mc_samples - number of MC dropout samples per state
+				state_labels - optional list of labels per state
+				verbose - if True, prints a formatted summary
+
+			Return:
+				summaries - list of dicts with index, label, mean, and variance
+
+			Example:
+				states = [s0, s1, s2, s3]
+				labels = ["normal", "dense traffic", "near collision", "late episode"]
+				summaries = agent.inspect_uncertainty_on_states(
+					states,
+					mc_samples=20,
+					state_labels=labels,
+					verbose=True
+				)
+		"""
+		summaries = []
+		for i, state in enumerate(states):
+			label = None
+			if state_labels is not None and i < len(state_labels):
+				label = state_labels[i]
+
+			V_mean, V_var = self.estimate_critic_uncertainty(state, mc_samples=mc_samples, return_samples=False)
+
+			if torch.is_tensor(V_mean) and V_mean.numel() == 1:
+				mean_val = float(V_mean.detach().cpu().item())
+			else:
+				mean_val = V_mean.detach().cpu().numpy()
+
+			if torch.is_tensor(V_var) and V_var.numel() == 1:
+				var_val = float(V_var.detach().cpu().item())
+			else:
+				var_val = V_var.detach().cpu().numpy()
+
+			summary = {
+				'index': i,
+				'label': label,
+				'mean': mean_val,
+				'variance': var_val
+			}
+			summaries.append(summary)
+
+			if verbose:
+				label_str = f" | label: {label}" if label is not None else ""
+				print(f"[{i}] mean: {mean_val:.6f} | var: {var_val:.6f}{label_str}")
+
+		return summaries
 
 	def _init_hyperparameters(self, hyperparameters):
 		"""
@@ -372,7 +478,7 @@ class PPO:
 		self.timesteps_per_batch = 4800                 # Number of timesteps to run per batch
 		self.max_timesteps_per_episode = 1600           # Max number of timesteps per episode
 		self.n_updates_per_iteration = 5                # Number of times to update actor/critic per iteration
-		self.lr = 0.005                                 # Learning rate of actor optimizer
+		self.lr = 3e-4                              # Learning rate of actor optimizer
 		self.gamma = 0.95                               # Discount factor to be applied when calculating Rewards-To-Go
 		self.clip = 0.2                                 # Recommended 0.2, helps define the threshold to clip the ratio during SGA
 
@@ -422,7 +528,7 @@ class PPO:
 		avg_ep_lens = np.mean(self.logger['batch_lens'])
 		avg_ep_rews = np.mean([np.sum(ep_rews) for ep_rews in self.logger['batch_rews']])
 		avg_actor_loss = np.mean([losses.float().mean() for losses in self.logger['actor_losses']])
-		avg_critic_uncertainty = np.mean([uncertainty.float().mean() for uncertainty in self.logger['critic_uncertainties']])
+		avg_critic_uncertainty = torch.stack(self.logger['critic_uncertainties']).mean().item()
 
 		# Round decimal places for more aesthetic logging messages
 		avg_ep_lens = str(round(avg_ep_lens, 2))

@@ -22,5 +22,9 @@ config_name = os.environ.get("HIGHWAY_CONFIG", DEFAULT_HIGHWAY_CONFIG)
 env = gym.make("highway-v0", config=get_highway_config(config_name))
 env = FlattenObservation(env)
 
-model = PPO(FeedForwardNN, env, **hyperparameters)
-model.learn(total_timesteps=10000)
+# model = PPO(FeedForwardNN, env, **hyperparameters)
+# model.learn(total_timesteps=10000)
+
+print(env)
+print(env.spec)
+print(env.unwrapped.config)
