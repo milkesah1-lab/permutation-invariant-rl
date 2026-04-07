@@ -18,17 +18,33 @@ hyperparameters = {
     "clip": 0.2,
 }
 
-if "continuous-spawn-highway-v0" not in registry:
-    register(
-        id="continuous-spawn-highway-v0",
-        entry_point="continuous_spawn_highway_env:ContinuousSpawnHighwayEnv",
-    )
-
-env = gym.make("continuous-spawn-highway-v0")
+env = gym.make(
+    "highway-v0",
+    config={
+        "action": {"type": "ContinuousAction"},
+        "lanes_count": 4,
+        "vehicles_count": 30,
+        "duration": 40,  # [s]
+        "initial_spacing": 2,
+        "collision_reward": -2,  # The reward received when colliding with a vehicle.
+        "reward_speed_range": [20, 30],  # [m/s] The reward for high speed is mapped linearly from this range to [0, HighwayEnv.HIGH_SPEED_REWARD].
+        "simulation_frequency": 15,  # [Hz]
+        "policy_frequency": 3,  # [Hz]
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+        "screen_width": 600,  # [px]
+        "screen_height": 150,  # [px]
+        "centering_position": [0.3, 0.5],
+        "scaling": 5.5,
+        "show_trajectories": False,
+        "render_agent": True,
+        "offscreen_rendering": False
+ 
+    }
+)
 env = FlattenObservation(env)
 
 model = PPO(FeedForwardNN, env, **hyperparameters)
-model_name = "uncertainty_aware_ppo_model_lambda_u_0.05"
+model_name = "baseline"
 model.actor.load_state_dict(model.actor.state_dict(), f"./{model_name}_actor.pth",)
 model.critic.load_state_dict(model.critic.state_dict(), f"./{model_name}_critic.pth",)
 
@@ -36,8 +52,28 @@ env.close()
 
 # Evaluation environment
 eval_env = gym.make(
-    "continuous-spawn-highway-v0",
-    render_mode="rgb_array"
+    "highway-v0",
+    render_mode="rgb_array",
+    config={
+        "action": {"type": "ContinuousAction"},
+        "lanes_count": 4,
+        "vehicles_count": 30,
+        "duration": 40,  # [s]
+        "initial_spacing": 2,
+        "collision_reward": -2,  # The reward received when colliding with a vehicle.
+        "reward_speed_range": [20, 30],  # [m/s] The reward for high speed is mapped linearly from this range to [0, HighwayEnv.HIGH_SPEED_REWARD].
+        "simulation_frequency": 15,  # [Hz]
+        "policy_frequency": 3,  # [Hz]
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+        "screen_width": 600,  # [px]
+        "screen_height": 150,  # [px]
+        "centering_position": [0.3, 0.5],
+        "scaling": 5.5,
+        "show_trajectories": False,
+        "render_agent": True,
+        "offscreen_rendering": False
+ 
+    }
 )
 eval_env = FlattenObservation(eval_env)
 eval_env = RecordVideo(

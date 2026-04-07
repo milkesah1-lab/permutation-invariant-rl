@@ -6,6 +6,7 @@ import torch
 from ppo import PPO
 from network import FeedForwardNN
 from gymnasium.wrappers import RecordVideo
+from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
 
 from eval_policy import eval_policy
 
@@ -60,6 +61,7 @@ torch.save(model.actor.state_dict(), f'./{model_name}_actor.pth')
 torch.save(model.critic.state_dict(), f'./{model_name}_critic.pth')
 
 env.close()
+env = gym.make("highway-v0", config=get_highway_config(config_name))
 
 env = gym.make(
     "continuous-spawn-highway-v0",
