@@ -5,6 +5,9 @@
 	which resides in ppo.py. Thus, we can test our trained policy without 
 	relying on ppo.py.
 """
+import numpy as np
+import torch
+from torch.distributions import MultivariateNormal
 
 def _log_summary(ep_len, ep_ret, ep_num):
 		"""
@@ -28,60 +31,7 @@ def _log_summary(ep_len, ep_ret, ep_num):
 		print(f"------------------------------------------------------", flush=True)
 		print(flush=True)
 
-def rollout(policy, env, render):
-	"""
-		Returns a generator to roll out each episode given a trained policy and
-		environment to test on. 
-
-		Parameters:
-			policy - The trained policy to test
-			env - The environment to evaluate the policy on
-			render - Specifies whether to render or not
-		
-		Return:
-			A generator object rollout, or iterable, which will return the latest
-			episodic length and return on each iteration of the generator.
-
-		Note:
-			If you're unfamiliar with Python generators, check this out:
-				https://wiki.python.org/moin/Generators
-			If you're unfamiliar with Python "yield", check this out:
-				https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do
-	"""
-	# Rollout until user kills process
-	while True:
-		obs, _ = env.reset()
-		done = False
-
-		# number of timesteps so far
-		t = 0
-
-		# Logging data
-		ep_len = 0            # episodic length
-		ep_ret = 0            # episodic return
-
-		while not done:
-			t += 1
-
-			# Render environment if specified, off by default
-			if render:
-				env.render()
-
-			# Query deterministic action from policy and run it
-			action = policy(obs).detach().numpy()
-			obs, rew, terminated, truncated, _ = env.step(action)
-			done = terminated | truncated
-
-			# Sum all episodic rewards as we go along
-			ep_ret += rew
-			
-		# Track episodic length
-		ep_len = t
-
-		# returns episodic length and return in this iteration
-		yield ep_len, ep_ret
-
-def eval_policy(policy, env, render=False):
+def eval_policy(policy, env, num_episodes, render=False):
 	"""
 		The main function to evaluate our policy with. It will iterate a generator object
 		"rollout", which will simulate each episode and return the most recent episode's
@@ -91,6 +41,7 @@ def eval_policy(policy, env, render=False):
 		Parameters:
 			policy - The trained policy to test, basically another name for our actor model
 			env - The environment to test the policy on
+			num_episodes - The number of episodes to evaluate
 			render - Whether we should render our episodes. False by default.
 
 		Return:
@@ -98,6 +49,66 @@ def eval_policy(policy, env, render=False):
 
 		NOTE: To learn more about generators, look at rollout's function description
 	"""
-	# Rollout with the policy and environment, and log each episode's data
-	for ep_num, (ep_len, ep_ret) in enumerate(rollout(policy, env, render)):
-		_log_summary(ep_len=ep_len, ep_ret=ep_ret, ep_num=ep_num)
+	collision_count = 0
+	episode_returns = []
+	episode_lengths = []
+
+	# evaluation mode is helpful if you use dropout in your actor
+	policy.eval()
+
+	try:
+		device = next(policy.parameters()).device
+	except StopIteration:
+		device = torch.device("cpu")
+
+	act_dim = env.action_space.shape[0]
+	cov_var = torch.full(size=(act_dim,), fill_value=0.05, device=device)
+	cov_mat = torch.diag(cov_var)
+
+	with torch.no_grad():
+		for ep in range(num_episodes):
+			obs, _ = env.reset()
+			done = False
+			collided = False
+			ep_ret = 0.0
+			ep_len = 0
+
+			while not done:
+				if render:
+					env.render()
+
+				obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
+				mean = policy(obs_t)
+				dist = MultivariateNormal(mean, cov_mat)
+				action = dist.sample().detach().cpu().numpy()
+				action = np.clip(action, env.action_space.low, env.action_space.high)
+
+				obs, rew, terminated, truncated, info = env.step(action)
+				done = terminated or truncated
+
+				ep_ret += rew
+				ep_len += 1
+
+				if env.unwrapped.vehicle.crashed:
+					collided = True
+
+			if collided:
+				collision_count += 1
+
+			episode_returns.append(ep_ret)
+			episode_lengths.append(ep_len)
+
+			_log_summary(ep_len, ep_ret, ep + 1)
+
+	avg_ep_ret = float(np.mean(episode_returns))
+	avg_ep_len = float(np.mean(episode_lengths))
+	collision_rate = collision_count / num_episodes
+
+	print("=============== Evaluation Summary ===============", flush=True)
+	print(f"Average Episodic Return: {avg_ep_ret:.3f}", flush=True)
+	print(f"Average Episodic Length: {avg_ep_len:.3f}", flush=True)
+	print(f"Collision Rate: {collision_rate:.3f}", flush=True)
+	print("==================================================", flush=True)
+
+	return avg_ep_len, avg_ep_ret, collision_rate
+			

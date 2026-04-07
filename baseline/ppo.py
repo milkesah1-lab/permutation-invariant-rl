@@ -42,16 +42,21 @@ class PPO:
 		self.obs_dim = env.observation_space.shape[0]
 		self.act_dim = env.action_space.shape[0]
 
+		# Set device for all tensors and networks
+		self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 		 # Initialize actor and critic networks
 		self.actor = policy_class(self.obs_dim, self.act_dim)                                                   # ALG STEP 1
 		self.critic = policy_class(self.obs_dim, 1)
+		self.actor.to(self.device)
+		self.critic.to(self.device)
 
 		# Initialize optimizers for actor and critic
 		self.actor_optim = Adam(self.actor.parameters(), lr=self.lr)
 		self.critic_optim = Adam(self.critic.parameters(), lr=self.lr)
 
 		# Initialize the covariance matrix used to query the actor for actions
-		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.5)
+		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.05, device=self.device)
 		self.cov_mat = torch.diag(self.cov_var)
 
 		# This logger will help us with printing out summaries of each iteration
@@ -129,7 +134,7 @@ class PPO:
 
 				# Calculate gradients and perform backward propagation for actor network
 				self.actor_optim.zero_grad()
-				actor_loss.backward(retain_graph=True)
+				actor_loss.backward()
 				self.actor_optim.step()
 
 				# Calculate gradients and perform backward propagation for critic network
@@ -202,6 +207,11 @@ class PPO:
 				action, log_prob = self.get_action(obs)
 				obs, rew, terminated, truncated, _ = self.env.step(action)
 
+				offroad = hasattr(self.env.unwrapped, "vehicle") and not self.env.unwrapped.vehicle.on_road
+				if offroad:
+					rew -= 2.0
+					# terminated = True causing it be slow
+
 				# Don't really care about the difference between terminated or truncated in this, so just combine them
 				done = terminated | truncated
 
@@ -219,9 +229,9 @@ class PPO:
 			batch_rews.append(ep_rews)
 
 		# Reshape data as tensors in the shape specified in function description, before returning
-		batch_obs = torch.tensor(np.array(batch_obs), dtype=torch.float)
-		batch_acts = torch.tensor(batch_acts, dtype=torch.float)
-		batch_log_probs = torch.tensor(batch_log_probs, dtype=torch.float)
+		batch_obs = torch.from_numpy(np.array(batch_obs, dtype=np.float32)).to(self.device)
+		batch_acts = torch.from_numpy(np.array(batch_acts, dtype=np.float32)).to(self.device)
+		batch_log_probs = torch.stack(batch_log_probs).to(self.device)
 		batch_rtgs = self.compute_rtgs(batch_rews)                                                              # ALG STEP 4
 
 		# Log the episodic returns and episodic lengths in this batch.
@@ -256,7 +266,7 @@ class PPO:
 				batch_rtgs.insert(0, discounted_reward)
 
 		# Convert the rewards-to-go into a tensor
-		batch_rtgs = torch.tensor(batch_rtgs, dtype=torch.float)
+		batch_rtgs = torch.tensor(batch_rtgs, dtype=torch.float32, device=self.device)
 
 		return batch_rtgs
 
@@ -271,6 +281,13 @@ class PPO:
 				action - the action to take, as a numpy array
 				log_prob - the log probability of the selected action in the distribution
 		"""
+		# Convert observation to tensor if needed and move to device
+		if isinstance(obs, np.ndarray):
+			obs = torch.tensor(obs, dtype=torch.float32)
+		elif not torch.is_tensor(obs):
+			obs = torch.tensor(obs, dtype=torch.float32)
+		obs = obs.to(self.device)
+
 		# Query the actor network for a mean action
 		mean = self.actor(obs)
 
@@ -279,12 +296,17 @@ class PPO:
 
 		# Sample an action from the distribution
 		action = dist.sample()
+		action = torch.clamp(
+			action,
+			torch.as_tensor(self.env.action_space.low).to(self.device),
+			torch.as_tensor(self.env.action_space.high).to(self.device)
+		)
 
 		# Calculate the log probability for that action
 		log_prob = dist.log_prob(action)
 
 		# Return the sampled action and the log probability of that action in our distribution
-		return action.detach().numpy(), log_prob.detach()
+		return action.detach().cpu().numpy(), log_prob.detach()
 
 	def evaluate(self, batch_obs, batch_acts):
 		"""
@@ -302,6 +324,19 @@ class PPO:
 				V - the predicted values of batch_obs
 				log_probs - the log probabilities of the actions taken in batch_acts given batch_obs
 		"""
+		# Convert inputs to tensors if needed and move to device
+		if isinstance(batch_obs, np.ndarray):
+			batch_obs = torch.tensor(batch_obs, dtype=torch.float32)
+		elif not torch.is_tensor(batch_obs):
+			batch_obs = torch.tensor(batch_obs, dtype=torch.float32)
+		batch_obs = batch_obs.to(self.device)
+
+		if isinstance(batch_acts, np.ndarray):
+			batch_acts = torch.tensor(batch_acts, dtype=torch.float32)
+		elif not torch.is_tensor(batch_acts):
+			batch_acts = torch.tensor(batch_acts, dtype=torch.float32)
+		batch_acts = batch_acts.to(self.device)
+
 		# Query critic network for a value V for each batch_obs. Shape of V should be same as batch_rtgs
 		V = self.critic(batch_obs).squeeze()
 

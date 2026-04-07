@@ -6,47 +6,135 @@ from typing import Any
 DEFAULT_HIGHWAY_CONFIG = "realistic_light"
 
 HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
-    # realistic_light: keeps multi-lane traffic and interactions, trimmed for faster rollouts.
+    # realistic_light:
+    # Main training setup for the project.
+    # Keeps realistic multi-lane interaction while avoiding unnecessary simulation cost.
     "realistic_light": {
-        "action": {"type": "ContinuousAction"},
-        "lanes_count": 3,  # fewer lanes reduces sim cost while preserving lane changes
-        "vehicles_count": 30,  # lower density speeds up dynamics without losing traffic context
-        "duration": 40,
+        "observation": {
+            "type": "Kinematics",
+            "vehicles_count": 10,  # smaller observation for faster forward passes
+            "features": ["presence", "x", "y", "vx", "vy"],
+            "absolute": False,
+            "normalize": True,
+        },
+        "action": {
+            "type": "ContinuousAction",
+        },
+        "lanes_count": 3,
+        "vehicles_count": 24,          # enough traffic for interaction, lighter than stock 50
+        "controlled_vehicles": 1,
+        "duration": 60,                # more realistic than 40, but not excessively long
+        "ego_spacing": 2,
+        "vehicles_density": 1.0,
         "simulation_frequency": 15,
         "policy_frequency": 5,
+
+        # Reward shaping
+        "collision_reward": -1.0,
+        "right_lane_reward": 0.05,     # mild encouragement, not dominant
+        "high_speed_reward": 0.4,
+        "lane_change_reward": -0.02,   # discourages unnecessary weaving
+        "reward_speed_range": [20, 30],
+        "normalize_reward": True,
+
+        # Safety / termination
+        "offroad_terminal": True,      # good for a safety-focused project
+
+        # Vehicle model
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+
+        # Rendering
+        "screen_width": 600,
+        "screen_height": 150,
+        "centering_position": [0.3, 0.5],
+        "scaling": 5.5,
+        "show_trajectories": False,
+        "render_agent": True,
+        "offscreen_rendering": False,
+    },
+
+    # fast_experiment:
+    # Faster setting for ablations and quick hyperparameter checks.
+    "fast_experiment": {
         "observation": {
             "type": "Kinematics",
-            "vehicles_count": 12,  # smaller observation vector for quicker forward passes
+            "vehicles_count": 6,
             "features": ["presence", "x", "y", "vx", "vy"],
+            "absolute": False,
+            "normalize": True,
         },
-    },
-    # fast_experiment: aggressive simplifications for rapid iteration, less realism.
-    "fast_experiment": {
-        "action": {"type": "ContinuousAction"},
-        "lanes_count": 2,  # fewer lanes -> fewer neighbors to simulate
-        "vehicles_count": 12,  # smaller traffic pool for faster steps
-        "duration": 25,
+        "action": {
+            "type": "ContinuousAction",
+        },
+        "lanes_count": 2,
+        "vehicles_count": 10,
+        "controlled_vehicles": 1,
+        "duration": 30,
+        "ego_spacing": 2,
+        "vehicles_density": 1.0,
         "simulation_frequency": 10,
         "policy_frequency": 2,
+
+        "collision_reward": -1.0,
+        "right_lane_reward": 0.03,
+        "high_speed_reward": 0.35,
+        "lane_change_reward": -0.02,
+        "reward_speed_range": [18, 28],
+        "normalize_reward": True,
+
+        "offroad_terminal": True,
+
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+
+        "screen_width": 600,
+        "screen_height": 150,
+        "centering_position": [0.3, 0.5],
+        "scaling": 5.5,
+        "show_trajectories": False,
+        "render_agent": True,
+        "offscreen_rendering": False,
+    },
+
+    # debug_minimal:
+    # Tiny setup for quick code sanity checks, not for real evaluation.
+    "debug_minimal": {
         "observation": {
             "type": "Kinematics",
-            "vehicles_count": 6,  # fewer observed vehicles speeds up training
+            "vehicles_count": 4,
             "features": ["presence", "x", "y", "vx", "vy"],
+            "absolute": False,
+            "normalize": True,
         },
-    },
-    # debug_minimal: shortest, tiniest setup for quick sanity checks over realism.
-    "debug_minimal": {
-        "action": {"type": "ContinuousAction"},
-        "lanes_count": 1,  # single lane removes most interactions
-        "vehicles_count": 6,  # minimal traffic for fastest sim
+        "action": {
+            "type": "ContinuousAction",
+        },
+        "lanes_count": 1,
+        "vehicles_count": 6,
+        "controlled_vehicles": 1,
         "duration": 12,
+        "ego_spacing": 2,
+        "vehicles_density": 1.0,
         "simulation_frequency": 6,
         "policy_frequency": 2,
-        "observation": {
-            "type": "Kinematics",
-            "vehicles_count": 4,  # tiny observation for quick debug runs
-            "features": ["presence", "x", "y", "vx", "vy"],
-        },
+
+        "collision_reward": -1.0,
+        "right_lane_reward": 0.0,
+        "high_speed_reward": 0.2,
+        "lane_change_reward": 0.0,
+        "reward_speed_range": [15, 25],
+        "normalize_reward": True,
+
+        "offroad_terminal": True,
+
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+
+        "screen_width": 600,
+        "screen_height": 150,
+        "centering_position": [0.3, 0.5],
+        "scaling": 5.5,
+        "show_trajectories": False,
+        "render_agent": True,
+        "offscreen_rendering": False,
     },
 }
 

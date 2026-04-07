@@ -56,7 +56,7 @@ class PPO:
 		self.critic_optim = Adam(self.critic.parameters(), lr=self.lr)
 
 		# Initialize the covariance matrix used to query the actor for actions
-		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.5, device=self.device)
+		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.05, device=self.device)
 		self.cov_mat = torch.diag(self.cov_var)
 
 		# This logger will help us with printing out summaries of each iteration
@@ -68,6 +68,8 @@ class PPO:
 			'batch_rews': [],       # episodic returns in batch
 			'actor_losses': [],     # losses of actor network in current iteration
 			'critic_uncertainties': [], # mean critic uncertainty per update
+			'rollout_uncertainties': [], # critic uncertainties collected during rollout
+			'batch_raw_rews': [],   # raw rewards in batch, without uncertainty penalty
 		}
 
 	def learn(self, total_timesteps):
@@ -82,6 +84,7 @@ class PPO:
 		"""
 		print(f"Learning... Running {self.max_timesteps_per_episode} timesteps per episode, ", end='')
 		print(f"{self.timesteps_per_batch} timesteps per batch for a total of {total_timesteps} timesteps")
+		print(f"the uncertainty penalty lambda is {self.lambda_u}")
 		t_so_far = 0 # Timesteps simulated so far
 		i_so_far = 0 # Iterations ran so far
 		while t_so_far < total_timesteps:                                                                       # ALG STEP 2
@@ -113,12 +116,7 @@ class PPO:
 				V_mean, V_var, curr_log_probs = self.evaluate(batch_obs, batch_acts, training=True)
 
 				# Calculate the ratio pi_theta(a_t | s_t) / pi_theta_k(a_t | s_t)
-				# NOTE: we just subtract the logs, which is the same as
-				# dividing the values and then canceling the log with e^log.
-				# For why we use log probabilities instead of actual probabilities,
-				# here's a great explanation: 
-				# https://cs.stackexchange.com/questions/70518/why-do-we-use-the-log-in-gradient-based-reinforcement-algorithms
-				# TL;DR makes gradient ascent easier behind the scenes.
+
 				ratios = torch.exp(curr_log_probs - batch_log_probs)
 
 				# Calculate surrogate losses.
@@ -156,8 +154,8 @@ class PPO:
 
 	def rollout(self):
 		"""
-			Too many transformers references, I'm sorry. This is where we collect the batch of data
-			from simulation. Since this is an on-policy algorithm, we'll need to collect a fresh batch
+			This is where we collect the batch of data from simulation.
+			Since this is an on-policy algorithm, we'll need to collect a fresh batch
 			of data each time we iterate the actor/critic networks.
 
 			Parameters:
@@ -175,8 +173,10 @@ class PPO:
 		batch_acts = []
 		batch_log_probs = []
 		batch_rews = []
+		batch_raw_rews = []
 		batch_rtgs = []
 		batch_lens = []
+		batch_uncertainties = []
 
 		# Episodic data. Keeps track of rewards per episode, will get cleared
 		# upon each new episode
@@ -187,6 +187,7 @@ class PPO:
 		# Keep simulating until we've run more than or equal to specified timesteps per batch
 		while t < self.timesteps_per_batch:
 			ep_rews = [] # rewards collected per episode
+			ep_raw_rews = [] # raw rewards collected per episode, without uncertainty penalty
 
 			# Reset the environment. sNote that obs is short for observation. 
 			obs, _ = self.env.reset()
@@ -208,11 +209,35 @@ class PPO:
 				action, log_prob = self.get_action(obs)
 				obs, rew, terminated, truncated, _ = self.env.step(action)
 
+				offroad = hasattr(self.env.unwrapped, "vehicle") and not self.env.unwrapped.vehicle.on_road
+				if offroad:
+					rew -= 2.0
+					terminated = True
+
+				_, uncertainty_estimation = self.estimate_critic_uncertainty(obs, mc_samples=self.mc_samples)
+				uncertainty_estimation = uncertainty_estimation.detach().item()
+				raw_rew = rew
+
+				batch_uncertainties.append(uncertainty_estimation)
+
+				if len(batch_uncertainties) < 20:
+					unc_norm = 0.0
+				else:
+					unc_mean = np.mean(batch_uncertainties)
+					unc_std = np.std(batch_uncertainties) + 1e-8
+					unc_norm = (uncertainty_estimation - unc_mean) / unc_std
+					unc_norm = np.clip(unc_norm, 0, 3)
+
+				rew = rew - (self.lambda_u * unc_norm)
+
+
+
 				# Don't really care about the difference between terminated or truncated in this, so just combine them
 				done = terminated | truncated
 
 				# Track recent reward, action, and action log probability
 				ep_rews.append(rew)
+				ep_raw_rews.append(raw_rew)
 				batch_acts.append(action)
 				batch_log_probs.append(log_prob)
 
@@ -223,6 +248,8 @@ class PPO:
 			# Track episodic lengths and rewards
 			batch_lens.append(ep_t + 1)
 			batch_rews.append(ep_rews)
+			batch_raw_rews.append(ep_raw_rews)
+			
 
 		# Reshape data as tensors in the shape specified in function description, before returning
 		batch_obs = torch.from_numpy(np.array(batch_obs, dtype=np.float32)).to(self.device)
@@ -232,7 +259,9 @@ class PPO:
 
 		# Log the episodic returns and episodic lengths in this batch.
 		self.logger['batch_rews'] = batch_rews
+		self.logger['batch_raw_rews'] = batch_raw_rews
 		self.logger['batch_lens'] = batch_lens
+		self.logger['rollout_uncertainties'] = batch_uncertainties
 
 		return batch_obs, batch_acts, batch_log_probs, batch_rtgs, batch_lens
 
@@ -292,6 +321,7 @@ class PPO:
 
 		# Sample an action from the distribution
 		action = dist.sample()
+		action = torch.clamp(action, torch.as_tensor(self.env.action_space.low).to(self.device), torch.as_tensor(self.env.action_space.high).to(self.device))
 
 		# Calculate the log probability for that action
 		log_prob = dist.log_prob(action)
@@ -327,8 +357,6 @@ class PPO:
 			obs = obs.unsqueeze(0)
 			single_input = True
 
-		# Preferred Stage 3 design: one official MC Dropout pathway, used everywhere for clarity and reporting
-		# Preserve original mode and keep dropout active during sampling
 		was_training = self.critic.training
 		self.critic.train()
 
@@ -491,10 +519,11 @@ class PPO:
 		# MC huperparameters
 		self.dropout_p = 0.1
 		self.mc_samples = 5
+		self.lambda_u = 0.01
 
 		# Change any default values to custom values for specified hyperparameters
 		for param, val in hyperparameters.items():
-			exec('self.' + param + ' = ' + str(val))
+			setattr(self, param, val)
 
 		# Sets the seed if specified
 		if self.seed != None:
@@ -527,12 +556,14 @@ class PPO:
 		i_so_far = self.logger['i_so_far']
 		avg_ep_lens = np.mean(self.logger['batch_lens'])
 		avg_ep_rews = np.mean([np.sum(ep_rews) for ep_rews in self.logger['batch_rews']])
+		avg_raw_ep_rews = np.mean([np.sum(ep_raw_rews) for ep_raw_rews in self.logger['batch_raw_rews']])
 		avg_actor_loss = np.mean([losses.float().mean() for losses in self.logger['actor_losses']])
-		avg_critic_uncertainty = torch.stack(self.logger['critic_uncertainties']).mean().item()
+		avg_critic_uncertainty =  float(np.mean(self.logger['rollout_uncertainties']))
 
 		# Round decimal places for more aesthetic logging messages
 		avg_ep_lens = str(round(avg_ep_lens, 2))
-		avg_ep_rews = str(round(avg_ep_rews, 2))
+		avg_ep_rews = str(round(avg_ep_rews, 3))
+		avg_raw_ep_rews = str(round(avg_raw_ep_rews, 3))
 		avg_actor_loss = str(round(avg_actor_loss, 5))
 		avg_critic_uncertainty = str(round(avg_critic_uncertainty, 5))
 
@@ -541,6 +572,7 @@ class PPO:
 		print(f"-------------------- Iteration #{i_so_far} --------------------", flush=True)
 		print(f"Average Episodic Length: {avg_ep_lens}", flush=True)
 		print(f"Average Episodic Return: {avg_ep_rews}", flush=True)
+		print(f"Average Raw Episodic Return (without uncertainty penalty): {avg_raw_ep_rews}", flush=True)
 		print(f"Average Loss: {avg_actor_loss}", flush=True)
 		print(f"Average Critic Uncertainty: {avg_critic_uncertainty}", flush=True)
 		print(f"Timesteps So Far: {t_so_far}", flush=True)
@@ -552,4 +584,6 @@ class PPO:
 		self.logger['batch_lens'] = []
 		self.logger['batch_rews'] = []
 		self.logger['actor_losses'] = []
-		self.logger['critic_uncertainties'] = []
+		self.logger['critic_uncertainties'] = [] # deprecated, now using rollout_uncertainties
+		self.logger['rollout_uncertainties'] = []
+		self.logger['batch_raw_rews'] = []

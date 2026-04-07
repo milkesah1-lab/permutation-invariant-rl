@@ -1,19 +1,13 @@
 import gymnasium as gym
 import highway_env
 from gymnasium.envs.registration import registry, register
-from gymnasium.wrappers import FlattenObservation, RecordVideo
+from gymnasium.wrappers import FlattenObservation
 import torch
-
 from ppo import PPO
 from network import FeedForwardNN
-from eval_policy import eval_policy
+from gymnasium.wrappers import RecordVideo
 
-# Register custom env once
-if "continuous-spawn-highway-v0" not in registry:
-    register(
-        id="continuous-spawn-highway-v0",
-        entry_point="continuous_spawn_highway_env:ContinuousSpawnHighwayEnv",
-    )
+from eval_policy import eval_policy
 
 hyperparameters = {
     "timesteps_per_batch": 2048,
@@ -22,22 +16,21 @@ hyperparameters = {
     "n_updates_per_iteration": 5,
     "lr": 2e-4,
     "clip": 0.2,
-    "dropout_p": 0.1,
-    "mc_samples": 5,
-    "lambda_u": 0.01
 }
 
-# Training environment
+if "continuous-spawn-highway-v0" not in registry:
+    register(
+        id="continuous-spawn-highway-v0",
+        entry_point="continuous_spawn_highway_env:ContinuousSpawnHighwayEnv",
+    )
+
 env = gym.make("continuous-spawn-highway-v0")
 env = FlattenObservation(env)
 
 model = PPO(FeedForwardNN, env, **hyperparameters)
-model.learn(total_timesteps=200000)
-
-model_name = f"uncertainty_aware_ppo_model_lambda_u_{hyperparameters['lambda_u']}"
-
-torch.save(model.actor.state_dict(), f"./{model_name}_actor.pth")
-torch.save(model.critic.state_dict(), f"./{model_name}_critic.pth")
+model_name = "uncertainty_aware_ppo_model_lambda_u_0.05"
+model.actor.load_state_dict(model.actor.state_dict(), f"./{model_name}_actor.pth",)
+model.critic.load_state_dict(model.critic.state_dict(), f"./{model_name}_critic.pth",)
 
 env.close()
 
@@ -63,3 +56,4 @@ avg_len, avg_ret, collision_rate = eval_policy(
 print(f"Final Eval -> Avg Length: {avg_len:.2f}, Avg Return: {avg_ret:.2f}, Collision Rate: {collision_rate:.3f}")
 
 eval_env.close()
+
