@@ -19,6 +19,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         },
         "action": {
             "type": "ContinuousAction",
+            "speed_range": [0.0, 30.0],
         },
         "lanes_count": 3,
         "vehicles_count": 24,          # enough traffic for interaction, lighter than stock 50
@@ -65,6 +66,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         },
         "action": {
             "type": "ContinuousAction",
+            "speed_range": [0.0, 30.0],
         },
         "lanes_count": 2,
         "vehicles_count": 10,
@@ -107,6 +109,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         },
         "action": {
             "type": "ContinuousAction",
+            "speed_range": [0.0, 30.0],
         },
         "lanes_count": 1,
         "vehicles_count": 6,

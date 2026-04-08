@@ -12,7 +12,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
     "realistic_light": {
         "observation": {
             "type": "Kinematics",
-            "vehicles_count": 10,  # smaller observation for faster forward passes
+            "vehicles_count": 15,  # smaller observation for faster forward passes
             "features": ["presence", "x", "y", "vx", "vy"],
             "absolute": False,
             "normalize": True,

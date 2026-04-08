@@ -25,7 +25,8 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
                     "vehicles_count": 15,
                     "features": ["presence", "x", "y", "vx", "vy"],
                 },
-                "action": {"type": "ContinuousAction"},
+                "action": {"type": "ContinuousAction",
+                           "speed_range" : [0.0, 30.0],},
                 "lanes_count": 4,
                 "vehicles_count": 20,
                 "controlled_vehicles": 1,
@@ -48,6 +49,9 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
                 # traffic speed controls
                 "traffic_speed_range": [20.0, 30.0],  # desired speed range (m/s)
                 "enforce_speed_each_step": False,     # keep non-ego traffic within range
+
+                "normalize":True,
+                "absolute" :False,
             }
         )
         return config

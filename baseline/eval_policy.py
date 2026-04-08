@@ -79,8 +79,9 @@ def eval_policy(policy, env, num_episodes, render=False):
 
 				obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
 				mean = policy(obs_t)
-				dist = MultivariateNormal(mean, cov_mat)
-				action = dist.sample().detach().cpu().numpy()
+				action = mean.detach().cpu().numpy()
+				# dist = MultivariateNormal(mean, cov_mat)  # making it use actor's mean action instead of sampling from the distribution
+				# action = dist.sample().detach().cpu().numpy()
 				action = np.clip(action, env.action_space.low, env.action_space.high)
 
 				obs, rew, terminated, truncated, info = env.step(action)

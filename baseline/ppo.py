@@ -13,12 +13,14 @@ import torch
 import torch.nn as nn
 from torch.optim import Adam
 from torch.distributions import MultivariateNormal
+from network import FeedForwardNN
+from PI_network import PIFeedForwardNN
 
 class PPO:
 	"""
 		This is the PPO class we will use as our model in main.py
 	"""
-	def __init__(self, policy_class, env, **hyperparameters):
+	def __init__(self, env, **hyperparameters):
 		"""
 			Initializes the PPO model, including hyperparameters.
 
@@ -46,8 +48,10 @@ class PPO:
 		self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 		 # Initialize actor and critic networks
-		self.actor = policy_class(self.obs_dim, self.act_dim)                                                   # ALG STEP 1
-		self.critic = policy_class(self.obs_dim, 1)
+		num_of_vehicles = env.unwrapped.config["observation"]["vehicles_count"]
+		num_of_features = len(env.unwrapped.config["observation"]["features"])	
+		self.actor = PIFeedForwardNN(out_dim=self.act_dim,num_of_features=num_of_features,num_of_vehicles=num_of_vehicles)     # ALG STEP 1
+		self.critic = PIFeedForwardNN(out_dim=1,num_of_features=num_of_features,num_of_vehicles=num_of_vehicles)
 		self.actor.to(self.device)
 		self.critic.to(self.device)
 

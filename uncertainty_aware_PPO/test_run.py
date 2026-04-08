@@ -5,7 +5,6 @@ from gymnasium.wrappers import FlattenObservation, RecordVideo
 import torch
 
 from ppo import PPO
-from network import FeedForwardNN
 from eval_policy import eval_policy
 
 # Register custom env once
@@ -27,11 +26,19 @@ hyperparameters = {
     "lambda_u": 0.01
 }
 
+env = gym.make(
+    "continuous-spawn-highway-v0",
+    render_mode="rgb_array"
+)
+
+
 # Training environment
 env = gym.make("continuous-spawn-highway-v0")
 env = FlattenObservation(env)
 
-model = PPO(FeedForwardNN, env, **hyperparameters)
+
+
+model = PPO(env, **hyperparameters)
 model.learn(total_timesteps=200000)
 
 model_name = f"uncertainty_aware_ppo_model_lambda_u_{hyperparameters['lambda_u']}"
