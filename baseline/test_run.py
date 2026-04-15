@@ -11,12 +11,16 @@ from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
 from eval_policy import eval_policy
 
 hyperparameters = {
-    "timesteps_per_batch": 2048,
-    "max_timesteps_per_episode": 100,
+    "timesteps_per_batch": 4096,
+    "max_timesteps_per_episode": 120,
     "gamma": 0.99,
     "n_updates_per_iteration": 5,
     "lr": 1e-4,
     "clip": 0.2,
+    "learn_std": True,
+    "init_log_std": -1.5,
+    "min_log_std": -3.0,
+    "max_log_std": -0.3,
 }
 
 # Register custom env once

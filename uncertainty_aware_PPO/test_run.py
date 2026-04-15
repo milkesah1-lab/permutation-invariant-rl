@@ -6,6 +6,7 @@ import torch
 
 from ppo import PPO
 from eval_policy import eval_policy
+from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
 
 # Register custom env once
 if "continuous-spawn-highway-v0" not in registry:
@@ -15,11 +16,11 @@ if "continuous-spawn-highway-v0" not in registry:
     )
 
 hyperparameters = {
-    "timesteps_per_batch": 2048,
-    "max_timesteps_per_episode": 40,
+    "timesteps_per_batch": 3072,
+    "max_timesteps_per_episode": 120,
     "gamma": 0.99,
     "n_updates_per_iteration": 5,
-    "lr": 2e-4,
+    "lr": 1e-4,
     "clip": 0.2,
     "dropout_p": 0.1,
     "mc_samples": 5,
@@ -28,15 +29,12 @@ hyperparameters = {
 
 env = gym.make(
     "continuous-spawn-highway-v0",
-    render_mode="rgb_array"
+    render_mode="rgb_array",
+    config=get_highway_config("realistic_light")
 )
 
 
-# Training environment
-env = gym.make("continuous-spawn-highway-v0")
 env = FlattenObservation(env)
-
-
 
 model = PPO(env, **hyperparameters)
 model.learn(total_timesteps=200000)
@@ -51,7 +49,8 @@ env.close()
 # Evaluation environment
 eval_env = gym.make(
     "continuous-spawn-highway-v0",
-    render_mode="rgb_array"
+    render_mode="rgb_array",
+    config=get_highway_config("realistic_light")
 )
 eval_env = FlattenObservation(eval_env)
 eval_env = RecordVideo(

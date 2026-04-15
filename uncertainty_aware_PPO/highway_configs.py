@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from copy import deepcopy
 from typing import Any
@@ -12,29 +12,30 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
     "realistic_light": {
         "observation": {
             "type": "Kinematics",
-            "vehicles_count": 15,  # smaller observation for faster forward passes
+            "vehicles_count": 15,  # changed it to 15 from 10 
             "features": ["presence", "x", "y", "vx", "vy"],
             "absolute": False,
             "normalize": True,
         },
         "action": {
             "type": "ContinuousAction",
+            "speed_range": [15.0, 30.0], # changed speed from 12 to 15
         },
         "lanes_count": 3,
-        "vehicles_count": 24,          # enough traffic for interaction, lighter than stock 50
+        "vehicles_count": 24,         #originally 24 # enough traffic for interaction, lighter than stock 50
         "controlled_vehicles": 1,
-        "duration": 60,                # more realistic than 40, but not excessively long
+        "duration": 30,
         "ego_spacing": 2,
         "vehicles_density": 1.0,
         "simulation_frequency": 15,
         "policy_frequency": 5,
 
         # Reward shaping
-        "collision_reward": -1.0,
-        "right_lane_reward": 0.05,     # mild encouragement, not dominant
-        "high_speed_reward": 0.4,
-        "lane_change_reward": -0.02,   # discourages unnecessary weaving
-        "reward_speed_range": [20, 30],
+        "collision_reward": -2.0,
+        "right_lane_reward": 0.0,      # remove residual lane-holding incentive
+        "high_speed_reward": 0.3,
+        "lane_change_reward": -0.01,   # discourage weaving without blocking necessary overtakes
+        "reward_speed_range": [18, 30],
         "normalize_reward": True,
 
         # Safety / termination
@@ -65,6 +66,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         },
         "action": {
             "type": "ContinuousAction",
+            "speed_range": [0.0, 30.0],
         },
         "lanes_count": 2,
         "vehicles_count": 10,
@@ -107,6 +109,7 @@ HIGHWAY_ENV_CONFIGS: dict[str, dict[str, Any]] = {
         },
         "action": {
             "type": "ContinuousAction",
+            "speed_range": [10.0, 30.0],
         },
         "lanes_count": 1,
         "vehicles_count": 6,

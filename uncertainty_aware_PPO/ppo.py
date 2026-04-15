@@ -13,6 +13,7 @@ import torch.nn as nn
 from torch.optim import Adam
 from torch.distributions import MultivariateNormal
 from network import FeedForwardNN, DropoutCritic
+from PI_network import PIFeedForwardNN, PIDropoutCritic
 
 class PPO:
 	"""
@@ -23,7 +24,6 @@ class PPO:
 			Initializes the PPO model, including hyperparameters.
 
 			Parameters:
-				policy_class - retained for backward compatibility (unused in current implementation).
 				env - the environment to train on.
 				hyperparameters - all extra arguments passed into PPO that should be hyperparameters.
 
@@ -46,8 +46,10 @@ class PPO:
 		self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 		 # Initialize actor and critic networks
-		self.actor = FeedForwardNN(self.obs_dim, self.act_dim)                                                                   # ALG STEP 1
-		self.critic = DropoutCritic(self.obs_dim, hidden_dim=64, dropout_p=self.dropout_p)                                      # ALG STEP 1
+		num_of_vehicles = env.unwrapped.config["observation"]["vehicles_count"]
+		num_of_features = len(env.unwrapped.config["observation"]["features"])	
+		self.actor = PIFeedForwardNN(out_dim=self.act_dim,num_of_features=num_of_features,num_of_vehicles=num_of_vehicles)                                                                   # ALG STEP 1
+		self.critic = PIDropoutCritic(dropout_p=self.dropout_p,num_of_features=num_of_features,num_of_vehicles=num_of_vehicles)                                      # ALG STEP 1
 		self.actor.to(self.device)
 		self.critic.to(self.device)
 

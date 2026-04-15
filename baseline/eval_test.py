@@ -11,8 +11,8 @@ from eval_policy import eval_policy
 from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
 
 hyperparameters = {
-    "timesteps_per_batch": 2048,
-    "max_timesteps_per_episode": 40,
+    "timesteps_per_batch": 4096,
+    "max_timesteps_per_episode": 120,
     "gamma": 0.99,
     "n_updates_per_iteration": 5,
     "lr": 1e-4,
@@ -30,8 +30,6 @@ env = gym.make(
     render_mode="rgb_array",
     config=get_highway_config("realistic_light")
 )
-
-
 env = FlattenObservation(env)
 
 model = PPO(env, **hyperparameters)

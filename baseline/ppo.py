@@ -25,7 +25,6 @@ class PPO:
 			Initializes the PPO model, including hyperparameters.
 
 			Parameters:
-				policy_class - the policy class to use for our actor/critic networks.
 				env - the environment to train on.
 				hyperparameters - all extra arguments passed into PPO that should be hyperparameters.
 
@@ -55,13 +54,26 @@ class PPO:
 		self.actor.to(self.device)
 		self.critic.to(self.device)
 
-		# Initialize optimizers for actor and critic
-		self.actor_optim = Adam(self.actor.parameters(), lr=self.lr)
-		self.critic_optim = Adam(self.critic.parameters(), lr=self.lr)
+		# Initialize a learnable diagonal std when enabled, otherwise keep the
+		# original fixed diagonal covariance.
+		actor_params = list(self.actor.parameters())
+		if self.learn_std:
+			self.actor_log_std = nn.Parameter(
+				torch.full((self.act_dim,), self.init_log_std, device=self.device)
+			)
+			actor_params.append(self.actor_log_std)
+		else:
+			self.actor_log_std = None
+			self.cov_var = torch.full(
+				size=(self.act_dim,),
+				fill_value=self.fixed_cov_var,
+				device=self.device,
+			)
+			self.cov_mat = torch.diag(self.cov_var)
 
-		# Initialize the covariance matrix used to query the actor for actions
-		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.05, device=self.device)
-		self.cov_mat = torch.diag(self.cov_var)
+		# Initialize optimizers for actor and critic
+		self.actor_optim = Adam(actor_params, lr=self.lr)
+		self.critic_optim = Adam(self.critic.parameters(), lr=self.lr)
 
 		# This logger will help us with printing out summaries of each iteration
 		self.logger = {
@@ -295,8 +307,8 @@ class PPO:
 		# Query the actor network for a mean action
 		mean = self.actor(obs)
 
-		# Create a distribution with the mean action and std from the covariance matrix above.
-		dist = MultivariateNormal(mean, self.cov_mat)
+		# Create a distribution with the mean action and current diagonal std.
+		dist = self._get_action_distribution(mean)
 
 		# Sample an action from the distribution
 		action = dist.sample()
@@ -347,7 +359,7 @@ class PPO:
 		# Calculate the log probabilities of batch actions using most recent actor network.
 		# This segment of code is similar to that in get_action()
 		mean = self.actor(batch_obs)
-		dist = MultivariateNormal(mean, self.cov_mat)
+		dist = self._get_action_distribution(mean)
 		log_probs = dist.log_prob(batch_acts)
 
 		# Return the value vector V of each observation in the batch
@@ -373,6 +385,11 @@ class PPO:
 		self.lr = 3e-4                                 # Learning rate of actor optimizer
 		self.gamma = 0.95                               # Discount factor to be applied when calculating Rewards-To-Go
 		self.clip = 0.2                                 # Recommended 0.2, helps define the threshold to clip the ratio during SGA
+		self.learn_std = False                          # Learn a diagonal action std instead of fixing covariance
+		self.init_log_std = -1.5                        # sqrt(0.05) std in log-space
+		self.min_log_std = -3.0
+		self.max_log_std = 0.0
+		self.fixed_cov_var = 0.05
 
 		# Miscellaneous parameters
 		self.render = True                              # If we should render during rollout
@@ -392,6 +409,14 @@ class PPO:
 			# Set the seed 
 			torch.manual_seed(self.seed)
 			print(f"Successfully set seed to {self.seed}")
+
+	def _get_action_distribution(self, mean):
+		if self.learn_std:
+			log_std = torch.clamp(self.actor_log_std, self.min_log_std, self.max_log_std)
+			cov_mat = torch.diag(torch.exp(2 * log_std))
+			return MultivariateNormal(mean, covariance_matrix=cov_mat)
+
+		return MultivariateNormal(mean, self.cov_mat)
 
 	def _log_summary(self):
 		"""
@@ -421,6 +446,11 @@ class PPO:
 		avg_ep_lens = str(round(avg_ep_lens, 2))
 		avg_ep_rews = str(round(avg_ep_rews, 2))
 		avg_actor_loss = str(round(avg_actor_loss, 5))
+		avg_action_std = None
+		if self.learn_std:
+			with torch.no_grad():
+				clamped_log_std = torch.clamp(self.actor_log_std, self.min_log_std, self.max_log_std)
+				avg_action_std = str(round(float(torch.exp(clamped_log_std).mean().item()), 4))
 
 		# Print logging statements
 		print(flush=True)
@@ -428,6 +458,8 @@ class PPO:
 		print(f"Average Episodic Length: {avg_ep_lens}", flush=True)
 		print(f"Average Episodic Return: {avg_ep_rews}", flush=True)
 		print(f"Average Loss: {avg_actor_loss}", flush=True)
+		if avg_action_std is not None:
+			print(f"Average Action Std: {avg_action_std}", flush=True)
 		print(f"Timesteps So Far: {t_so_far}", flush=True)
 		print(f"Iteration took: {delta_t} secs", flush=True)
 		print(f"------------------------------------------------------", flush=True)
