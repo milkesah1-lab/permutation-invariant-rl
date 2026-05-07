@@ -1,0 +1,92 @@
+Run ID: meanmax_3run_300k_parallel_20260504_172422
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_3run_300k_parallel_20260504_172422
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\mean+max
+Training seeds: [12345, 23456, 34567]
+Shared evaluation seeds: [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049]
+Parallel runs: True
+Torch threads per run: 1
+Started run 1/3 with training seed 12345; pid=33636
+Started run 2/3 with training seed 23456; pid=16388
+Started run 3/3 with training seed 34567; pid=23004
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Status: run_1:running, run_2:running, run_3:running
+Finished run 1: eval_return=55.773604, eval_length=83.140000, collision_rate=0.900000
+Finished run 2: eval_return=45.391278, eval_length=69.200000, collision_rate=0.920000
+Finished run 3: eval_return=46.512695, eval_length=67.120000, collision_rate=0.920000
+Completed mean+max 3-run 300k study.
+Individual results: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_3run_300k_parallel_20260504_172422\individual_run_results.csv
+Final averaged evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_3run_300k_parallel_20260504_172422\final_averaged_evaluation.csv

@@ -1,0 +1,8 @@
+﻿{
+    "run_id":  "meanmax_3run_300k_parallel_20260504_172422",
+    "pid":  3876,
+    "out_dir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422",
+    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_3run_300k_parallel_20260504_172422_stdout.log",
+    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_3run_300k_parallel_20260504_172422_stderr.log",
+    "started_at":  "2026-05-04T17:24:23"
+}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import numpy as np
+from gymnasium import spaces
 
 from highway_env import utils
 from highway_env.envs.highway_env import HighwayEnv
@@ -24,63 +25,102 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
                     "type": "Kinematics",
                     "vehicles_count": 15,
                     "features": ["presence", "x", "y", "vx", "vy"],
+                    "absolute": False,
+                    "normalize": True,
+                    "order": "sorted",
+                    "see_behind": True,
                 },
-                "action": {"type": "ContinuousAction",
-                           "speed_range" : [10.0, 30.0],},
-                "lanes_count": 4,
+                "action": {
+                    "type": "ContinuousAction",
+                    "speed_range": [15.0, 30.0],
+                },
+                "lanes_count": 3,
                 "vehicles_count": 20,
                 "controlled_vehicles": 1,
-                "duration": 40,
+                "duration": 35,
                 "ego_spacing": 2,
                 "vehicles_density": 1.0,
                 "simulation_frequency": 15,
                 "policy_frequency": 5,
+                "collision_reward": -2.0,
+                "right_lane_reward": 0.0,
+                "high_speed_reward": 0.3,
+                "lane_change_reward": -0.01,
+                "reward_speed_range": [18, 30],
+                "normalize_reward": True,
+                "offroad_terminal": True,
+                "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+                "screen_width": 600,
+                "screen_height": 150,
+                "centering_position": [0.3, 0.5],
+                "scaling": 5.5,
+                "show_trajectories": False,
+                "render_agent": True,
+                "offscreen_rendering": False,
 
                 # custom traffic settings
-                "ego_start_x": 180.0,          # ego starts already well onto the highway
-                "ego_start_lane_policy": "center",
+                "ego_start_x": 180.0,
+                "ego_start_speed": 24.0,
+                "ego_start_lane_policy": "random",
                 "initial_vehicles_ahead": 2,
                 "initial_vehicles_behind": 1,
-                "spawn_probability": 0.20,
-                "spawn_interval": 2,
+                "spawn_probability": 0.10,
+                "spawn_interval": 3,
                 "spawn_min_gap": 20.0,
-                "max_vehicles": 16,
-                "spawn_ahead_probability": 0.7,
-                "lead_vehicle_distance_range": [20.0, 30.0],
-                "lead_vehicle_speed_range": [12.0, 16.0],
-                "lead_vehicle_lane_change_enabled": False,
-                "stay_best_lead_distance_range": [60.0, 85.0],
-                "stay_best_lead_speed_range": [22.0, 25.0],
-                "blocked_adjacent_front_distance_range": [8.0, 18.0],
-                "blocked_adjacent_rear_distance_range": [6.0, 14.0],
-                "blocked_adjacent_front_min_gap": 8.0,
-                "blocked_adjacent_rear_min_gap": 8.0,
-                "semi_open_adjacent_front_distance_range": [28.0, 42.0],
+                "max_vehicles": 12,
+                "spawn_ahead_probability": 0.6,
+                "lead_vehicle_distance_range": [32.0, 48.0],
+                "lead_vehicle_speed_range": [14.0, 18.0],
+                "stay_best_lead_distance_range": [65.0, 90.0],
+                "stay_best_lead_speed_range": [24.0, 27.0],
+                "blocked_adjacent_front_distance_range": [18.0, 30.0],
+                "blocked_adjacent_rear_distance_range": [15.0, 25.0],
+                "blocked_adjacent_front_min_gap": 10.0,
+                "blocked_adjacent_rear_min_gap": 10.0,
+                "semi_open_adjacent_front_distance_range": [32.0, 48.0],
                 "semi_open_adjacent_speed_range": [22.0, 26.0],
-                "blocked_adjacent_speed_range": [24.0, 28.0],
+                "blocked_adjacent_speed_range": [22.0, 27.0],
                 "scenario_probabilities": {
-                    "overtake_easy": 0.55,
-                    "overtake_blocked": 0.35,
-                    "stay_best": 0.10,
+                    "overtake_easy": 0.70,
+                    "overtake_blocked": 0.15,
+                    "stay_best": 0.15,
                 },
-                "same_lane_blocker_check_interval": 8,
-                "same_lane_blocker_distance_range": [24.0, 34.0],
+                "same_lane_blocker_check_interval": 10,
+                "same_lane_blocker_distance_range": [30.0, 44.0],
                 "same_lane_blocker_speed_range": [15.0, 19.0],
-                "same_lane_blocker_probability": 0.65,
-                "same_lane_blocker_lookahead": 40.0,
-                "close_follow_penalty_weight": 0.20,
-                "close_follow_distance": 22.0,
-                "close_follow_speed_diff": 1.5,
-                "slow_leader_penalty_weight": 0.18,
-                "slow_leader_distance": 45.0,
-                "slow_leader_speed_diff": 2.0,
+                "same_lane_blocker_probability": 0.25,
+                "same_lane_blocker_lookahead": 50.0,
+                "close_follow_penalty_weight": 0.25,
+                "close_follow_distance": 24.0,
+                "close_follow_speed_diff": 1.0,
+                "slow_leader_penalty_weight": 0.30,
+                "slow_leader_distance": 55.0,
+                "slow_leader_speed_diff": 1.5,
 
                 # traffic speed controls
-                "traffic_speed_range": [18.0, 24.0],  # desired speed range (m/s)
-                "enforce_speed_each_step": False,     # keep non-ego traffic within range
+                "traffic_speed_range": [20.0, 27.0],
+                "enforce_speed_each_step": False,
+                "append_urgency_to_observation": True,
+                "urgency_max_distance": 80.0,
+                "urgency_speed_scale": 15.0,
+                "urgency_ttc_horizon": 6.0,
             }
         )
         return config
+
+    def define_spaces(self) -> None:
+        super().define_spaces()
+        self._base_observation_space = self.observation_type.space()
+
+        if self.config.get("append_urgency_to_observation", False):
+            base_dim = int(np.prod(self._base_observation_space.shape))
+            total_dim = base_dim + self._urgency_feature_dim()
+            self.observation_space = spaces.Box(
+                low=-np.inf,
+                high=np.inf,
+                shape=(total_dim,),
+                dtype=np.float32,
+            )
 
     def reset(self, *args, **kwargs):
         obs, info = super().reset(*args, **kwargs)
@@ -88,7 +128,9 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
         self._other_vehicles_type = utils.class_from_path(self.config["other_vehicles_type"])
         if self.config.get("enforce_speed_each_step", True):
             self._enforce_traffic_speeds()
+        obs = self._augment_observation(obs)
         info["scenario"] = getattr(self, "_active_scenario", "unknown")
+        info["urgency_features"] = self._urgency_feature_dict()
         return obs, info
 
     def _create_vehicles(self) -> None:
@@ -103,7 +145,7 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
         ego_lane = self.road.network.get_lane(("0", "1", int(ego_lane_id)))
 
         ego_x = float(self.config.get("ego_start_x", 180.0))
-        ego_speed = 25.0
+        ego_speed = float(self.config.get("ego_start_speed", 24.0))
 
         ego_base = Vehicle(
             self.road,
@@ -141,28 +183,152 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
         self._spawn_step = getattr(self, "_spawn_step", 0) + 1
 
         if not (terminated or truncated):
-            self._spawn_traffic()
+            spawned_vehicle = self._spawn_traffic()
             if self.config.get("enforce_speed_each_step", True):
                 self._enforce_traffic_speeds()
+            if spawned_vehicle:
+                # Refresh the observation so newly spawned traffic is visible
+                # to the policy on the same decision step.
+                obs = self.observation_type.observe()
 
+        obs = self._augment_observation(obs)
         info["scenario"] = getattr(self, "_active_scenario", "unknown")
         info["close_follow_penalty"] = self._close_follow_penalty()
         info["slow_leader_penalty"] = self._slow_leader_penalty()
+        info["urgency_features"] = self._urgency_feature_dict()
         return obs, reward, terminated, truncated, info
 
-    def _spawn_traffic(self) -> None:
+    def _augment_observation(self, obs):
+        obs_array = np.asarray(obs, dtype=np.float32)
+        if not self.config.get("append_urgency_to_observation", False):
+            return obs_array
+
+        urgency_features = self._compute_urgency_features().astype(np.float32)
+        return np.concatenate([obs_array.reshape(-1), urgency_features]).astype(np.float32)
+
+    def _urgency_feature_dim(self) -> int:
+        return 8 if self.config.get("append_urgency_to_observation", False) else 0
+
+    def _compute_urgency_features(self) -> np.ndarray:
+        max_gap = float(self.config.get("urgency_max_distance", 80.0))
+        speed_scale = float(self.config.get("urgency_speed_scale", 15.0))
+        ttc_horizon = float(self.config.get("urgency_ttc_horizon", 6.0))
+        left_available = self._adjacent_lane_exists(-1)
+        right_available = self._adjacent_lane_exists(1)
+
+        same_front_gap, same_front_vehicle = self._nearest_vehicle_in_lane(direction="front")
+        same_closing_speed = self._closing_speed_to_vehicle(same_front_vehicle)
+        same_ttc_risk = self._ttc_risk(same_front_gap, same_closing_speed, ttc_horizon)
+
+        left_front_gap, _ = self._nearest_vehicle_in_adjacent_lane(offset=-1, direction="front")
+        left_rear_gap, _ = self._nearest_vehicle_in_adjacent_lane(offset=-1, direction="rear")
+        right_front_gap, _ = self._nearest_vehicle_in_adjacent_lane(offset=1, direction="front")
+        right_rear_gap, _ = self._nearest_vehicle_in_adjacent_lane(offset=1, direction="rear")
+
+        left_escape_gap = min(left_front_gap, left_rear_gap) if left_available else 0.0
+        right_escape_gap = min(right_front_gap, right_rear_gap) if right_available else 0.0
+        best_escape_gap = max(left_escape_gap, right_escape_gap)
+
+        features = np.array(
+            [
+                self._normalize_gap(same_front_gap, max_gap),
+                np.clip(same_closing_speed / speed_scale, 0.0, 1.0),
+                same_ttc_risk,
+                self._normalize_gap(left_front_gap, max_gap) if left_available else 0.0,
+                self._normalize_gap(left_rear_gap, max_gap) if left_available else 0.0,
+                self._normalize_gap(right_front_gap, max_gap) if right_available else 0.0,
+                self._normalize_gap(right_rear_gap, max_gap) if right_available else 0.0,
+                self._normalize_gap(best_escape_gap, max_gap),
+            ],
+            dtype=np.float32,
+        )
+        return features
+
+    def _urgency_feature_dict(self) -> dict[str, float]:
+        values = self._compute_urgency_features()
+        names = [
+            "same_lane_front_gap",
+            "same_lane_closing_speed",
+            "same_lane_ttc_risk",
+            "left_front_gap",
+            "left_rear_gap",
+            "right_front_gap",
+            "right_rear_gap",
+            "best_side_escape_gap",
+        ]
+        return {name: float(value) for name, value in zip(names, values)}
+
+    def _nearest_vehicle_in_lane(self, direction: str):
+        ego_lane = int(self.vehicle.lane_index[2])
+        return self._nearest_vehicle_by_lane_id(ego_lane, direction)
+
+    def _nearest_vehicle_in_adjacent_lane(self, offset: int, direction: str):
+        if not self._adjacent_lane_exists(offset):
+            return np.inf, None
+        ego_lane = int(self.vehicle.lane_index[2])
+        target_lane = ego_lane + offset
+        return self._nearest_vehicle_by_lane_id(target_lane, direction)
+
+    def _adjacent_lane_exists(self, offset: int) -> bool:
+        if self.vehicle is None:
+            return False
+        ego_lane = int(self.vehicle.lane_index[2])
+        target_lane = ego_lane + offset
+        return 0 <= target_lane < self.config["lanes_count"]
+
+    def _nearest_vehicle_by_lane_id(self, lane_id: int, direction: str):
+        if self.road is None or self.vehicle is None:
+            return np.inf, None
+
+        ego_x = float(self.vehicle.position[0])
+        best_gap = np.inf
+        best_vehicle = None
+
+        for vehicle in self.road.vehicles:
+            if vehicle is self.vehicle:
+                continue
+            if int(vehicle.lane_index[2]) != lane_id:
+                continue
+
+            dx = float(vehicle.position[0]) - ego_x
+            if direction == "front" and dx > 0.0 and dx < best_gap:
+                best_gap = dx
+                best_vehicle = vehicle
+            if direction == "rear" and dx < 0.0 and -dx < best_gap:
+                best_gap = -dx
+                best_vehicle = vehicle
+
+        return best_gap, best_vehicle
+
+    def _closing_speed_to_vehicle(self, vehicle) -> float:
+        if vehicle is None or self.vehicle is None:
+            return 0.0
+        return max(float(self.vehicle.speed - vehicle.speed), 0.0)
+
+    def _ttc_risk(self, gap: float, closing_speed: float, ttc_horizon: float) -> float:
+        if not np.isfinite(gap) or gap <= 0.0 or closing_speed <= 1e-6:
+            return 0.0
+        ttc = gap / closing_speed
+        return float(np.clip(1.0 - (ttc / ttc_horizon), 0.0, 1.0))
+
+    def _normalize_gap(self, gap: float, max_gap: float) -> float:
+        if not np.isfinite(gap):
+            return 1.0
+        return float(np.clip(gap / max_gap, 0.0, 1.0))
+
+    def _spawn_traffic(self) -> bool:
         if self.road is None:
-            return
+            return False
 
         if len(self.road.vehicles) >= self.config["max_vehicles"]:
-            return
+            return False
 
         spawn_interval = int(self.config.get("spawn_interval", 1))
         if spawn_interval > 1 and (self._spawn_step % spawn_interval != 0):
-            return
+            return False
 
         if self.np_random.uniform() > self.config["spawn_probability"]:
-            return
+            return False
 
         other_vehicles_type = getattr(self, "_other_vehicles_type", None)
         if other_vehicles_type is None:
@@ -172,7 +338,7 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
             blocker = self._spawn_same_lane_blocker(other_vehicles_type)
             if blocker is not None:
                 self.road.vehicles.append(blocker)
-                return
+                return True
 
         ahead_prob = float(self.config.get("spawn_ahead_probability", 0.5))
         spawn_ahead = self.np_random.uniform() < ahead_prob
@@ -180,6 +346,9 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
         vehicle = self._make_vehicle_near_ego(other_vehicles_type, ahead=spawn_ahead)
         if vehicle is not None:
             self.road.vehicles.append(vehicle)
+            return True
+
+        return False
 
     def _sample_scenario(self) -> str:
         scenario_probs = self.config.get("scenario_probabilities", {})
@@ -210,8 +379,8 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
             lead_vehicle = self._spawn_same_lane_blocker(
                 vehicle_class,
                 lane_id=ego_lane_id,
-                distance_range=(26.0, 36.0),
-                speed_range=(14.0, 18.0),
+                distance_range=tuple(self.config.get("lead_vehicle_distance_range", [32.0, 48.0])),
+                speed_range=tuple(self.config.get("lead_vehicle_speed_range", [14.0, 18.0])),
             )
             if lead_vehicle is not None:
                 self.road.vehicles.append(lead_vehicle)
@@ -484,7 +653,8 @@ class ContinuousSpawnHighwayEnv(HighwayEnv):
                 continue
 
             if speed_range is None:
-                speed = self.np_random.uniform(20.0, 28.0)
+                min_speed, max_speed = self._speed_range()
+                speed = self.np_random.uniform(min_speed, max_speed)
             else:
                 speed = self.np_random.uniform(*speed_range)
 

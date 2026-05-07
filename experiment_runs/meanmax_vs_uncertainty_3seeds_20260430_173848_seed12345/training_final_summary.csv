@@ -1,0 +1,3 @@
+model,iteration,timesteps_so_far,avg_episodic_length,avg_episodic_return,avg_loss,avg_raw_episodic_return,avg_critic_uncertainty,iteration_seconds
+deep_sets_mean_max_baseline,25,102978,36.166667,24.454118,-0.001013,,,55.82
+uncertainty_aware_lambda_0.01,25,103030,43.84,30.674,5e-05,30.832,0.00078,86.44

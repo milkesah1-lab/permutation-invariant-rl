@@ -16,7 +16,6 @@ import highway_env  # noqa: F401  # registers envs
 from gymnasium.wrappers import FlattenObservation
 
 from ppo import PPO
-from network import FeedForwardNN
 from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
 
 
@@ -66,7 +65,7 @@ def bench_get_action(num_steps: int, warmup: int) -> float:
         "clip": 0.2,
         "render": False,
     }
-    model = PPO(FeedForwardNN, env, **hyperparameters)
+    model = PPO(env, **hyperparameters)
 
     # Warm-up
     for _ in range(warmup):
@@ -95,7 +94,7 @@ def bench_full_rollout(warmup_rollouts: int = 1) -> float:
         "clip": 0.2,
         "render": False,
     }
-    model = PPO(FeedForwardNN, env, **hyperparameters)
+    model = PPO(env, **hyperparameters)
 
     # Warm-up rollout(s)
     for _ in range(warmup_rollouts):

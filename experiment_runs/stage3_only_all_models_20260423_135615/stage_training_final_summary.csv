@@ -1,0 +1,5 @@
+"model","source_file","iteration","timesteps_so_far","avg_episodic_length","avg_episodic_return","avg_loss","iteration_seconds"
+"basic_mlp","basic_mlp_01_curriculum_stage_3_mixed_traffic_training.csv","49","202640","94.25","74.134844","-0.00024","41.38"
+"deep_sets_mean","01_curriculum_stage_3_mixed_traffic_training.csv","49","201863","65.873016","49.775457","-0.000103","46.81"
+"deep_sets_mean_max","deep_sets_mean_max_01_curriculum_stage_3_mixed_traffic_training.csv","49","201923","72.186441","55.180106","4e-05","48.11"
+"self_attention","01_curriculum_stage_3_mixed_traffic_training.csv","49","202396","81.764706","62.846987","-0.000317","50.21"

@@ -1,0 +1,5 @@
+"model","source_file","iteration","timesteps_so_far","avg_episodic_length","avg_episodic_return","avg_loss","iteration_seconds"
+"basic_mlp","basic_mlp_training_plus100k.csv","24","100771","176.166667","142.763471","-0.00031","44.96"
+"deep_sets_mean_max","deep_sets_mean_max_training_plus100k.csv","24","100484","114.078947","88.821291","-0.000525","58.74"
+"self_attention","self_attention_training_plus100k.csv","24","100139","85.854167","63.210608","0.000125","68.39"
+"deep_sets_mean","deep_sets_mean_training_plus100k.csv","24","100415","54.866667","39.967676","-0.000179","50.65"

@@ -1,0 +1,3 @@
+model,num_training_runs,final_training_return_mean,final_training_length_mean,final_training_loss_mean,final_raw_training_return_mean,final_avg_critic_uncertainty_mean
+deep_sets_mean_max_baseline,3,23.299408,34.087556,-0.000586,,
+uncertainty_aware_lambda_0.01,3,26.871333,38.616667,-0.00023,27.008333,0.00131

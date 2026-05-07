@@ -4,8 +4,10 @@
 			It can be found here: https://spinningup.openai.com/en/latest/_images/math/e62a8971472597f4b014c2da064f636ffe365ba3.svg
 """
 
+import csv
 import gymnasium as gym
 import time
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -58,7 +60,7 @@ class PPO:
 		self.critic_optim = Adam(self.critic.parameters(), lr=self.lr)
 
 		# Initialize the covariance matrix used to query the actor for actions
-		self.cov_var = torch.full(size=(self.act_dim,), fill_value=0.05, device=self.device)
+		self.cov_var = torch.full(size=(self.act_dim,), fill_value=self.fixed_cov_var, device=self.device)
 		self.cov_mat = torch.diag(self.cov_var)
 
 		# This logger will help us with printing out summaries of each iteration
@@ -73,6 +75,22 @@ class PPO:
 			'rollout_uncertainties': [], # critic uncertainties collected during rollout
 			'batch_raw_rews': [],   # raw rewards in batch, without uncertainty penalty
 		}
+
+	def set_env(self, env):
+		"""
+			Switch to a new environment while keeping the current model weights.
+			This is useful for curriculum learning or further training where the
+			observation and action spaces stay consistent.
+		"""
+		assert(type(env.observation_space) == gym.spaces.Box)
+		assert(type(env.action_space) == gym.spaces.Box)
+		assert env.observation_space.shape == self.env.observation_space.shape
+		assert env.action_space.shape == self.env.action_space.shape
+		self.env = env
+
+	def set_csv_log_path(self, csv_log_path):
+		self.csv_log_path = csv_log_path
+		self._csv_initialized = False
 
 	def learn(self, total_timesteps):
 		"""
@@ -510,7 +528,10 @@ class PPO:
 		self.n_updates_per_iteration = 5                # Number of times to update actor/critic per iteration
 		self.lr = 3e-4                              # Learning rate of actor optimizer
 		self.gamma = 0.95                               # Discount factor to be applied when calculating Rewards-To-Go
-		self.clip = 0.2                                 # Recommended 0.2, helps define the threshold to clip the ratio during SGA
+		self.clip = 0.2   
+		self.fixed_cov_var = 0.05                        # Fixed variance for the action distribution
+		self.csv_log_path = None
+		self._csv_initialized = False
 
 		# Miscellaneous parameters
 		self.render = True                              # If we should render during rollout
@@ -582,6 +603,17 @@ class PPO:
 		print(f"------------------------------------------------------", flush=True)
 		print(flush=True)
 
+		self._append_csv_row(
+			iteration=i_so_far,
+			timesteps_so_far=t_so_far,
+			avg_episodic_length=float(avg_ep_lens),
+			avg_episodic_return=float(avg_ep_rews),
+			avg_raw_episodic_return=float(avg_raw_ep_rews),
+			avg_loss=float(avg_actor_loss),
+			avg_critic_uncertainty=float(avg_critic_uncertainty),
+			iteration_seconds=float(delta_t),
+		)
+
 		# Reset batch-specific logging data
 		self.logger['batch_lens'] = []
 		self.logger['batch_rews'] = []
@@ -589,3 +621,52 @@ class PPO:
 		self.logger['critic_uncertainties'] = [] # deprecated, now using rollout_uncertainties
 		self.logger['rollout_uncertainties'] = []
 		self.logger['batch_raw_rews'] = []
+
+	def _append_csv_row(
+		self,
+		iteration,
+		timesteps_so_far,
+		avg_episodic_length,
+		avg_episodic_return,
+		avg_raw_episodic_return,
+		avg_loss,
+		avg_critic_uncertainty,
+		iteration_seconds,
+	):
+		if not self.csv_log_path:
+			return
+
+		csv_path = Path(self.csv_log_path)
+		csv_path.parent.mkdir(parents=True, exist_ok=True)
+
+		if not self._csv_initialized:
+			with csv_path.open("w", newline="") as csv_file:
+				writer = csv.writer(csv_file)
+				writer.writerow(
+					[
+						"iteration",
+						"timesteps_so_far",
+						"avg_episodic_length",
+						"avg_episodic_return",
+						"avg_raw_episodic_return",
+						"avg_loss",
+						"avg_critic_uncertainty",
+						"iteration_seconds",
+					]
+				)
+			self._csv_initialized = True
+
+		with csv_path.open("a", newline="") as csv_file:
+			writer = csv.writer(csv_file)
+			writer.writerow(
+				[
+					iteration,
+					timesteps_so_far,
+					round(avg_episodic_length, 6),
+					round(avg_episodic_return, 6),
+					round(avg_raw_episodic_return, 6),
+					round(avg_loss, 6),
+					round(avg_critic_uncertainty, 6),
+					round(iteration_seconds, 6),
+				]
+			)

@@ -1,0 +1,3 @@
+model,config,eval_type,episodes,max_steps,avg_episodic_length,avg_episodic_return,collision_rate,checkpoint
+basic_mlp_smoke,curriculum_stage_3_mixed_traffic,capped,1,30,7.0,4.144378,0.0,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\smoke_stage3_only\checkpoints\basic_mlp_smoke_curriculum_final_actor.pth
+basic_mlp_smoke,curriculum_stage_3_mixed_traffic,full,1,,16.0,12.019138,0.0,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\smoke_stage3_only\checkpoints\basic_mlp_smoke_curriculum_final_actor.pth

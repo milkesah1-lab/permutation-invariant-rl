@@ -1,0 +1,1059 @@
+Model: deep_sets_mean_max
+Run ID: fair_curriculum_codex_run
+Training from scratch: no checkpoints will be loaded.
+Artifacts directory: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run
+
+==================== Stage 1: curriculum_stage_1_open_lane ====================
+Target timesteps for this stage: 24576
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 24576 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 25.83
+Average Episodic Return: 18.41
+Average Loss: -0.00335
+Timesteps So Far: 4107
+Iteration took: 40.7 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 26.72
+Average Episodic Return: 19.05
+Average Loss: -0.00183
+Timesteps So Far: 8248
+Iteration took: 40.33 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 30.22
+Average Episodic Return: 21.8
+Average Loss: -0.00037
+Timesteps So Far: 12358
+Iteration took: 40.73 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 27.41
+Average Episodic Return: 19.79
+Average Loss: -0.00055
+Timesteps So Far: 16470
+Iteration took: 40.5 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 33.23
+Average Episodic Return: 24.79
+Average Loss: -0.00094
+Timesteps So Far: 20624
+Iteration took: 40.19 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 30.56
+Average Episodic Return: 22.36
+Average Loss: -0.00066
+Timesteps So Far: 24750
+Iteration took: 40.44 secs
+------------------------------------------------------
+
+Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\01_curriculum_stage_1_open_lane_training.csv
+Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_actor.pth
+Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_critic.pth
+
+==================== Stage 2: curriculum_stage_2_easy_overtake ====================
+Target timesteps for this stage: 49152
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 27.18
+Average Episodic Return: 18.21
+Average Loss: -0.00043
+Timesteps So Far: 4104
+Iteration took: 43.57 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 29.16
+Average Episodic Return: 19.74
+Average Loss: -0.00071
+Timesteps So Far: 8215
+Iteration took: 43.12 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 29.8
+Average Episodic Return: 20.76
+Average Loss: -0.00045
+Timesteps So Far: 12327
+Iteration took: 43.84 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 29.22
+Average Episodic Return: 20.18
+Average Loss: -0.00074
+Timesteps So Far: 16564
+Iteration took: 44.5 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 30.01
+Average Episodic Return: 20.84
+Average Loss: -0.001
+Timesteps So Far: 20675
+Iteration took: 43.91 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 30.87
+Average Episodic Return: 21.29
+Average Loss: -0.0005
+Timesteps So Far: 24781
+Iteration took: 43.57 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 36.13
+Average Episodic Return: 25.85
+Average Loss: -0.00055
+Timesteps So Far: 28900
+Iteration took: 43.44 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 35.71
+Average Episodic Return: 25.52
+Average Loss: -0.00067
+Timesteps So Far: 33042
+Iteration took: 43.96 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #9 --------------------
+Average Episodic Length: 41.55
+Average Episodic Return: 30.21
+Average Loss: -0.00042
+Timesteps So Far: 37155
+Iteration took: 43.4 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #10 --------------------
+Average Episodic Length: 44.94
+Average Episodic Return: 33.27
+Average Loss: -0.00071
+Timesteps So Far: 41469
+Iteration took: 45.47 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #11 --------------------
+Average Episodic Length: 40.7
+Average Episodic Return: 30.05
+Average Loss: -0.00054
+Timesteps So Far: 45620
+Iteration took: 44.1 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #12 --------------------
+Average Episodic Length: 42.44
+Average Episodic Return: 30.92
+Average Loss: -0.0011
+Timesteps So Far: 49737
+Iteration took: 43.64 secs
+------------------------------------------------------
+
+Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\02_curriculum_stage_2_easy_overtake_training.csv
+Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_actor.pth
+Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_critic.pth
+
+==================== Stage 3: curriculum_stage_3_mixed_traffic ====================
+Target timesteps for this stage: 98304
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 98304 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 37.72
+Average Episodic Return: 26.87
+Average Loss: -0.00031
+Timesteps So Far: 4111
+Iteration took: 46.92 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 47.92
+Average Episodic Return: 34.88
+Average Loss: -0.0007
+Timesteps So Far: 8232
+Iteration took: 46.13 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 40.38
+Average Episodic Return: 28.65
+Average Loss: -0.00065
+Timesteps So Far: 12351
+Iteration took: 46.52 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 44.63
+Average Episodic Return: 32.0
+Average Loss: -0.00032
+Timesteps So Far: 16502
+Iteration took: 46.79 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 57.62
+Average Episodic Return: 42.96
+Average Loss: -0.00069
+Timesteps So Far: 20651
+Iteration took: 46.9 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 47.99
+Average Episodic Return: 34.68
+Average Loss: -0.0004
+Timesteps So Far: 24778
+Iteration took: 46.37 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 49.45
+Average Episodic Return: 35.43
+Average Loss: -0.00112
+Timesteps So Far: 28882
+Iteration took: 46.74 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 67.57
+Average Episodic Return: 50.88
+Average Loss: -0.00013
+Timesteps So Far: 33004
+Iteration took: 46.42 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #9 --------------------
+Average Episodic Length: 56.64
+Average Episodic Return: 41.71
+Average Loss: -0.00068
+Timesteps So Far: 37195
+Iteration took: 46.53 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #10 --------------------
+Average Episodic Length: 61.97
+Average Episodic Return: 47.04
+Average Loss: -0.00111
+Timesteps So Far: 41533
+Iteration took: 49.87 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #11 --------------------
+Average Episodic Length: 52.56
+Average Episodic Return: 38.56
+Average Loss: -0.00084
+Timesteps So Far: 45633
+Iteration took: 46.68 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #12 --------------------
+Average Episodic Length: 76.35
+Average Episodic Return: 58.91
+Average Loss: -7e-05
+Timesteps So Far: 49756
+Iteration took: 48.27 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #13 --------------------
+Average Episodic Length: 73.36
+Average Episodic Return: 55.1
+Average Loss: -0.00036
+Timesteps So Far: 53864
+Iteration took: 46.42 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #14 --------------------
+Average Episodic Length: 63.37
+Average Episodic Return: 47.82
+Average Loss: -0.00067
+Timesteps So Far: 57983
+Iteration took: 46.33 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #15 --------------------
+Average Episodic Length: 73.2
+Average Episodic Return: 55.19
+Average Loss: -0.00064
+Timesteps So Far: 62302
+Iteration took: 48.81 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #16 --------------------
+Average Episodic Length: 73.17
+Average Episodic Return: 55.27
+Average Loss: -0.00022
+Timesteps So Far: 66546
+Iteration took: 47.46 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #17 --------------------
+Average Episodic Length: 72.6
+Average Episodic Return: 54.57
+Average Loss: -0.00048
+Timesteps So Far: 70684
+Iteration took: 46.6 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #18 --------------------
+Average Episodic Length: 78.92
+Average Episodic Return: 60.65
+Average Loss: -0.0002
+Timesteps So Far: 74788
+Iteration took: 45.62 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #19 --------------------
+Average Episodic Length: 89.22
+Average Episodic Return: 69.08
+Average Loss: -0.00014
+Timesteps So Far: 78892
+Iteration took: 46.82 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #20 --------------------
+Average Episodic Length: 91.56
+Average Episodic Return: 70.56
+Average Loss: -0.00029
+Timesteps So Far: 83012
+Iteration took: 46.98 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #21 --------------------
+Average Episodic Length: 80.53
+Average Episodic Return: 61.64
+Average Loss: -0.0006
+Timesteps So Far: 87280
+Iteration took: 48.27 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #22 --------------------
+Average Episodic Length: 67.21
+Average Episodic Return: 50.2
+Average Loss: 2e-05
+Timesteps So Far: 91380
+Iteration took: 47.65 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #23 --------------------
+Average Episodic Length: 89.29
+Average Episodic Return: 69.11
+Average Loss: -0.00021
+Timesteps So Far: 95666
+Iteration took: 49.35 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #24 --------------------
+Average Episodic Length: 82.36
+Average Episodic Return: 63.02
+Average Loss: -0.00029
+Timesteps So Far: 99784
+Iteration took: 45.97 secs
+------------------------------------------------------
+
+Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\03_curriculum_stage_3_mixed_traffic_training.csv
+Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_actor.pth
+Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_critic.pth
+
+==================== Stage 4: curriculum_stage_4_dense_traffic ====================
+Target timesteps for this stage: 49152
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 62.16
+Average Episodic Return: 43.1
+Average Loss: -0.00014
+Timesteps So Far: 4289
+Iteration took: 58.19 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 73.68
+Average Episodic Return: 52.85
+Average Loss: -0.00019
+Timesteps So Far: 8415
+Iteration took: 55.84 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 69.42
+Average Episodic Return: 49.67
+Average Loss: -0.00033
+Timesteps So Far: 12511
+Iteration took: 54.63 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 58.24
+Average Episodic Return: 40.29
+Average Loss: -0.00033
+Timesteps So Far: 16646
+Iteration took: 55.08 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 76.91
+Average Episodic Return: 56.36
+Average Loss: -0.00015
+Timesteps So Far: 20799
+Iteration took: 56.41 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 77.89
+Average Episodic Return: 56.38
+Average Loss: -0.00131
+Timesteps So Far: 25083
+Iteration took: 58.75 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 62.43
+Average Episodic Return: 44.21
+Average Loss: -0.00037
+Timesteps So Far: 29391
+Iteration took: 59.38 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 88.59
+Average Episodic Return: 67.06
+Average Loss: -0.00035
+Timesteps So Far: 33732
+Iteration took: 58.36 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #9 --------------------
+Average Episodic Length: 72.75
+Average Episodic Return: 51.58
+Average Loss: -0.00018
+Timesteps So Far: 37879
+Iteration took: 56.65 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #10 --------------------
+Average Episodic Length: 80.1
+Average Episodic Return: 59.55
+Average Loss: -5e-05
+Timesteps So Far: 42044
+Iteration took: 55.9 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #11 --------------------
+Average Episodic Length: 131.24
+Average Episodic Return: 100.67
+Average Loss: -4e-05
+Timesteps So Far: 46375
+Iteration took: 59.86 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #12 --------------------
+Average Episodic Length: 72.04
+Average Episodic Return: 52.6
+Average Loss: -0.0001
+Timesteps So Far: 50481
+Iteration took: 56.06 secs
+------------------------------------------------------
+
+Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\04_curriculum_stage_4_dense_traffic_training.csv
+Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_actor.pth
+Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_critic.pth
+
+Evaluating deep_sets_mean_max on curriculum_stage_1_open_lane (capped, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 53
+Episodic Return: 32.12
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 54
+Episodic Return: 33.03
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 300
+Episodic Return: 251.24
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 300
+Episodic Return: 252.0
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 59
+Episodic Return: 36.57
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 300
+Episodic Return: 251.95
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 61
+Episodic Return: 48.12
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 300
+Episodic Return: 251.43
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 300
+Episodic Return: 248.78
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 81
+Episodic Return: 54.43
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_1_open_lane capped eval ===============
+Average Episodic Return: 145.966
+Average Episodic Length: 180.800
+Collision Rate: 0.500
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_1_open_lane (full, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 69
+Episodic Return: 44.38
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 451
+Episodic Return: 376.95
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 105
+Episodic Return: 77.49
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 451
+Episodic Return: 377.04
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 103
+Episodic Return: 83.42
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 451
+Episodic Return: 378.28
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 67
+Episodic Return: 43.78
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 451
+Episodic Return: 374.15
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 79
+Episodic Return: 52.61
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 90
+Episodic Return: 72.28
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_1_open_lane full eval ===============
+Average Episodic Return: 188.040
+Average Episodic Length: 231.700
+Collision Rate: 0.600
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_2_easy_overtake (capped, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 27
+Episodic Return: 13.84
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 300
+Episodic Return: 249.15
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 300
+Episodic Return: 250.6
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 46
+Episodic Return: 25.69
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 31
+Episodic Return: 16.39
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 300
+Episodic Return: 250.3
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 300
+Episodic Return: 251.15
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 300
+Episodic Return: 248.88
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 300
+Episodic Return: 250.24
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 300
+Episodic Return: 251.17
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_2_easy_overtake capped eval ===============
+Average Episodic Return: 180.741
+Average Episodic Length: 220.400
+Collision Rate: 0.300
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_2_easy_overtake (full, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 31
+Episodic Return: 16.48
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 525
+Episodic Return: 436.09
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 525
+Episodic Return: 428.51
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 525
+Episodic Return: 433.36
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 525
+Episodic Return: 432.61
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 45
+Episodic Return: 34.05
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 525
+Episodic Return: 437.63
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 35
+Episodic Return: 19.3
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 525
+Episodic Return: 428.64
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 42
+Episodic Return: 23.09
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_2_easy_overtake full eval ===============
+Average Episodic Return: 268.975
+Average Episodic Length: 330.300
+Collision Rate: 0.400
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_3_mixed_traffic (capped, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 300
+Episodic Return: 242.83
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 37
+Episodic Return: 25.68
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 300
+Episodic Return: 250.33
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 43
+Episodic Return: 29.99
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 300
+Episodic Return: 248.53
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 300
+Episodic Return: 252.02
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 45
+Episodic Return: 22.55
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 41
+Episodic Return: 19.71
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 255
+Episodic Return: 198.57
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 300
+Episodic Return: 250.79
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_3_mixed_traffic capped eval ===============
+Average Episodic Return: 154.099
+Average Episodic Length: 192.100
+Collision Rate: 0.500
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_3_mixed_traffic (full, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 600
+Episodic Return: 499.56
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 36
+Episodic Return: 17.55
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 38
+Episodic Return: 18.26
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 380
+Episodic Return: 303.68
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 600
+Episodic Return: 502.13
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 600
+Episodic Return: 502.08
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 39
+Episodic Return: 30.29
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 600
+Episodic Return: 498.69
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 600
+Episodic Return: 498.1
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 40
+Episodic Return: 32.71
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_3_mixed_traffic full eval ===============
+Average Episodic Return: 290.305
+Average Episodic Length: 353.300
+Collision Rate: 0.500
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_4_dense_traffic (capped, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 300
+Episodic Return: 247.06
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 300
+Episodic Return: 244.22
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 300
+Episodic Return: 248.76
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 26
+Episodic Return: 7.05
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 300
+Episodic Return: 236.88
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 300
+Episodic Return: 247.23
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 158
+Episodic Return: 111.59
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 20
+Episodic Return: 4.62
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 67
+Episodic Return: 41.54
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 300
+Episodic Return: 245.51
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_4_dense_traffic capped eval ===============
+Average Episodic Return: 163.445
+Average Episodic Length: 207.100
+Collision Rate: 0.400
+==================================================
+
+Evaluating deep_sets_mean_max on curriculum_stage_4_dense_traffic (full, episodes=10)
+
+-------------------- Episode #1 --------------------
+Episodic Length: 160
+Episodic Return: 116.91
+------------------------------------------------------
+
+
+-------------------- Episode #2 --------------------
+Episodic Length: 36
+Episodic Return: 18.34
+------------------------------------------------------
+
+
+-------------------- Episode #3 --------------------
+Episodic Length: 17
+Episodic Return: 3.59
+------------------------------------------------------
+
+
+-------------------- Episode #4 --------------------
+Episodic Length: 750
+Episodic Return: 626.67
+------------------------------------------------------
+
+
+-------------------- Episode #5 --------------------
+Episodic Length: 24
+Episodic Return: 6.96
+------------------------------------------------------
+
+
+-------------------- Episode #6 --------------------
+Episodic Length: 25
+Episodic Return: 7.63
+------------------------------------------------------
+
+
+-------------------- Episode #7 --------------------
+Episodic Length: 187
+Episodic Return: 139.83
+------------------------------------------------------
+
+
+-------------------- Episode #8 --------------------
+Episodic Length: 35
+Episodic Return: 22.92
+------------------------------------------------------
+
+
+-------------------- Episode #9 --------------------
+Episodic Length: 35
+Episodic Return: 21.62
+------------------------------------------------------
+
+
+-------------------- Episode #10 --------------------
+Episodic Length: 103
+Episodic Return: 73.51
+------------------------------------------------------
+
+=============== deep_sets_mean_max curriculum_stage_4_dense_traffic full eval ===============
+Average Episodic Return: 103.797
+Average Episodic Length: 137.200
+Collision Rate: 0.900
+==================================================
+
+Curriculum training and evaluation complete.
+Final actor checkpoint: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\deep_sets_mean_max_curriculum_final_actor.pth
+Final critic checkpoint: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\deep_sets_mean_max_curriculum_final_critic.pth
+Evaluation CSV: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\evaluation\deep_sets_mean_max_final_evaluation.csv

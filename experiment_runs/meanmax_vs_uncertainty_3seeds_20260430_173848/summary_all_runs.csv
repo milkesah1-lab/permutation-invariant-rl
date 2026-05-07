@@ -1,0 +1,7 @@
+run_index,train_seed,model,config_name,total_timesteps,eval_episodes,avg_episodic_return,avg_episodic_length,collision_rate
+1,12345,deep_sets_mean_max_baseline,curriculum_stage_3_mixed_traffic,100000,50,68.209716,95.5,0.92
+1,12345,uncertainty_aware_lambda_0.01,curriculum_stage_3_mixed_traffic,100000,50,74.570666,98.58,0.9
+2,23456,deep_sets_mean_max_baseline,curriculum_stage_3_mixed_traffic,100000,50,44.735268,63.22,0.98
+2,23456,uncertainty_aware_lambda_0.01,curriculum_stage_3_mixed_traffic,100000,50,68.959239,93.62,0.92
+3,34567,deep_sets_mean_max_baseline,curriculum_stage_3_mixed_traffic,100000,50,26.428608,42.2,1.0
+3,34567,uncertainty_aware_lambda_0.01,curriculum_stage_3_mixed_traffic,100000,50,28.151327,43.18,1.0

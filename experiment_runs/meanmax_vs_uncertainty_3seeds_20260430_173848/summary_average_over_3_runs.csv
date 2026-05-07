@@ -1,0 +1,3 @@
+model,config_name,total_timesteps,num_training_runs,eval_episodes_per_run,avg_episodic_return_mean,avg_episodic_length_mean,collision_rate_mean
+deep_sets_mean_max_baseline,curriculum_stage_3_mixed_traffic,100000,3,50,46.457864,66.973333,0.966667
+uncertainty_aware_lambda_0.01,curriculum_stage_3_mixed_traffic,100000,3,50,57.227077,78.46,0.94

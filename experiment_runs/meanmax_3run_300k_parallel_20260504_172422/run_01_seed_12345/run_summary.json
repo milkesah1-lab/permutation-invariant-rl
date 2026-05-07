@@ -1,0 +1,20 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422\\run_01_seed_12345\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422\\run_01_seed_12345\\training_log.csv",
+    "final_training_return": 52.874265,
+    "final_training_episode_length": 73.701754,
+    "final_training_timesteps": 302230
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422\\run_01_seed_12345\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422\\run_01_seed_12345\\evaluation_per_episode.csv",
+    "avg_episodic_return": 55.77360444769016,
+    "avg_episodic_length": 83.14,
+    "collision_rate": 0.9
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422\\run_01_seed_12345\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_parallel_20260504_172422\\run_01_seed_12345\\checkpoint_critic.pth"
+  }
+}

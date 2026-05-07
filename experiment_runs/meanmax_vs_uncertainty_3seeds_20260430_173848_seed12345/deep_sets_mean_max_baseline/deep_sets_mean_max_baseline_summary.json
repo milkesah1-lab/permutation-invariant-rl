@@ -1,0 +1,14 @@
+{
+  "model": "deep_sets_mean_max_baseline",
+  "config_name": "curriculum_stage_3_mixed_traffic",
+  "total_timesteps": 100000,
+  "train_seed": 12345,
+  "eval_episodes": 50,
+  "avg_episodic_return": 68.2097159151084,
+  "avg_episodic_length": 95.5,
+  "collision_rate": 0.92,
+  "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed12345\\deep_sets_mean_max_baseline\\deep_sets_mean_max_baseline_training.csv",
+  "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed12345\\deep_sets_mean_max_baseline\\deep_sets_mean_max_baseline_per_episode.csv",
+  "actor_path": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed12345\\deep_sets_mean_max_baseline\\deep_sets_mean_max_baseline_actor.pth",
+  "critic_path": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed12345\\deep_sets_mean_max_baseline\\deep_sets_mean_max_baseline_critic.pth"
+}

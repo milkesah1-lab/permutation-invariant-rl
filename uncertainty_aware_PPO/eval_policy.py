@@ -6,7 +6,6 @@
 
 import numpy as np
 import torch
-from torch.distributions import MultivariateNormal
 
 
 def _log_summary(ep_len, ep_ret, ep_num, crashed):
@@ -26,7 +25,7 @@ def _log_summary(ep_len, ep_ret, ep_num, crashed):
     print(flush=True)
 
 
-def eval_policy(policy, env, num_episodes=5, render=False):
+def eval_policy(policy, env, num_episodes=5, render=False, max_steps=None, label="Evaluation Summary"):
     """
     Evaluate a trained policy for a fixed number of episodes.
 
@@ -52,10 +51,6 @@ def eval_policy(policy, env, num_episodes=5, render=False):
         device = next(policy.parameters()).device
     except StopIteration:
         device = torch.device("cpu")
-    act_dim = env.action_space.shape[0]
-    cov_var = torch.full(size=(act_dim,), fill_value=0.05, device=device)
-    cov_mat = torch.diag(cov_var)
-
     with torch.no_grad():
         for ep in range(num_episodes):
             obs, _ = env.reset()
@@ -70,8 +65,7 @@ def eval_policy(policy, env, num_episodes=5, render=False):
 
                 obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
                 mean = policy(obs_t)
-                dist = MultivariateNormal(mean, cov_mat)
-                action = dist.sample().detach().cpu().numpy()
+                action = mean.detach().cpu().numpy()
                 action = np.clip(action, env.action_space.low, env.action_space.high)
                 obs, rew, terminated, truncated, info = env.step(action)
                 done = terminated or truncated
@@ -81,6 +75,9 @@ def eval_policy(policy, env, num_episodes=5, render=False):
 
                 if env.unwrapped.vehicle.crashed:
                     collided = True
+
+                if max_steps is not None and ep_len >= max_steps:
+                    done = True
 
             if collided:
                 collision_count += 1
@@ -94,7 +91,7 @@ def eval_policy(policy, env, num_episodes=5, render=False):
     avg_ep_len = float(np.mean(episode_lengths))
     collision_rate = collision_count / num_episodes
 
-    print("=============== Evaluation Summary ===============", flush=True)
+    print(f"=============== {label} ===============", flush=True)
     print(f"Average Episodic Return: {avg_ep_ret:.3f}", flush=True)
     print(f"Average Episodic Length: {avg_ep_len:.3f}", flush=True)
     print(f"Collision Rate: {collision_rate:.3f}", flush=True)

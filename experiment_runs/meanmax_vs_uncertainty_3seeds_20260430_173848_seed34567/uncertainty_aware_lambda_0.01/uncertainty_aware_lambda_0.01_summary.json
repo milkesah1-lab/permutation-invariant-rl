@@ -1,0 +1,14 @@
+{
+  "model": "uncertainty_aware_lambda_0.01",
+  "config_name": "curriculum_stage_3_mixed_traffic",
+  "total_timesteps": 100000,
+  "train_seed": 34567,
+  "eval_episodes": 50,
+  "avg_episodic_return": 28.151326582181355,
+  "avg_episodic_length": 43.18,
+  "collision_rate": 1.0,
+  "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed34567\\uncertainty_aware_lambda_0.01\\uncertainty_aware_lambda_0.01_training.csv",
+  "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed34567\\uncertainty_aware_lambda_0.01\\uncertainty_aware_lambda_0.01_per_episode.csv",
+  "actor_path": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed34567\\uncertainty_aware_lambda_0.01\\uncertainty_aware_lambda_0.01_actor.pth",
+  "critic_path": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_vs_uncertainty_3seeds_20260430_173848_seed34567\\uncertainty_aware_lambda_0.01\\uncertainty_aware_lambda_0.01_critic.pth"
+}

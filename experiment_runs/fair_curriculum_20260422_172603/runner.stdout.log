@@ -1,0 +1,19 @@
+Run ID: fair_curriculum_20260422_172603
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Evaluation episodes per eval: 10
+Curriculum stages used: 4
+Capped eval steps: 300
+Experiment logs: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_20260422_172603
+All models train from scratch; no existing weights are loaded.
+
+==================== Running deep_sets_mean ====================
+Folder: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_20260422_172603\deep_sets_mean.log
+[deep_sets_mean] Model: deep_sets_mean
+[deep_sets_mean] Run ID: fair_curriculum_20260422_172603
+[deep_sets_mean] Training from scratch: no checkpoints will be loaded.
+[deep_sets_mean] Artifacts directory: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_20260422_172603
+[deep_sets_mean] 
+[deep_sets_mean] ==================== Stage 1: curriculum_stage_1_open_lane ====================
+[deep_sets_mean] Target timesteps for this stage: 24576
+[deep_sets_mean] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 24576 timesteps

@@ -1,0 +1,5 @@
+model,avg_episodic_return,avg_episodic_length,collision_rate,episodes,config
+basic_mlp,170.037561,211.16,0.76,50,curriculum_stage_3_mixed_traffic
+deep_sets_mean,202.009815,249.88,0.68,50,curriculum_stage_3_mixed_traffic
+deep_sets_mean_max,217.338945,269.36,0.64,50,curriculum_stage_3_mixed_traffic
+self_attention,189.807354,236.84,0.72,50,curriculum_stage_3_mixed_traffic

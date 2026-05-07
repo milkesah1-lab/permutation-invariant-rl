@@ -3,7 +3,6 @@ import gymnasium as gym
 import highway_env
 from gymnasium.wrappers import FlattenObservation
 from ppo import PPO
-from network import FeedForwardNN
 import numpy as np
 
 from highway_configs import DEFAULT_HIGHWAY_CONFIG, get_highway_config
@@ -23,7 +22,7 @@ config_name = os.environ.get("HIGHWAY_CONFIG", DEFAULT_HIGHWAY_CONFIG)
 env = gym.make("highway-v0", config=get_highway_config(config_name))
 env = FlattenObservation(env)
 
-model = PPO(FeedForwardNN, env, **hyperparameters)
+model = PPO(env, **hyperparameters)
 model.learn(total_timesteps=10000)
 
 # print(env)

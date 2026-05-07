@@ -1,0 +1,8 @@
+﻿{
+    "run_id":  "meanmax_3run_300k_20260504_171911",
+    "pid":  31408,
+    "out_dir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_3run_300k_20260504_171911",
+    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_3run_300k_20260504_171911_stdout.log",
+    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_3run_300k_20260504_171911_stderr.log",
+    "started_at":  "2026-05-04T17:19:11"
+}

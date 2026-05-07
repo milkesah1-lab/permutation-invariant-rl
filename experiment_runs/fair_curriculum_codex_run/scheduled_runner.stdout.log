@@ -1,0 +1,3199 @@
+Run ID: fair_curriculum_codex_run
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Evaluation episodes per eval: 10
+Curriculum stages used: 4
+Capped eval steps: 300
+Experiment logs: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_codex_run
+All models train from scratch; no existing weights are loaded.
+
+==================== Running deep_sets_mean ====================
+Folder: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_codex_run\deep_sets_mean.log
+[deep_sets_mean] Model: deep_sets_mean
+[deep_sets_mean] Run ID: fair_curriculum_codex_run
+[deep_sets_mean] Training from scratch: no checkpoints will be loaded.
+[deep_sets_mean] Artifacts directory: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run
+[deep_sets_mean] 
+[deep_sets_mean] ==================== Stage 1: curriculum_stage_1_open_lane ====================
+[deep_sets_mean] Target timesteps for this stage: 24576
+[deep_sets_mean] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 24576 timesteps
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #1 --------------------
+[deep_sets_mean] Average Episodic Length: 23.58
+[deep_sets_mean] Average Episodic Return: 16.7
+[deep_sets_mean] Average Loss: -0.00255
+[deep_sets_mean] Timesteps So Far: 4103
+[deep_sets_mean] Iteration took: 42.28 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #2 --------------------
+[deep_sets_mean] Average Episodic Length: 24.36
+[deep_sets_mean] Average Episodic Return: 17.54
+[deep_sets_mean] Average Loss: -0.00099
+[deep_sets_mean] Timesteps So Far: 8244
+[deep_sets_mean] Iteration took: 41.51 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #3 --------------------
+[deep_sets_mean] Average Episodic Length: 25.76
+[deep_sets_mean] Average Episodic Return: 18.52
+[deep_sets_mean] Average Loss: -0.00054
+[deep_sets_mean] Timesteps So Far: 12365
+[deep_sets_mean] Iteration took: 42.62 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #4 --------------------
+[deep_sets_mean] Average Episodic Length: 26.44
+[deep_sets_mean] Average Episodic Return: 19.32
+[deep_sets_mean] Average Loss: -0.00078
+[deep_sets_mean] Timesteps So Far: 16463
+[deep_sets_mean] Iteration took: 43.33 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #5 --------------------
+[deep_sets_mean] Average Episodic Length: 28.69
+[deep_sets_mean] Average Episodic Return: 21.1
+[deep_sets_mean] Average Loss: -0.00038
+[deep_sets_mean] Timesteps So Far: 20565
+[deep_sets_mean] Iteration took: 43.15 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #6 --------------------
+[deep_sets_mean] Average Episodic Length: 28.64
+[deep_sets_mean] Average Episodic Return: 21.34
+[deep_sets_mean] Average Loss: -0.00051
+[deep_sets_mean] Timesteps So Far: 24661
+[deep_sets_mean] Iteration took: 44.32 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\csv\01_curriculum_stage_1_open_lane_training.csv
+[deep_sets_mean] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_actor.pth
+[deep_sets_mean] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_critic.pth
+[deep_sets_mean] 
+[deep_sets_mean] ==================== Stage 2: curriculum_stage_2_easy_overtake ====================
+[deep_sets_mean] Target timesteps for this stage: 49152
+[deep_sets_mean] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #1 --------------------
+[deep_sets_mean] Average Episodic Length: 27.35
+[deep_sets_mean] Average Episodic Return: 18.99
+[deep_sets_mean] Average Loss: -0.0005
+[deep_sets_mean] Timesteps So Far: 4103
+[deep_sets_mean] Iteration took: 46.32 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #2 --------------------
+[deep_sets_mean] Average Episodic Length: 28.64
+[deep_sets_mean] Average Episodic Return: 19.4
+[deep_sets_mean] Average Loss: -0.00039
+[deep_sets_mean] Timesteps So Far: 8199
+[deep_sets_mean] Iteration took: 46.16 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #3 --------------------
+[deep_sets_mean] Average Episodic Length: 25.94
+[deep_sets_mean] Average Episodic Return: 17.47
+[deep_sets_mean] Average Loss: -0.00047
+[deep_sets_mean] Timesteps So Far: 12298
+[deep_sets_mean] Iteration took: 46.75 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #4 --------------------
+[deep_sets_mean] Average Episodic Length: 29.14
+[deep_sets_mean] Average Episodic Return: 20.55
+[deep_sets_mean] Average Loss: -0.0005
+[deep_sets_mean] Timesteps So Far: 16465
+[deep_sets_mean] Iteration took: 46.66 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #5 --------------------
+[deep_sets_mean] Average Episodic Length: 27.71
+[deep_sets_mean] Average Episodic Return: 18.97
+[deep_sets_mean] Average Loss: -0.00077
+[deep_sets_mean] Timesteps So Far: 20566
+[deep_sets_mean] Iteration took: 47.66 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #6 --------------------
+[deep_sets_mean] Average Episodic Length: 28.13
+[deep_sets_mean] Average Episodic Return: 19.48
+[deep_sets_mean] Average Loss: -0.00078
+[deep_sets_mean] Timesteps So Far: 24673
+[deep_sets_mean] Iteration took: 47.07 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #7 --------------------
+[deep_sets_mean] Average Episodic Length: 29.86
+[deep_sets_mean] Average Episodic Return: 20.71
+[deep_sets_mean] Average Loss: -0.00094
+[deep_sets_mean] Timesteps So Far: 28793
+[deep_sets_mean] Iteration took: 47.13 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #8 --------------------
+[deep_sets_mean] Average Episodic Length: 28.25
+[deep_sets_mean] Average Episodic Return: 19.84
+[deep_sets_mean] Average Loss: -0.0006
+[deep_sets_mean] Timesteps So Far: 32889
+[deep_sets_mean] Iteration took: 48.38 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #9 --------------------
+[deep_sets_mean] Average Episodic Length: 29.27
+[deep_sets_mean] Average Episodic Return: 20.79
+[deep_sets_mean] Average Loss: -0.0005
+[deep_sets_mean] Timesteps So Far: 37016
+[deep_sets_mean] Iteration took: 46.65 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #10 --------------------
+[deep_sets_mean] Average Episodic Length: 30.38
+[deep_sets_mean] Average Episodic Return: 21.11
+[deep_sets_mean] Average Loss: -0.00037
+[deep_sets_mean] Timesteps So Far: 41117
+[deep_sets_mean] Iteration took: 43.43 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #11 --------------------
+[deep_sets_mean] Average Episodic Length: 32.78
+[deep_sets_mean] Average Episodic Return: 23.51
+[deep_sets_mean] Average Loss: -0.00043
+[deep_sets_mean] Timesteps So Far: 45215
+[deep_sets_mean] Iteration took: 45.44 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #12 --------------------
+[deep_sets_mean] Average Episodic Length: 30.73
+[deep_sets_mean] Average Episodic Return: 21.41
+[deep_sets_mean] Average Loss: -0.00059
+[deep_sets_mean] Timesteps So Far: 49333
+[deep_sets_mean] Iteration took: 43.16 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\csv\02_curriculum_stage_2_easy_overtake_training.csv
+[deep_sets_mean] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_actor.pth
+[deep_sets_mean] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_critic.pth
+[deep_sets_mean] 
+[deep_sets_mean] ==================== Stage 3: curriculum_stage_3_mixed_traffic ====================
+[deep_sets_mean] Target timesteps for this stage: 98304
+[deep_sets_mean] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 98304 timesteps
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #1 --------------------
+[deep_sets_mean] Average Episodic Length: 31.45
+[deep_sets_mean] Average Episodic Return: 21.14
+[deep_sets_mean] Average Loss: -0.00076
+[deep_sets_mean] Timesteps So Far: 4120
+[deep_sets_mean] Iteration took: 45.88 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #2 --------------------
+[deep_sets_mean] Average Episodic Length: 35.16
+[deep_sets_mean] Average Episodic Return: 25.0
+[deep_sets_mean] Average Loss: -0.00024
+[deep_sets_mean] Timesteps So Far: 8304
+[deep_sets_mean] Iteration took: 47.29 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #3 --------------------
+[deep_sets_mean] Average Episodic Length: 40.49
+[deep_sets_mean] Average Episodic Return: 29.47
+[deep_sets_mean] Average Loss: -0.00026
+[deep_sets_mean] Timesteps So Far: 12434
+[deep_sets_mean] Iteration took: 46.99 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #4 --------------------
+[deep_sets_mean] Average Episodic Length: 35.33
+[deep_sets_mean] Average Episodic Return: 24.75
+[deep_sets_mean] Average Loss: -0.00035
+[deep_sets_mean] Timesteps So Far: 16532
+[deep_sets_mean] Iteration took: 45.46 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #5 --------------------
+[deep_sets_mean] Average Episodic Length: 36.67
+[deep_sets_mean] Average Episodic Return: 26.19
+[deep_sets_mean] Average Loss: -0.00059
+[deep_sets_mean] Timesteps So Far: 20639
+[deep_sets_mean] Iteration took: 46.64 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #6 --------------------
+[deep_sets_mean] Average Episodic Length: 35.56
+[deep_sets_mean] Average Episodic Return: 25.59
+[deep_sets_mean] Average Loss: -0.00049
+[deep_sets_mean] Timesteps So Far: 24835
+[deep_sets_mean] Iteration took: 47.01 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #7 --------------------
+[deep_sets_mean] Average Episodic Length: 38.31
+[deep_sets_mean] Average Episodic Return: 27.16
+[deep_sets_mean] Average Loss: -0.00084
+[deep_sets_mean] Timesteps So Far: 28934
+[deep_sets_mean] Iteration took: 46.08 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #8 --------------------
+[deep_sets_mean] Average Episodic Length: 40.71
+[deep_sets_mean] Average Episodic Return: 29.35
+[deep_sets_mean] Average Loss: -0.00012
+[deep_sets_mean] Timesteps So Far: 33046
+[deep_sets_mean] Iteration took: 45.38 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #9 --------------------
+[deep_sets_mean] Average Episodic Length: 37.73
+[deep_sets_mean] Average Episodic Return: 27.11
+[deep_sets_mean] Average Loss: -0.00045
+[deep_sets_mean] Timesteps So Far: 37159
+[deep_sets_mean] Iteration took: 45.94 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #10 --------------------
+[deep_sets_mean] Average Episodic Length: 38.7
+[deep_sets_mean] Average Episodic Return: 27.42
+[deep_sets_mean] Average Loss: -0.00047
+[deep_sets_mean] Timesteps So Far: 41261
+[deep_sets_mean] Iteration took: 45.76 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #11 --------------------
+[deep_sets_mean] Average Episodic Length: 37.57
+[deep_sets_mean] Average Episodic Return: 26.76
+[deep_sets_mean] Average Loss: -0.00028
+[deep_sets_mean] Timesteps So Far: 45394
+[deep_sets_mean] Iteration took: 46.0 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #12 --------------------
+[deep_sets_mean] Average Episodic Length: 37.9
+[deep_sets_mean] Average Episodic Return: 26.47
+[deep_sets_mean] Average Loss: -0.00032
+[deep_sets_mean] Timesteps So Far: 49525
+[deep_sets_mean] Iteration took: 46.76 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #13 --------------------
+[deep_sets_mean] Average Episodic Length: 40.91
+[deep_sets_mean] Average Episodic Return: 29.72
+[deep_sets_mean] Average Loss: -0.00042
+[deep_sets_mean] Timesteps So Far: 53657
+[deep_sets_mean] Iteration took: 46.14 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #14 --------------------
+[deep_sets_mean] Average Episodic Length: 43.56
+[deep_sets_mean] Average Episodic Return: 30.77
+[deep_sets_mean] Average Loss: -0.0003
+[deep_sets_mean] Timesteps So Far: 57795
+[deep_sets_mean] Iteration took: 46.0 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #15 --------------------
+[deep_sets_mean] Average Episodic Length: 48.87
+[deep_sets_mean] Average Episodic Return: 36.4
+[deep_sets_mean] Average Loss: -0.00035
+[deep_sets_mean] Timesteps So Far: 61900
+[deep_sets_mean] Iteration took: 45.35 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #16 --------------------
+[deep_sets_mean] Average Episodic Length: 44.33
+[deep_sets_mean] Average Episodic Return: 32.48
+[deep_sets_mean] Average Loss: -0.00045
+[deep_sets_mean] Timesteps So Far: 66023
+[deep_sets_mean] Iteration took: 46.27 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #17 --------------------
+[deep_sets_mean] Average Episodic Length: 42.28
+[deep_sets_mean] Average Episodic Return: 30.71
+[deep_sets_mean] Average Loss: -0.00075
+[deep_sets_mean] Timesteps So Far: 70124
+[deep_sets_mean] Iteration took: 45.92 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #18 --------------------
+[deep_sets_mean] Average Episodic Length: 42.61
+[deep_sets_mean] Average Episodic Return: 30.84
+[deep_sets_mean] Average Loss: -0.00058
+[deep_sets_mean] Timesteps So Far: 74257
+[deep_sets_mean] Iteration took: 45.89 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #19 --------------------
+[deep_sets_mean] Average Episodic Length: 45.09
+[deep_sets_mean] Average Episodic Return: 32.05
+[deep_sets_mean] Average Loss: -8e-05
+[deep_sets_mean] Timesteps So Far: 78360
+[deep_sets_mean] Iteration took: 46.21 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #20 --------------------
+[deep_sets_mean] Average Episodic Length: 47.73
+[deep_sets_mean] Average Episodic Return: 34.49
+[deep_sets_mean] Average Loss: -0.00015
+[deep_sets_mean] Timesteps So Far: 82465
+[deep_sets_mean] Iteration took: 46.44 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #21 --------------------
+[deep_sets_mean] Average Episodic Length: 51.45
+[deep_sets_mean] Average Episodic Return: 38.24
+[deep_sets_mean] Average Loss: -0.00044
+[deep_sets_mean] Timesteps So Far: 86581
+[deep_sets_mean] Iteration took: 45.41 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #22 --------------------
+[deep_sets_mean] Average Episodic Length: 47.23
+[deep_sets_mean] Average Episodic Return: 34.28
+[deep_sets_mean] Average Loss: -4e-05
+[deep_sets_mean] Timesteps So Far: 90832
+[deep_sets_mean] Iteration took: 48.15 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #23 --------------------
+[deep_sets_mean] Average Episodic Length: 51.42
+[deep_sets_mean] Average Episodic Return: 38.7
+[deep_sets_mean] Average Loss: -0.0004
+[deep_sets_mean] Timesteps So Far: 94946
+[deep_sets_mean] Iteration took: 45.45 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #24 --------------------
+[deep_sets_mean] Average Episodic Length: 56.12
+[deep_sets_mean] Average Episodic Return: 42.54
+[deep_sets_mean] Average Loss: -0.00047
+[deep_sets_mean] Timesteps So Far: 99043
+[deep_sets_mean] Iteration took: 46.39 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\csv\03_curriculum_stage_3_mixed_traffic_training.csv
+[deep_sets_mean] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_actor.pth
+[deep_sets_mean] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_critic.pth
+[deep_sets_mean] 
+[deep_sets_mean] ==================== Stage 4: curriculum_stage_4_dense_traffic ====================
+[deep_sets_mean] Target timesteps for this stage: 49152
+[deep_sets_mean] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #1 --------------------
+[deep_sets_mean] Average Episodic Length: 58.18
+[deep_sets_mean] Average Episodic Return: 40.55
+[deep_sets_mean] Average Loss: -0.00019
+[deep_sets_mean] Timesteps So Far: 4131
+[deep_sets_mean] Iteration took: 54.42 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #2 --------------------
+[deep_sets_mean] Average Episodic Length: 52.98
+[deep_sets_mean] Average Episodic Return: 36.76
+[deep_sets_mean] Average Loss: -0.00013
+[deep_sets_mean] Timesteps So Far: 8422
+[deep_sets_mean] Iteration took: 56.88 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #3 --------------------
+[deep_sets_mean] Average Episodic Length: 45.62
+[deep_sets_mean] Average Episodic Return: 30.69
+[deep_sets_mean] Average Loss: -0.00022
+[deep_sets_mean] Timesteps So Far: 12528
+[deep_sets_mean] Iteration took: 53.42 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #4 --------------------
+[deep_sets_mean] Average Episodic Length: 53.68
+[deep_sets_mean] Average Episodic Return: 37.57
+[deep_sets_mean] Average Loss: -0.00022
+[deep_sets_mean] Timesteps So Far: 16661
+[deep_sets_mean] Iteration took: 54.78 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #5 --------------------
+[deep_sets_mean] Average Episodic Length: 51.04
+[deep_sets_mean] Average Episodic Return: 35.9
+[deep_sets_mean] Average Loss: -0.00017
+[deep_sets_mean] Timesteps So Far: 20846
+[deep_sets_mean] Iteration took: 55.37 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #6 --------------------
+[deep_sets_mean] Average Episodic Length: 57.94
+[deep_sets_mean] Average Episodic Return: 42.68
+[deep_sets_mean] Average Loss: -0.0002
+[deep_sets_mean] Timesteps So Far: 24960
+[deep_sets_mean] Iteration took: 54.09 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #7 --------------------
+[deep_sets_mean] Average Episodic Length: 59.46
+[deep_sets_mean] Average Episodic Return: 41.87
+[deep_sets_mean] Average Loss: -0.00019
+[deep_sets_mean] Timesteps So Far: 29063
+[deep_sets_mean] Iteration took: 55.54 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #8 --------------------
+[deep_sets_mean] Average Episodic Length: 51.44
+[deep_sets_mean] Average Episodic Return: 35.2
+[deep_sets_mean] Average Loss: -0.00019
+[deep_sets_mean] Timesteps So Far: 33384
+[deep_sets_mean] Iteration took: 57.77 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #9 --------------------
+[deep_sets_mean] Average Episodic Length: 65.35
+[deep_sets_mean] Average Episodic Return: 47.09
+[deep_sets_mean] Average Loss: -0.00018
+[deep_sets_mean] Timesteps So Far: 37697
+[deep_sets_mean] Iteration took: 58.03 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #10 --------------------
+[deep_sets_mean] Average Episodic Length: 66.11
+[deep_sets_mean] Average Episodic Return: 48.64
+[deep_sets_mean] Average Loss: -0.00024
+[deep_sets_mean] Timesteps So Far: 41796
+[deep_sets_mean] Iteration took: 55.55 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #11 --------------------
+[deep_sets_mean] Average Episodic Length: 49.76
+[deep_sets_mean] Average Episodic Return: 35.21
+[deep_sets_mean] Average Loss: -0.00014
+[deep_sets_mean] Timesteps So Far: 45926
+[deep_sets_mean] Iteration took: 54.1 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Iteration #12 --------------------
+[deep_sets_mean] Average Episodic Length: 58.54
+[deep_sets_mean] Average Episodic Return: 41.47
+[deep_sets_mean] Average Loss: -0.00014
+[deep_sets_mean] Timesteps So Far: 50024
+[deep_sets_mean] Iteration took: 54.35 secs
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\csv\04_curriculum_stage_4_dense_traffic_training.csv
+[deep_sets_mean] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_actor.pth
+[deep_sets_mean] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_critic.pth
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_1_open_lane (capped, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 252.85
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 250.51
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 248.04
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 51
+[deep_sets_mean] Episodic Return: 32.05
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 89
+[deep_sets_mean] Episodic Return: 60.04
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 249.32
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 253.93
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 79
+[deep_sets_mean] Episodic Return: 49.87
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 253.05
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 70
+[deep_sets_mean] Episodic Return: 45.77
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_1_open_lane capped eval ===============
+[deep_sets_mean] Average Episodic Return: 169.542
+[deep_sets_mean] Average Episodic Length: 208.900
+[deep_sets_mean] Collision Rate: 0.400
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_1_open_lane (full, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 379.16
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 378.87
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 379.8
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 379.0
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 376.57
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 379.7
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 375.92
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 379.12
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 59
+[deep_sets_mean] Episodic Return: 37.42
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 451
+[deep_sets_mean] Episodic Return: 379.11
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_1_open_lane full eval ===============
+[deep_sets_mean] Average Episodic Return: 344.466
+[deep_sets_mean] Average Episodic Length: 411.800
+[deep_sets_mean] Collision Rate: 0.100
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_2_easy_overtake (capped, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 30
+[deep_sets_mean] Episodic Return: 16.44
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 252.0
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 27
+[deep_sets_mean] Episodic Return: 14.35
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 250.73
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 250.31
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 251.38
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 252.85
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 38
+[deep_sets_mean] Episodic Return: 32.01
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 40
+[deep_sets_mean] Episodic Return: 32.88
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 39
+[deep_sets_mean] Episodic Return: 30.83
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_2_easy_overtake capped eval ===============
+[deep_sets_mean] Average Episodic Return: 138.379
+[deep_sets_mean] Average Episodic Length: 167.400
+[deep_sets_mean] Collision Rate: 0.500
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_2_easy_overtake (full, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 525
+[deep_sets_mean] Episodic Return: 436.77
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 39
+[deep_sets_mean] Episodic Return: 22.09
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 380
+[deep_sets_mean] Episodic Return: 304.29
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 525
+[deep_sets_mean] Episodic Return: 439.09
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 38
+[deep_sets_mean] Episodic Return: 31.88
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 42
+[deep_sets_mean] Episodic Return: 34.93
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 23
+[deep_sets_mean] Episodic Return: 11.61
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 36
+[deep_sets_mean] Episodic Return: 29.93
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 38
+[deep_sets_mean] Episodic Return: 28.6
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 37
+[deep_sets_mean] Episodic Return: 31.22
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_2_easy_overtake full eval ===============
+[deep_sets_mean] Average Episodic Return: 137.043
+[deep_sets_mean] Average Episodic Length: 168.300
+[deep_sets_mean] Collision Rate: 0.800
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_3_mixed_traffic (capped, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 148
+[deep_sets_mean] Episodic Return: 110.93
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 251.69
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 37
+[deep_sets_mean] Episodic Return: 18.89
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 42
+[deep_sets_mean] Episodic Return: 20.92
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 244.94
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 252.78
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 152
+[deep_sets_mean] Episodic Return: 122.8
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 39
+[deep_sets_mean] Episodic Return: 30.65
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 44
+[deep_sets_mean] Episodic Return: 34.25
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 251.39
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_3_mixed_traffic capped eval ===============
+[deep_sets_mean] Average Episodic Return: 133.924
+[deep_sets_mean] Average Episodic Length: 166.200
+[deep_sets_mean] Collision Rate: 0.600
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_3_mixed_traffic (full, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 392
+[deep_sets_mean] Episodic Return: 314.35
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 600
+[deep_sets_mean] Episodic Return: 502.72
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 42
+[deep_sets_mean] Episodic Return: 21.53
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 29
+[deep_sets_mean] Episodic Return: 16.81
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 600
+[deep_sets_mean] Episodic Return: 498.82
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 46
+[deep_sets_mean] Episodic Return: 24.03
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 600
+[deep_sets_mean] Episodic Return: 503.4
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 38
+[deep_sets_mean] Episodic Return: 31.3
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 41
+[deep_sets_mean] Episodic Return: 31.07
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 534
+[deep_sets_mean] Episodic Return: 429.8
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_3_mixed_traffic full eval ===============
+[deep_sets_mean] Average Episodic Return: 237.382
+[deep_sets_mean] Average Episodic Length: 292.200
+[deep_sets_mean] Collision Rate: 0.700
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_4_dense_traffic (capped, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 251.17
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 247.98
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 28
+[deep_sets_mean] Episodic Return: 19.79
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 20
+[deep_sets_mean] Episodic Return: 4.89
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 27
+[deep_sets_mean] Episodic Return: 8.72
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 49
+[deep_sets_mean] Episodic Return: 37.13
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 40
+[deep_sets_mean] Episodic Return: 24.14
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 231.45
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 38
+[deep_sets_mean] Episodic Return: 31.09
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 300
+[deep_sets_mean] Episodic Return: 247.81
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_4_dense_traffic capped eval ===============
+[deep_sets_mean] Average Episodic Return: 110.417
+[deep_sets_mean] Average Episodic Length: 140.200
+[deep_sets_mean] Collision Rate: 0.600
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Evaluating deep_sets_mean on curriculum_stage_4_dense_traffic (full, episodes=10)
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #1 --------------------
+[deep_sets_mean] Episodic Length: 26
+[deep_sets_mean] Episodic Return: 8.57
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #2 --------------------
+[deep_sets_mean] Episodic Length: 19
+[deep_sets_mean] Episodic Return: 4.99
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #3 --------------------
+[deep_sets_mean] Episodic Length: 24
+[deep_sets_mean] Episodic Return: 6.99
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #4 --------------------
+[deep_sets_mean] Episodic Length: 314
+[deep_sets_mean] Episodic Return: 254.36
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #5 --------------------
+[deep_sets_mean] Episodic Length: 25
+[deep_sets_mean] Episodic Return: 7.35
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #6 --------------------
+[deep_sets_mean] Episodic Length: 66
+[deep_sets_mean] Episodic Return: 43.48
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #7 --------------------
+[deep_sets_mean] Episodic Length: 359
+[deep_sets_mean] Episodic Return: 281.74
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #8 --------------------
+[deep_sets_mean] Episodic Length: 750
+[deep_sets_mean] Episodic Return: 624.49
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #9 --------------------
+[deep_sets_mean] Episodic Length: 184
+[deep_sets_mean] Episodic Return: 137.03
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] 
+[deep_sets_mean] -------------------- Episode #10 --------------------
+[deep_sets_mean] Episodic Length: 195
+[deep_sets_mean] Episodic Return: 156.4
+[deep_sets_mean] ------------------------------------------------------
+[deep_sets_mean] 
+[deep_sets_mean] =============== deep_sets_mean curriculum_stage_4_dense_traffic full eval ===============
+[deep_sets_mean] Average Episodic Return: 152.540
+[deep_sets_mean] Average Episodic Length: 196.200
+[deep_sets_mean] Collision Rate: 0.900
+[deep_sets_mean] ==================================================
+[deep_sets_mean] 
+[deep_sets_mean] Curriculum training and evaluation complete.
+[deep_sets_mean] Final actor checkpoint: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\deep_sets_mean_curriculum_final_actor.pth
+[deep_sets_mean] Final critic checkpoint: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\deep_sets_mean_curriculum_final_critic.pth
+[deep_sets_mean] Evaluation CSV: C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\fair_curriculum_codex_run\evaluation\deep_sets_mean_final_evaluation.csv
+
+==================== Running deep_sets_mean_max ====================
+Folder: C:\Users\milke\groupCoursework\FYP\baseline
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_codex_run\deep_sets_mean_max.log
+[deep_sets_mean_max] Model: deep_sets_mean_max
+[deep_sets_mean_max] Run ID: fair_curriculum_codex_run
+[deep_sets_mean_max] Training from scratch: no checkpoints will be loaded.
+[deep_sets_mean_max] Artifacts directory: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run
+[deep_sets_mean_max] 
+[deep_sets_mean_max] ==================== Stage 1: curriculum_stage_1_open_lane ====================
+[deep_sets_mean_max] Target timesteps for this stage: 24576
+[deep_sets_mean_max] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 24576 timesteps
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #1 --------------------
+[deep_sets_mean_max] Average Episodic Length: 25.83
+[deep_sets_mean_max] Average Episodic Return: 18.41
+[deep_sets_mean_max] Average Loss: -0.00335
+[deep_sets_mean_max] Timesteps So Far: 4107
+[deep_sets_mean_max] Iteration took: 40.7 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #2 --------------------
+[deep_sets_mean_max] Average Episodic Length: 26.72
+[deep_sets_mean_max] Average Episodic Return: 19.05
+[deep_sets_mean_max] Average Loss: -0.00183
+[deep_sets_mean_max] Timesteps So Far: 8248
+[deep_sets_mean_max] Iteration took: 40.33 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #3 --------------------
+[deep_sets_mean_max] Average Episodic Length: 30.22
+[deep_sets_mean_max] Average Episodic Return: 21.8
+[deep_sets_mean_max] Average Loss: -0.00037
+[deep_sets_mean_max] Timesteps So Far: 12358
+[deep_sets_mean_max] Iteration took: 40.73 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #4 --------------------
+[deep_sets_mean_max] Average Episodic Length: 27.41
+[deep_sets_mean_max] Average Episodic Return: 19.79
+[deep_sets_mean_max] Average Loss: -0.00055
+[deep_sets_mean_max] Timesteps So Far: 16470
+[deep_sets_mean_max] Iteration took: 40.5 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #5 --------------------
+[deep_sets_mean_max] Average Episodic Length: 33.23
+[deep_sets_mean_max] Average Episodic Return: 24.79
+[deep_sets_mean_max] Average Loss: -0.00094
+[deep_sets_mean_max] Timesteps So Far: 20624
+[deep_sets_mean_max] Iteration took: 40.19 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #6 --------------------
+[deep_sets_mean_max] Average Episodic Length: 30.56
+[deep_sets_mean_max] Average Episodic Return: 22.36
+[deep_sets_mean_max] Average Loss: -0.00066
+[deep_sets_mean_max] Timesteps So Far: 24750
+[deep_sets_mean_max] Iteration took: 40.44 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\01_curriculum_stage_1_open_lane_training.csv
+[deep_sets_mean_max] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_actor.pth
+[deep_sets_mean_max] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_critic.pth
+[deep_sets_mean_max] 
+[deep_sets_mean_max] ==================== Stage 2: curriculum_stage_2_easy_overtake ====================
+[deep_sets_mean_max] Target timesteps for this stage: 49152
+[deep_sets_mean_max] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #1 --------------------
+[deep_sets_mean_max] Average Episodic Length: 27.18
+[deep_sets_mean_max] Average Episodic Return: 18.21
+[deep_sets_mean_max] Average Loss: -0.00043
+[deep_sets_mean_max] Timesteps So Far: 4104
+[deep_sets_mean_max] Iteration took: 43.57 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #2 --------------------
+[deep_sets_mean_max] Average Episodic Length: 29.16
+[deep_sets_mean_max] Average Episodic Return: 19.74
+[deep_sets_mean_max] Average Loss: -0.00071
+[deep_sets_mean_max] Timesteps So Far: 8215
+[deep_sets_mean_max] Iteration took: 43.12 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #3 --------------------
+[deep_sets_mean_max] Average Episodic Length: 29.8
+[deep_sets_mean_max] Average Episodic Return: 20.76
+[deep_sets_mean_max] Average Loss: -0.00045
+[deep_sets_mean_max] Timesteps So Far: 12327
+[deep_sets_mean_max] Iteration took: 43.84 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #4 --------------------
+[deep_sets_mean_max] Average Episodic Length: 29.22
+[deep_sets_mean_max] Average Episodic Return: 20.18
+[deep_sets_mean_max] Average Loss: -0.00074
+[deep_sets_mean_max] Timesteps So Far: 16564
+[deep_sets_mean_max] Iteration took: 44.5 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #5 --------------------
+[deep_sets_mean_max] Average Episodic Length: 30.01
+[deep_sets_mean_max] Average Episodic Return: 20.84
+[deep_sets_mean_max] Average Loss: -0.001
+[deep_sets_mean_max] Timesteps So Far: 20675
+[deep_sets_mean_max] Iteration took: 43.91 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #6 --------------------
+[deep_sets_mean_max] Average Episodic Length: 30.87
+[deep_sets_mean_max] Average Episodic Return: 21.29
+[deep_sets_mean_max] Average Loss: -0.0005
+[deep_sets_mean_max] Timesteps So Far: 24781
+[deep_sets_mean_max] Iteration took: 43.57 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #7 --------------------
+[deep_sets_mean_max] Average Episodic Length: 36.13
+[deep_sets_mean_max] Average Episodic Return: 25.85
+[deep_sets_mean_max] Average Loss: -0.00055
+[deep_sets_mean_max] Timesteps So Far: 28900
+[deep_sets_mean_max] Iteration took: 43.44 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #8 --------------------
+[deep_sets_mean_max] Average Episodic Length: 35.71
+[deep_sets_mean_max] Average Episodic Return: 25.52
+[deep_sets_mean_max] Average Loss: -0.00067
+[deep_sets_mean_max] Timesteps So Far: 33042
+[deep_sets_mean_max] Iteration took: 43.96 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #9 --------------------
+[deep_sets_mean_max] Average Episodic Length: 41.55
+[deep_sets_mean_max] Average Episodic Return: 30.21
+[deep_sets_mean_max] Average Loss: -0.00042
+[deep_sets_mean_max] Timesteps So Far: 37155
+[deep_sets_mean_max] Iteration took: 43.4 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #10 --------------------
+[deep_sets_mean_max] Average Episodic Length: 44.94
+[deep_sets_mean_max] Average Episodic Return: 33.27
+[deep_sets_mean_max] Average Loss: -0.00071
+[deep_sets_mean_max] Timesteps So Far: 41469
+[deep_sets_mean_max] Iteration took: 45.47 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #11 --------------------
+[deep_sets_mean_max] Average Episodic Length: 40.7
+[deep_sets_mean_max] Average Episodic Return: 30.05
+[deep_sets_mean_max] Average Loss: -0.00054
+[deep_sets_mean_max] Timesteps So Far: 45620
+[deep_sets_mean_max] Iteration took: 44.1 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #12 --------------------
+[deep_sets_mean_max] Average Episodic Length: 42.44
+[deep_sets_mean_max] Average Episodic Return: 30.92
+[deep_sets_mean_max] Average Loss: -0.0011
+[deep_sets_mean_max] Timesteps So Far: 49737
+[deep_sets_mean_max] Iteration took: 43.64 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\02_curriculum_stage_2_easy_overtake_training.csv
+[deep_sets_mean_max] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_actor.pth
+[deep_sets_mean_max] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_critic.pth
+[deep_sets_mean_max] 
+[deep_sets_mean_max] ==================== Stage 3: curriculum_stage_3_mixed_traffic ====================
+[deep_sets_mean_max] Target timesteps for this stage: 98304
+[deep_sets_mean_max] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 98304 timesteps
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #1 --------------------
+[deep_sets_mean_max] Average Episodic Length: 37.72
+[deep_sets_mean_max] Average Episodic Return: 26.87
+[deep_sets_mean_max] Average Loss: -0.00031
+[deep_sets_mean_max] Timesteps So Far: 4111
+[deep_sets_mean_max] Iteration took: 46.92 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #2 --------------------
+[deep_sets_mean_max] Average Episodic Length: 47.92
+[deep_sets_mean_max] Average Episodic Return: 34.88
+[deep_sets_mean_max] Average Loss: -0.0007
+[deep_sets_mean_max] Timesteps So Far: 8232
+[deep_sets_mean_max] Iteration took: 46.13 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #3 --------------------
+[deep_sets_mean_max] Average Episodic Length: 40.38
+[deep_sets_mean_max] Average Episodic Return: 28.65
+[deep_sets_mean_max] Average Loss: -0.00065
+[deep_sets_mean_max] Timesteps So Far: 12351
+[deep_sets_mean_max] Iteration took: 46.52 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #4 --------------------
+[deep_sets_mean_max] Average Episodic Length: 44.63
+[deep_sets_mean_max] Average Episodic Return: 32.0
+[deep_sets_mean_max] Average Loss: -0.00032
+[deep_sets_mean_max] Timesteps So Far: 16502
+[deep_sets_mean_max] Iteration took: 46.79 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #5 --------------------
+[deep_sets_mean_max] Average Episodic Length: 57.62
+[deep_sets_mean_max] Average Episodic Return: 42.96
+[deep_sets_mean_max] Average Loss: -0.00069
+[deep_sets_mean_max] Timesteps So Far: 20651
+[deep_sets_mean_max] Iteration took: 46.9 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #6 --------------------
+[deep_sets_mean_max] Average Episodic Length: 47.99
+[deep_sets_mean_max] Average Episodic Return: 34.68
+[deep_sets_mean_max] Average Loss: -0.0004
+[deep_sets_mean_max] Timesteps So Far: 24778
+[deep_sets_mean_max] Iteration took: 46.37 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #7 --------------------
+[deep_sets_mean_max] Average Episodic Length: 49.45
+[deep_sets_mean_max] Average Episodic Return: 35.43
+[deep_sets_mean_max] Average Loss: -0.00112
+[deep_sets_mean_max] Timesteps So Far: 28882
+[deep_sets_mean_max] Iteration took: 46.74 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #8 --------------------
+[deep_sets_mean_max] Average Episodic Length: 67.57
+[deep_sets_mean_max] Average Episodic Return: 50.88
+[deep_sets_mean_max] Average Loss: -0.00013
+[deep_sets_mean_max] Timesteps So Far: 33004
+[deep_sets_mean_max] Iteration took: 46.42 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #9 --------------------
+[deep_sets_mean_max] Average Episodic Length: 56.64
+[deep_sets_mean_max] Average Episodic Return: 41.71
+[deep_sets_mean_max] Average Loss: -0.00068
+[deep_sets_mean_max] Timesteps So Far: 37195
+[deep_sets_mean_max] Iteration took: 46.53 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #10 --------------------
+[deep_sets_mean_max] Average Episodic Length: 61.97
+[deep_sets_mean_max] Average Episodic Return: 47.04
+[deep_sets_mean_max] Average Loss: -0.00111
+[deep_sets_mean_max] Timesteps So Far: 41533
+[deep_sets_mean_max] Iteration took: 49.87 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #11 --------------------
+[deep_sets_mean_max] Average Episodic Length: 52.56
+[deep_sets_mean_max] Average Episodic Return: 38.56
+[deep_sets_mean_max] Average Loss: -0.00084
+[deep_sets_mean_max] Timesteps So Far: 45633
+[deep_sets_mean_max] Iteration took: 46.68 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #12 --------------------
+[deep_sets_mean_max] Average Episodic Length: 76.35
+[deep_sets_mean_max] Average Episodic Return: 58.91
+[deep_sets_mean_max] Average Loss: -7e-05
+[deep_sets_mean_max] Timesteps So Far: 49756
+[deep_sets_mean_max] Iteration took: 48.27 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #13 --------------------
+[deep_sets_mean_max] Average Episodic Length: 73.36
+[deep_sets_mean_max] Average Episodic Return: 55.1
+[deep_sets_mean_max] Average Loss: -0.00036
+[deep_sets_mean_max] Timesteps So Far: 53864
+[deep_sets_mean_max] Iteration took: 46.42 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #14 --------------------
+[deep_sets_mean_max] Average Episodic Length: 63.37
+[deep_sets_mean_max] Average Episodic Return: 47.82
+[deep_sets_mean_max] Average Loss: -0.00067
+[deep_sets_mean_max] Timesteps So Far: 57983
+[deep_sets_mean_max] Iteration took: 46.33 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #15 --------------------
+[deep_sets_mean_max] Average Episodic Length: 73.2
+[deep_sets_mean_max] Average Episodic Return: 55.19
+[deep_sets_mean_max] Average Loss: -0.00064
+[deep_sets_mean_max] Timesteps So Far: 62302
+[deep_sets_mean_max] Iteration took: 48.81 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #16 --------------------
+[deep_sets_mean_max] Average Episodic Length: 73.17
+[deep_sets_mean_max] Average Episodic Return: 55.27
+[deep_sets_mean_max] Average Loss: -0.00022
+[deep_sets_mean_max] Timesteps So Far: 66546
+[deep_sets_mean_max] Iteration took: 47.46 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #17 --------------------
+[deep_sets_mean_max] Average Episodic Length: 72.6
+[deep_sets_mean_max] Average Episodic Return: 54.57
+[deep_sets_mean_max] Average Loss: -0.00048
+[deep_sets_mean_max] Timesteps So Far: 70684
+[deep_sets_mean_max] Iteration took: 46.6 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #18 --------------------
+[deep_sets_mean_max] Average Episodic Length: 78.92
+[deep_sets_mean_max] Average Episodic Return: 60.65
+[deep_sets_mean_max] Average Loss: -0.0002
+[deep_sets_mean_max] Timesteps So Far: 74788
+[deep_sets_mean_max] Iteration took: 45.62 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #19 --------------------
+[deep_sets_mean_max] Average Episodic Length: 89.22
+[deep_sets_mean_max] Average Episodic Return: 69.08
+[deep_sets_mean_max] Average Loss: -0.00014
+[deep_sets_mean_max] Timesteps So Far: 78892
+[deep_sets_mean_max] Iteration took: 46.82 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #20 --------------------
+[deep_sets_mean_max] Average Episodic Length: 91.56
+[deep_sets_mean_max] Average Episodic Return: 70.56
+[deep_sets_mean_max] Average Loss: -0.00029
+[deep_sets_mean_max] Timesteps So Far: 83012
+[deep_sets_mean_max] Iteration took: 46.98 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #21 --------------------
+[deep_sets_mean_max] Average Episodic Length: 80.53
+[deep_sets_mean_max] Average Episodic Return: 61.64
+[deep_sets_mean_max] Average Loss: -0.0006
+[deep_sets_mean_max] Timesteps So Far: 87280
+[deep_sets_mean_max] Iteration took: 48.27 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #22 --------------------
+[deep_sets_mean_max] Average Episodic Length: 67.21
+[deep_sets_mean_max] Average Episodic Return: 50.2
+[deep_sets_mean_max] Average Loss: 2e-05
+[deep_sets_mean_max] Timesteps So Far: 91380
+[deep_sets_mean_max] Iteration took: 47.65 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #23 --------------------
+[deep_sets_mean_max] Average Episodic Length: 89.29
+[deep_sets_mean_max] Average Episodic Return: 69.11
+[deep_sets_mean_max] Average Loss: -0.00021
+[deep_sets_mean_max] Timesteps So Far: 95666
+[deep_sets_mean_max] Iteration took: 49.35 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #24 --------------------
+[deep_sets_mean_max] Average Episodic Length: 82.36
+[deep_sets_mean_max] Average Episodic Return: 63.02
+[deep_sets_mean_max] Average Loss: -0.00029
+[deep_sets_mean_max] Timesteps So Far: 99784
+[deep_sets_mean_max] Iteration took: 45.97 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\03_curriculum_stage_3_mixed_traffic_training.csv
+[deep_sets_mean_max] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_actor.pth
+[deep_sets_mean_max] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_critic.pth
+[deep_sets_mean_max] 
+[deep_sets_mean_max] ==================== Stage 4: curriculum_stage_4_dense_traffic ====================
+[deep_sets_mean_max] Target timesteps for this stage: 49152
+[deep_sets_mean_max] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #1 --------------------
+[deep_sets_mean_max] Average Episodic Length: 62.16
+[deep_sets_mean_max] Average Episodic Return: 43.1
+[deep_sets_mean_max] Average Loss: -0.00014
+[deep_sets_mean_max] Timesteps So Far: 4289
+[deep_sets_mean_max] Iteration took: 58.19 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #2 --------------------
+[deep_sets_mean_max] Average Episodic Length: 73.68
+[deep_sets_mean_max] Average Episodic Return: 52.85
+[deep_sets_mean_max] Average Loss: -0.00019
+[deep_sets_mean_max] Timesteps So Far: 8415
+[deep_sets_mean_max] Iteration took: 55.84 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #3 --------------------
+[deep_sets_mean_max] Average Episodic Length: 69.42
+[deep_sets_mean_max] Average Episodic Return: 49.67
+[deep_sets_mean_max] Average Loss: -0.00033
+[deep_sets_mean_max] Timesteps So Far: 12511
+[deep_sets_mean_max] Iteration took: 54.63 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #4 --------------------
+[deep_sets_mean_max] Average Episodic Length: 58.24
+[deep_sets_mean_max] Average Episodic Return: 40.29
+[deep_sets_mean_max] Average Loss: -0.00033
+[deep_sets_mean_max] Timesteps So Far: 16646
+[deep_sets_mean_max] Iteration took: 55.08 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #5 --------------------
+[deep_sets_mean_max] Average Episodic Length: 76.91
+[deep_sets_mean_max] Average Episodic Return: 56.36
+[deep_sets_mean_max] Average Loss: -0.00015
+[deep_sets_mean_max] Timesteps So Far: 20799
+[deep_sets_mean_max] Iteration took: 56.41 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #6 --------------------
+[deep_sets_mean_max] Average Episodic Length: 77.89
+[deep_sets_mean_max] Average Episodic Return: 56.38
+[deep_sets_mean_max] Average Loss: -0.00131
+[deep_sets_mean_max] Timesteps So Far: 25083
+[deep_sets_mean_max] Iteration took: 58.75 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #7 --------------------
+[deep_sets_mean_max] Average Episodic Length: 62.43
+[deep_sets_mean_max] Average Episodic Return: 44.21
+[deep_sets_mean_max] Average Loss: -0.00037
+[deep_sets_mean_max] Timesteps So Far: 29391
+[deep_sets_mean_max] Iteration took: 59.38 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #8 --------------------
+[deep_sets_mean_max] Average Episodic Length: 88.59
+[deep_sets_mean_max] Average Episodic Return: 67.06
+[deep_sets_mean_max] Average Loss: -0.00035
+[deep_sets_mean_max] Timesteps So Far: 33732
+[deep_sets_mean_max] Iteration took: 58.36 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #9 --------------------
+[deep_sets_mean_max] Average Episodic Length: 72.75
+[deep_sets_mean_max] Average Episodic Return: 51.58
+[deep_sets_mean_max] Average Loss: -0.00018
+[deep_sets_mean_max] Timesteps So Far: 37879
+[deep_sets_mean_max] Iteration took: 56.65 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #10 --------------------
+[deep_sets_mean_max] Average Episodic Length: 80.1
+[deep_sets_mean_max] Average Episodic Return: 59.55
+[deep_sets_mean_max] Average Loss: -5e-05
+[deep_sets_mean_max] Timesteps So Far: 42044
+[deep_sets_mean_max] Iteration took: 55.9 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #11 --------------------
+[deep_sets_mean_max] Average Episodic Length: 131.24
+[deep_sets_mean_max] Average Episodic Return: 100.67
+[deep_sets_mean_max] Average Loss: -4e-05
+[deep_sets_mean_max] Timesteps So Far: 46375
+[deep_sets_mean_max] Iteration took: 59.86 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Iteration #12 --------------------
+[deep_sets_mean_max] Average Episodic Length: 72.04
+[deep_sets_mean_max] Average Episodic Return: 52.6
+[deep_sets_mean_max] Average Loss: -0.0001
+[deep_sets_mean_max] Timesteps So Far: 50481
+[deep_sets_mean_max] Iteration took: 56.06 secs
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\csv\04_curriculum_stage_4_dense_traffic_training.csv
+[deep_sets_mean_max] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_actor.pth
+[deep_sets_mean_max] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_critic.pth
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_1_open_lane (capped, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 53
+[deep_sets_mean_max] Episodic Return: 32.12
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 54
+[deep_sets_mean_max] Episodic Return: 33.03
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 251.24
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 252.0
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 59
+[deep_sets_mean_max] Episodic Return: 36.57
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 251.95
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 61
+[deep_sets_mean_max] Episodic Return: 48.12
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 251.43
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 248.78
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 81
+[deep_sets_mean_max] Episodic Return: 54.43
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_1_open_lane capped eval ===============
+[deep_sets_mean_max] Average Episodic Return: 145.966
+[deep_sets_mean_max] Average Episodic Length: 180.800
+[deep_sets_mean_max] Collision Rate: 0.500
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_1_open_lane (full, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 69
+[deep_sets_mean_max] Episodic Return: 44.38
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 451
+[deep_sets_mean_max] Episodic Return: 376.95
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 105
+[deep_sets_mean_max] Episodic Return: 77.49
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 451
+[deep_sets_mean_max] Episodic Return: 377.04
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 103
+[deep_sets_mean_max] Episodic Return: 83.42
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 451
+[deep_sets_mean_max] Episodic Return: 378.28
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 67
+[deep_sets_mean_max] Episodic Return: 43.78
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 451
+[deep_sets_mean_max] Episodic Return: 374.15
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 79
+[deep_sets_mean_max] Episodic Return: 52.61
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 90
+[deep_sets_mean_max] Episodic Return: 72.28
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_1_open_lane full eval ===============
+[deep_sets_mean_max] Average Episodic Return: 188.040
+[deep_sets_mean_max] Average Episodic Length: 231.700
+[deep_sets_mean_max] Collision Rate: 0.600
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_2_easy_overtake (capped, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 27
+[deep_sets_mean_max] Episodic Return: 13.84
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 249.15
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 250.6
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 46
+[deep_sets_mean_max] Episodic Return: 25.69
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 31
+[deep_sets_mean_max] Episodic Return: 16.39
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 250.3
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 251.15
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 248.88
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 250.24
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 251.17
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_2_easy_overtake capped eval ===============
+[deep_sets_mean_max] Average Episodic Return: 180.741
+[deep_sets_mean_max] Average Episodic Length: 220.400
+[deep_sets_mean_max] Collision Rate: 0.300
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_2_easy_overtake (full, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 31
+[deep_sets_mean_max] Episodic Return: 16.48
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 525
+[deep_sets_mean_max] Episodic Return: 436.09
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 525
+[deep_sets_mean_max] Episodic Return: 428.51
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 525
+[deep_sets_mean_max] Episodic Return: 433.36
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 525
+[deep_sets_mean_max] Episodic Return: 432.61
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 45
+[deep_sets_mean_max] Episodic Return: 34.05
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 525
+[deep_sets_mean_max] Episodic Return: 437.63
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 35
+[deep_sets_mean_max] Episodic Return: 19.3
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 525
+[deep_sets_mean_max] Episodic Return: 428.64
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 42
+[deep_sets_mean_max] Episodic Return: 23.09
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_2_easy_overtake full eval ===============
+[deep_sets_mean_max] Average Episodic Return: 268.975
+[deep_sets_mean_max] Average Episodic Length: 330.300
+[deep_sets_mean_max] Collision Rate: 0.400
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_3_mixed_traffic (capped, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 242.83
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 37
+[deep_sets_mean_max] Episodic Return: 25.68
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 250.33
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 43
+[deep_sets_mean_max] Episodic Return: 29.99
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 248.53
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 252.02
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 45
+[deep_sets_mean_max] Episodic Return: 22.55
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 41
+[deep_sets_mean_max] Episodic Return: 19.71
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 255
+[deep_sets_mean_max] Episodic Return: 198.57
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 250.79
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_3_mixed_traffic capped eval ===============
+[deep_sets_mean_max] Average Episodic Return: 154.099
+[deep_sets_mean_max] Average Episodic Length: 192.100
+[deep_sets_mean_max] Collision Rate: 0.500
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_3_mixed_traffic (full, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 600
+[deep_sets_mean_max] Episodic Return: 499.56
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 36
+[deep_sets_mean_max] Episodic Return: 17.55
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 38
+[deep_sets_mean_max] Episodic Return: 18.26
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 380
+[deep_sets_mean_max] Episodic Return: 303.68
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 600
+[deep_sets_mean_max] Episodic Return: 502.13
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 600
+[deep_sets_mean_max] Episodic Return: 502.08
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 39
+[deep_sets_mean_max] Episodic Return: 30.29
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 600
+[deep_sets_mean_max] Episodic Return: 498.69
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 600
+[deep_sets_mean_max] Episodic Return: 498.1
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 40
+[deep_sets_mean_max] Episodic Return: 32.71
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_3_mixed_traffic full eval ===============
+[deep_sets_mean_max] Average Episodic Return: 290.305
+[deep_sets_mean_max] Average Episodic Length: 353.300
+[deep_sets_mean_max] Collision Rate: 0.500
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_4_dense_traffic (capped, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 247.06
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 244.22
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 248.76
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 26
+[deep_sets_mean_max] Episodic Return: 7.05
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 236.88
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 247.23
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 158
+[deep_sets_mean_max] Episodic Return: 111.59
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 20
+[deep_sets_mean_max] Episodic Return: 4.62
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 67
+[deep_sets_mean_max] Episodic Return: 41.54
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 300
+[deep_sets_mean_max] Episodic Return: 245.51
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_4_dense_traffic capped eval ===============
+[deep_sets_mean_max] Average Episodic Return: 163.445
+[deep_sets_mean_max] Average Episodic Length: 207.100
+[deep_sets_mean_max] Collision Rate: 0.400
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Evaluating deep_sets_mean_max on curriculum_stage_4_dense_traffic (full, episodes=10)
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #1 --------------------
+[deep_sets_mean_max] Episodic Length: 160
+[deep_sets_mean_max] Episodic Return: 116.91
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #2 --------------------
+[deep_sets_mean_max] Episodic Length: 36
+[deep_sets_mean_max] Episodic Return: 18.34
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #3 --------------------
+[deep_sets_mean_max] Episodic Length: 17
+[deep_sets_mean_max] Episodic Return: 3.59
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #4 --------------------
+[deep_sets_mean_max] Episodic Length: 750
+[deep_sets_mean_max] Episodic Return: 626.67
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #5 --------------------
+[deep_sets_mean_max] Episodic Length: 24
+[deep_sets_mean_max] Episodic Return: 6.96
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #6 --------------------
+[deep_sets_mean_max] Episodic Length: 25
+[deep_sets_mean_max] Episodic Return: 7.63
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #7 --------------------
+[deep_sets_mean_max] Episodic Length: 187
+[deep_sets_mean_max] Episodic Return: 139.83
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #8 --------------------
+[deep_sets_mean_max] Episodic Length: 35
+[deep_sets_mean_max] Episodic Return: 22.92
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #9 --------------------
+[deep_sets_mean_max] Episodic Length: 35
+[deep_sets_mean_max] Episodic Return: 21.62
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] 
+[deep_sets_mean_max] -------------------- Episode #10 --------------------
+[deep_sets_mean_max] Episodic Length: 103
+[deep_sets_mean_max] Episodic Return: 73.51
+[deep_sets_mean_max] ------------------------------------------------------
+[deep_sets_mean_max] 
+[deep_sets_mean_max] =============== deep_sets_mean_max curriculum_stage_4_dense_traffic full eval ===============
+[deep_sets_mean_max] Average Episodic Return: 103.797
+[deep_sets_mean_max] Average Episodic Length: 137.200
+[deep_sets_mean_max] Collision Rate: 0.900
+[deep_sets_mean_max] ==================================================
+[deep_sets_mean_max] 
+[deep_sets_mean_max] Curriculum training and evaluation complete.
+[deep_sets_mean_max] Final actor checkpoint: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\deep_sets_mean_max_curriculum_final_actor.pth
+[deep_sets_mean_max] Final critic checkpoint: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\deep_sets_mean_max_curriculum_final_critic.pth
+[deep_sets_mean_max] Evaluation CSV: C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_codex_run\evaluation\deep_sets_mean_max_final_evaluation.csv
+
+==================== Running self_attention ====================
+Folder: C:\Users\milke\groupCoursework\FYP\self_attention_model
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_codex_run\self_attention.log
+[self_attention] Model: self_attention
+[self_attention] Run ID: fair_curriculum_codex_run
+[self_attention] Training from scratch: no checkpoints will be loaded.
+[self_attention] Artifacts directory: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run
+[self_attention] 
+[self_attention] ==================== Stage 1: curriculum_stage_1_open_lane ====================
+[self_attention] Target timesteps for this stage: 24576
+[self_attention] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 24576 timesteps
+[self_attention] 
+[self_attention] -------------------- Iteration #1 --------------------
+[self_attention] Average Episodic Length: 19.82
+[self_attention] Average Episodic Return: 13.54
+[self_attention] Average Loss: -0.00462
+[self_attention] Timesteps So Far: 4102
+[self_attention] Iteration took: 42.95 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #2 --------------------
+[self_attention] Average Episodic Length: 21.16
+[self_attention] Average Episodic Return: 14.76
+[self_attention] Average Loss: -0.00267
+[self_attention] Timesteps So Far: 8207
+[self_attention] Iteration took: 44.82 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #3 --------------------
+[self_attention] Average Episodic Length: 22.9
+[self_attention] Average Episodic Return: 16.17
+[self_attention] Average Loss: -0.00156
+[self_attention] Timesteps So Far: 12329
+[self_attention] Iteration took: 47.42 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #4 --------------------
+[self_attention] Average Episodic Length: 24.53
+[self_attention] Average Episodic Return: 17.44
+[self_attention] Average Loss: -0.0008
+[self_attention] Timesteps So Far: 16425
+[self_attention] Iteration took: 44.2 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #5 --------------------
+[self_attention] Average Episodic Length: 23.63
+[self_attention] Average Episodic Return: 16.75
+[self_attention] Average Loss: -0.0006
+[self_attention] Timesteps So Far: 20537
+[self_attention] Iteration took: 45.59 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #6 --------------------
+[self_attention] Average Episodic Length: 26.03
+[self_attention] Average Episodic Return: 18.87
+[self_attention] Average Loss: -0.00097
+[self_attention] Timesteps So Far: 24702
+[self_attention] Iteration took: 44.11 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\csv\01_curriculum_stage_1_open_lane_training.csv
+[self_attention] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_actor.pth
+[self_attention] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\01_curriculum_stage_1_open_lane_critic.pth
+[self_attention] 
+[self_attention] ==================== Stage 2: curriculum_stage_2_easy_overtake ====================
+[self_attention] Target timesteps for this stage: 49152
+[self_attention] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+[self_attention] 
+[self_attention] -------------------- Iteration #1 --------------------
+[self_attention] Average Episodic Length: 23.75
+[self_attention] Average Episodic Return: 15.68
+[self_attention] Average Loss: -0.00107
+[self_attention] Timesteps So Far: 4109
+[self_attention] Iteration took: 46.27 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #2 --------------------
+[self_attention] Average Episodic Length: 26.86
+[self_attention] Average Episodic Return: 18.01
+[self_attention] Average Loss: -0.00081
+[self_attention] Timesteps So Far: 8218
+[self_attention] Iteration took: 46.47 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #3 --------------------
+[self_attention] Average Episodic Length: 25.96
+[self_attention] Average Episodic Return: 17.34
+[self_attention] Average Loss: -0.00043
+[self_attention] Timesteps So Far: 12320
+[self_attention] Iteration took: 45.77 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #4 --------------------
+[self_attention] Average Episodic Length: 25.0
+[self_attention] Average Episodic Return: 16.69
+[self_attention] Average Loss: -0.0007
+[self_attention] Timesteps So Far: 16445
+[self_attention] Iteration took: 45.72 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #5 --------------------
+[self_attention] Average Episodic Length: 27.5
+[self_attention] Average Episodic Return: 18.71
+[self_attention] Average Loss: -0.00062
+[self_attention] Timesteps So Far: 20543
+[self_attention] Iteration took: 45.64 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #6 --------------------
+[self_attention] Average Episodic Length: 28.28
+[self_attention] Average Episodic Return: 19.34
+[self_attention] Average Loss: -0.00086
+[self_attention] Timesteps So Far: 24700
+[self_attention] Iteration took: 45.92 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #7 --------------------
+[self_attention] Average Episodic Length: 28.91
+[self_attention] Average Episodic Return: 20.02
+[self_attention] Average Loss: -0.00095
+[self_attention] Timesteps So Far: 28805
+[self_attention] Iteration took: 46.81 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #8 --------------------
+[self_attention] Average Episodic Length: 30.81
+[self_attention] Average Episodic Return: 21.23
+[self_attention] Average Loss: -0.00113
+[self_attention] Timesteps So Far: 32933
+[self_attention] Iteration took: 47.75 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #9 --------------------
+[self_attention] Average Episodic Length: 34.83
+[self_attention] Average Episodic Return: 25.21
+[self_attention] Average Loss: -0.00153
+[self_attention] Timesteps So Far: 37043
+[self_attention] Iteration took: 46.19 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #10 --------------------
+[self_attention] Average Episodic Length: 30.51
+[self_attention] Average Episodic Return: 21.28
+[self_attention] Average Loss: -0.00073
+[self_attention] Timesteps So Far: 41162
+[self_attention] Iteration took: 46.04 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #11 --------------------
+[self_attention] Average Episodic Length: 32.09
+[self_attention] Average Episodic Return: 22.24
+[self_attention] Average Loss: -0.00115
+[self_attention] Timesteps So Far: 45269
+[self_attention] Iteration took: 45.85 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #12 --------------------
+[self_attention] Average Episodic Length: 34.84
+[self_attention] Average Episodic Return: 24.81
+[self_attention] Average Loss: -0.00071
+[self_attention] Timesteps So Far: 49450
+[self_attention] Iteration took: 46.38 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\csv\02_curriculum_stage_2_easy_overtake_training.csv
+[self_attention] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_actor.pth
+[self_attention] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\02_curriculum_stage_2_easy_overtake_critic.pth
+[self_attention] 
+[self_attention] ==================== Stage 3: curriculum_stage_3_mixed_traffic ====================
+[self_attention] Target timesteps for this stage: 98304
+[self_attention] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 98304 timesteps
+[self_attention] 
+[self_attention] -------------------- Iteration #1 --------------------
+[self_attention] Average Episodic Length: 41.18
+[self_attention] Average Episodic Return: 29.45
+[self_attention] Average Loss: -0.00068
+[self_attention] Timesteps So Far: 4200
+[self_attention] Iteration took: 49.24 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #2 --------------------
+[self_attention] Average Episodic Length: 42.78
+[self_attention] Average Episodic Return: 30.83
+[self_attention] Average Loss: -0.00047
+[self_attention] Timesteps So Far: 8307
+[self_attention] Iteration took: 49.07 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #3 --------------------
+[self_attention] Average Episodic Length: 39.53
+[self_attention] Average Episodic Return: 28.18
+[self_attention] Average Loss: -0.00069
+[self_attention] Timesteps So Far: 12418
+[self_attention] Iteration took: 49.61 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #4 --------------------
+[self_attention] Average Episodic Length: 36.12
+[self_attention] Average Episodic Return: 25.11
+[self_attention] Average Loss: -0.00116
+[self_attention] Timesteps So Far: 16536
+[self_attention] Iteration took: 48.9 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #5 --------------------
+[self_attention] Average Episodic Length: 41.73
+[self_attention] Average Episodic Return: 30.06
+[self_attention] Average Loss: -0.00092
+[self_attention] Timesteps So Far: 20667
+[self_attention] Iteration took: 48.94 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #6 --------------------
+[self_attention] Average Episodic Length: 41.14
+[self_attention] Average Episodic Return: 29.9
+[self_attention] Average Loss: -0.00068
+[self_attention] Timesteps So Far: 24781
+[self_attention] Iteration took: 48.58 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #7 --------------------
+[self_attention] Average Episodic Length: 46.02
+[self_attention] Average Episodic Return: 33.42
+[self_attention] Average Loss: -0.00026
+[self_attention] Timesteps So Far: 28877
+[self_attention] Iteration took: 49.15 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #8 --------------------
+[self_attention] Average Episodic Length: 44.85
+[self_attention] Average Episodic Return: 32.61
+[self_attention] Average Loss: -0.00052
+[self_attention] Timesteps So Far: 33003
+[self_attention] Iteration took: 50.31 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #9 --------------------
+[self_attention] Average Episodic Length: 52.73
+[self_attention] Average Episodic Return: 39.23
+[self_attention] Average Loss: -0.00096
+[self_attention] Timesteps So Far: 37116
+[self_attention] Iteration took: 49.37 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #10 --------------------
+[self_attention] Average Episodic Length: 49.45
+[self_attention] Average Episodic Return: 35.93
+[self_attention] Average Loss: -0.00082
+[self_attention] Timesteps So Far: 41220
+[self_attention] Iteration took: 48.17 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #11 --------------------
+[self_attention] Average Episodic Length: 46.29
+[self_attention] Average Episodic Return: 33.89
+[self_attention] Average Loss: -0.00017
+[self_attention] Timesteps So Far: 45340
+[self_attention] Iteration took: 48.65 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #12 --------------------
+[self_attention] Average Episodic Length: 49.43
+[self_attention] Average Episodic Return: 36.26
+[self_attention] Average Loss: -0.00032
+[self_attention] Timesteps So Far: 49443
+[self_attention] Iteration took: 49.12 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #13 --------------------
+[self_attention] Average Episodic Length: 54.57
+[self_attention] Average Episodic Return: 40.16
+[self_attention] Average Loss: -0.00072
+[self_attention] Timesteps So Far: 53590
+[self_attention] Iteration took: 48.91 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #14 --------------------
+[self_attention] Average Episodic Length: 63.06
+[self_attention] Average Episodic Return: 46.87
+[self_attention] Average Loss: -7e-05
+[self_attention] Timesteps So Far: 57689
+[self_attention] Iteration took: 48.61 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #15 --------------------
+[self_attention] Average Episodic Length: 79.9
+[self_attention] Average Episodic Return: 61.16
+[self_attention] Average Loss: -0.00028
+[self_attention] Timesteps So Far: 61844
+[self_attention] Iteration took: 49.96 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #16 --------------------
+[self_attention] Average Episodic Length: 80.47
+[self_attention] Average Episodic Return: 62.37
+[self_attention] Average Loss: -0.00044
+[self_attention] Timesteps So Far: 65948
+[self_attention] Iteration took: 48.31 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #17 --------------------
+[self_attention] Average Episodic Length: 64.64
+[self_attention] Average Episodic Return: 48.67
+[self_attention] Average Loss: -0.00032
+[self_attention] Timesteps So Far: 70085
+[self_attention] Iteration took: 48.57 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #18 --------------------
+[self_attention] Average Episodic Length: 73.64
+[self_attention] Average Episodic Return: 55.59
+[self_attention] Average Loss: -0.00065
+[self_attention] Timesteps So Far: 74209
+[self_attention] Iteration took: 49.76 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #19 --------------------
+[self_attention] Average Episodic Length: 79.15
+[self_attention] Average Episodic Return: 60.13
+[self_attention] Average Loss: -0.0007
+[self_attention] Timesteps So Far: 78325
+[self_attention] Iteration took: 49.2 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #20 --------------------
+[self_attention] Average Episodic Length: 73.2
+[self_attention] Average Episodic Return: 54.27
+[self_attention] Average Loss: -0.00082
+[self_attention] Timesteps So Far: 82424
+[self_attention] Iteration took: 48.26 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #21 --------------------
+[self_attention] Average Episodic Length: 90.52
+[self_attention] Average Episodic Return: 69.77
+[self_attention] Average Loss: -3e-05
+[self_attention] Timesteps So Far: 86769
+[self_attention] Iteration took: 52.24 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #22 --------------------
+[self_attention] Average Episodic Length: 89.22
+[self_attention] Average Episodic Return: 69.24
+[self_attention] Average Loss: -0.00082
+[self_attention] Timesteps So Far: 90873
+[self_attention] Iteration took: 48.53 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #23 --------------------
+[self_attention] Average Episodic Length: 98.55
+[self_attention] Average Episodic Return: 75.74
+[self_attention] Average Loss: -0.00071
+[self_attention] Timesteps So Far: 95012
+[self_attention] Iteration took: 49.78 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #24 --------------------
+[self_attention] Average Episodic Length: 77.68
+[self_attention] Average Episodic Return: 57.94
+[self_attention] Average Loss: -0.00084
+[self_attention] Timesteps So Far: 99129
+[self_attention] Iteration took: 48.29 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\csv\03_curriculum_stage_3_mixed_traffic_training.csv
+[self_attention] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_actor.pth
+[self_attention] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\03_curriculum_stage_3_mixed_traffic_critic.pth
+[self_attention] 
+[self_attention] ==================== Stage 4: curriculum_stage_4_dense_traffic ====================
+[self_attention] Target timesteps for this stage: 49152
+[self_attention] Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 49152 timesteps
+[self_attention] 
+[self_attention] -------------------- Iteration #1 --------------------
+[self_attention] Average Episodic Length: 92.51
+[self_attention] Average Episodic Return: 69.26
+[self_attention] Average Loss: 5e-05
+[self_attention] Timesteps So Far: 4163
+[self_attention] Iteration took: 60.5 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #2 --------------------
+[self_attention] Average Episodic Length: 85.22
+[self_attention] Average Episodic Return: 64.03
+[self_attention] Average Loss: -0.00067
+[self_attention] Timesteps So Far: 8424
+[self_attention] Iteration took: 62.65 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #3 --------------------
+[self_attention] Average Episodic Length: 80.52
+[self_attention] Average Episodic Return: 58.95
+[self_attention] Average Loss: 0.00012
+[self_attention] Timesteps So Far: 12611
+[self_attention] Iteration took: 62.36 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #4 --------------------
+[self_attention] Average Episodic Length: 74.71
+[self_attention] Average Episodic Return: 54.46
+[self_attention] Average Loss: -6e-05
+[self_attention] Timesteps So Far: 16720
+[self_attention] Iteration took: 60.07 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #5 --------------------
+[self_attention] Average Episodic Length: 79.82
+[self_attention] Average Episodic Return: 58.64
+[self_attention] Average Loss: -0.0018
+[self_attention] Timesteps So Far: 21110
+[self_attention] Iteration took: 64.97 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #6 --------------------
+[self_attention] Average Episodic Length: 69.47
+[self_attention] Average Episodic Return: 49.97
+[self_attention] Average Loss: 0.00047
+[self_attention] Timesteps So Far: 25278
+[self_attention] Iteration took: 61.43 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #7 --------------------
+[self_attention] Average Episodic Length: 72.37
+[self_attention] Average Episodic Return: 52.24
+[self_attention] Average Loss: -9e-05
+[self_attention] Timesteps So Far: 29403
+[self_attention] Iteration took: 60.74 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #8 --------------------
+[self_attention] Average Episodic Length: 100.17
+[self_attention] Average Episodic Return: 76.21
+[self_attention] Average Loss: -0.00022
+[self_attention] Timesteps So Far: 33610
+[self_attention] Iteration took: 62.18 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #9 --------------------
+[self_attention] Average Episodic Length: 64.42
+[self_attention] Average Episodic Return: 45.31
+[self_attention] Average Loss: -0.0
+[self_attention] Timesteps So Far: 37733
+[self_attention] Iteration took: 60.58 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #10 --------------------
+[self_attention] Average Episodic Length: 84.24
+[self_attention] Average Episodic Return: 63.21
+[self_attention] Average Loss: -0.00074
+[self_attention] Timesteps So Far: 41861
+[self_attention] Iteration took: 61.89 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #11 --------------------
+[self_attention] Average Episodic Length: 73.34
+[self_attention] Average Episodic Return: 53.74
+[self_attention] Average Loss: -9e-05
+[self_attention] Timesteps So Far: 45968
+[self_attention] Iteration took: 61.32 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Iteration #12 --------------------
+[self_attention] Average Episodic Length: 98.93
+[self_attention] Average Episodic Return: 74.5
+[self_attention] Average Loss: -0.00142
+[self_attention] Timesteps So Far: 50123
+[self_attention] Iteration took: 62.16 secs
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] Saved stage CSV to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\csv\04_curriculum_stage_4_dense_traffic_training.csv
+[self_attention] Saved stage actor checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_actor.pth
+[self_attention] Saved stage critic checkpoint to: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\04_curriculum_stage_4_dense_traffic_critic.pth
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_1_open_lane (capped, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 187
+[self_attention] Episodic Return: 155.26
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 250.63
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 106
+[self_attention] Episodic Return: 75.29
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 125
+[self_attention] Episodic Return: 98.21
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 250.75
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 250.72
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 119
+[self_attention] Episodic Return: 85.44
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 87
+[self_attention] Episodic Return: 59.67
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 241.88
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 250.82
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_1_open_lane capped eval ===============
+[self_attention] Average Episodic Return: 171.867
+[self_attention] Average Episodic Length: 212.400
+[self_attention] Collision Rate: 0.500
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_1_open_lane (full, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 451
+[self_attention] Episodic Return: 376.25
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 451
+[self_attention] Episodic Return: 376.63
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 140
+[self_attention] Episodic Return: 103.99
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 121
+[self_attention] Episodic Return: 88.46
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 82
+[self_attention] Episodic Return: 62.55
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 104
+[self_attention] Episodic Return: 74.88
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 226
+[self_attention] Episodic Return: 179.34
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 202
+[self_attention] Episodic Return: 167.78
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 209
+[self_attention] Episodic Return: 162.23
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 451
+[self_attention] Episodic Return: 376.5
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_1_open_lane full eval ===============
+[self_attention] Average Episodic Return: 196.861
+[self_attention] Average Episodic Length: 243.700
+[self_attention] Collision Rate: 0.700
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_2_easy_overtake (capped, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 41
+[self_attention] Episodic Return: 24.45
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 33
+[self_attention] Episodic Return: 16.73
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 35
+[self_attention] Episodic Return: 21.54
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 31
+[self_attention] Episodic Return: 17.77
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 240.17
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 250.06
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 251.14
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 33
+[self_attention] Episodic Return: 16.68
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 39
+[self_attention] Episodic Return: 20.93
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 35
+[self_attention] Episodic Return: 22.1
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_2_easy_overtake capped eval ===============
+[self_attention] Average Episodic Return: 88.157
+[self_attention] Average Episodic Length: 114.700
+[self_attention] Collision Rate: 0.700
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_2_easy_overtake (full, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 418
+[self_attention] Episodic Return: 335.11
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 44
+[self_attention] Episodic Return: 27.83
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 525
+[self_attention] Episodic Return: 438.44
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 525
+[self_attention] Episodic Return: 436.88
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 34
+[self_attention] Episodic Return: 25.14
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 42
+[self_attention] Episodic Return: 30.65
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 525
+[self_attention] Episodic Return: 437.58
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 525
+[self_attention] Episodic Return: 431.09
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 29
+[self_attention] Episodic Return: 20.97
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 39
+[self_attention] Episodic Return: 26.92
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_2_easy_overtake full eval ===============
+[self_attention] Average Episodic Return: 221.061
+[self_attention] Average Episodic Length: 270.600
+[self_attention] Collision Rate: 0.600
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_3_mixed_traffic (capped, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 190
+[self_attention] Episodic Return: 146.06
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 65
+[self_attention] Episodic Return: 41.49
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 250.37
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 34
+[self_attention] Episodic Return: 24.15
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 49
+[self_attention] Episodic Return: 29.15
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 48
+[self_attention] Episodic Return: 30.37
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 247.2
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 37
+[self_attention] Episodic Return: 22.85
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 109
+[self_attention] Episodic Return: 80.35
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 37
+[self_attention] Episodic Return: 21.76
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_3_mixed_traffic capped eval ===============
+[self_attention] Average Episodic Return: 89.375
+[self_attention] Average Episodic Length: 116.900
+[self_attention] Collision Rate: 0.800
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_3_mixed_traffic (full, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 542
+[self_attention] Episodic Return: 441.5
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 314
+[self_attention] Episodic Return: 250.29
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 40
+[self_attention] Episodic Return: 23.51
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 85
+[self_attention] Episodic Return: 64.93
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 39
+[self_attention] Episodic Return: 18.3
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 600
+[self_attention] Episodic Return: 498.52
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 52
+[self_attention] Episodic Return: 32.26
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 55
+[self_attention] Episodic Return: 28.59
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 41
+[self_attention] Episodic Return: 26.53
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 122
+[self_attention] Episodic Return: 88.26
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_3_mixed_traffic full eval ===============
+[self_attention] Average Episodic Return: 147.270
+[self_attention] Average Episodic Length: 189.000
+[self_attention] Collision Rate: 0.900
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_4_dense_traffic (capped, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 239.46
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 139
+[self_attention] Episodic Return: 100.88
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 90
+[self_attention] Episodic Return: 59.14
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 248.77
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 248.09
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 25
+[self_attention] Episodic Return: 6.88
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 81
+[self_attention] Episodic Return: 54.64
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 117
+[self_attention] Episodic Return: 87.25
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 244
+[self_attention] Episodic Return: 181.73
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 300
+[self_attention] Episodic Return: 247.32
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_4_dense_traffic capped eval ===============
+[self_attention] Average Episodic Return: 147.417
+[self_attention] Average Episodic Length: 189.600
+[self_attention] Collision Rate: 0.600
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Evaluating self_attention on curriculum_stage_4_dense_traffic (full, episodes=10)
+[self_attention] 
+[self_attention] -------------------- Episode #1 --------------------
+[self_attention] Episodic Length: 521
+[self_attention] Episodic Return: 415.45
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #2 --------------------
+[self_attention] Episodic Length: 34
+[self_attention] Episodic Return: 15.53
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #3 --------------------
+[self_attention] Episodic Length: 21
+[self_attention] Episodic Return: 4.54
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #4 --------------------
+[self_attention] Episodic Length: 136
+[self_attention] Episodic Return: 103.57
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #5 --------------------
+[self_attention] Episodic Length: 135
+[self_attention] Episodic Return: 100.36
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #6 --------------------
+[self_attention] Episodic Length: 501
+[self_attention] Episodic Return: 405.81
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #7 --------------------
+[self_attention] Episodic Length: 428
+[self_attention] Episodic Return: 331.69
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #8 --------------------
+[self_attention] Episodic Length: 31
+[self_attention] Episodic Return: 18.21
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #9 --------------------
+[self_attention] Episodic Length: 33
+[self_attention] Episodic Return: 24.02
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] 
+[self_attention] -------------------- Episode #10 --------------------
+[self_attention] Episodic Length: 29
+[self_attention] Episodic Return: 8.66
+[self_attention] ------------------------------------------------------
+[self_attention] 
+[self_attention] =============== self_attention curriculum_stage_4_dense_traffic full eval ===============
+[self_attention] Average Episodic Return: 142.785
+[self_attention] Average Episodic Length: 186.900
+[self_attention] Collision Rate: 1.000
+[self_attention] ==================================================
+[self_attention] 
+[self_attention] Curriculum training and evaluation complete.
+[self_attention] Final actor checkpoint: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\self_attention_curriculum_final_actor.pth
+[self_attention] Final critic checkpoint: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\checkpoints\self_attention_curriculum_final_critic.pth
+[self_attention] Evaluation CSV: C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\fair_curriculum_codex_run\evaluation\self_attention_final_evaluation.csv
+
+Combined evaluation CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\fair_curriculum_codex_run\combined_final_evaluation.csv
+All fair curriculum experiments completed.

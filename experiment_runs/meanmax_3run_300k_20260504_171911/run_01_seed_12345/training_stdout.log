@@ -1,0 +1,16 @@
+Run 1: training seed 12345
+Config: curriculum_stage_3_mixed_traffic
+Target timesteps: 300000
+Evaluation seeds: 1000..1049 (50 episodes)
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_3run_300k_20260504_171911\run_01_seed_12345
+Successfully set seed to 12345
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 300000 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 22.53
+Average Episodic Return: 14.27
+Average Loss: -0.00135
+Timesteps So Far: 4101
+Iteration took: 165.5 secs
+------------------------------------------------------
+

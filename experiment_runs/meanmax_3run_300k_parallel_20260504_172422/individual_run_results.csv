@@ -1,0 +1,4 @@
+run_index,train_seed,final_training_return,final_training_episode_length,final_training_timesteps,avg_episodic_return,avg_episodic_length,collision_rate
+1,12345,52.874265,73.701754,302230,55.773604,83.14,0.9
+2,23456,54.342269,73.160714,301405,45.391278,69.2,0.92
+3,34567,38.776544,55.8,300959,46.512695,67.12,0.92
