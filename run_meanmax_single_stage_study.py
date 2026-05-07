@@ -10,7 +10,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-MODEL_DIR = ROOT / "mean+max"
+MODEL_SUBDIR = os.environ.get("MODEL_SUBDIR", "mean+max")
+MODEL_DIR = ROOT / MODEL_SUBDIR
 
 DEFAULT_PYTHON = Path(r"C:\Users\milke\miniconda3\envs\highway\python.exe")
 PYTHON = Path(os.environ.get("PYTHON_EXE", DEFAULT_PYTHON if DEFAULT_PYTHON.exists() else sys.executable))
@@ -19,7 +20,7 @@ DEFAULT_RUN_ID = f"meanmax_single_stage2_full_{datetime.now().strftime('%Y%m%d_%
 RUN_ID = os.environ.get("RUN_ID", DEFAULT_RUN_ID)
 OUT_DIR = ROOT / "experiment_runs" / RUN_ID
 
-MODEL_LABEL = "deep_sets_mean_max"
+MODEL_LABEL = os.environ.get("MODEL_LABEL", "deep_sets_mean_max")
 CONFIG_NAME = os.environ.get("HIGHWAY_CONFIG", "curriculum_stage_2_easy_overtake")
 TARGET_TIMESTEPS = int(os.environ.get("TOTAL_TIMESTEPS", "300000"))
 TRAIN_SEED = int(os.environ.get("TRAIN_SEED", "12345"))
@@ -27,6 +28,8 @@ EVAL_SEEDS = json.loads(os.environ.get("EVAL_SEEDS", json.dumps(list(range(1000,
 EVAL_MAX_STEPS_RAW = os.environ.get("EVAL_MAX_STEPS", "").strip().lower()
 EVAL_MAX_STEPS = None if EVAL_MAX_STEPS_RAW in {"", "none", "full"} else int(EVAL_MAX_STEPS_RAW)
 TORCH_NUM_THREADS = int(os.environ.get("TORCH_NUM_THREADS", "1"))
+EGO_START_LANE_POLICY = os.environ.get("EGO_START_LANE_POLICY", "random")
+CONFIG_OVERRIDES = json.loads(os.environ.get("CONFIG_OVERRIDES", "{}"))
 
 HYPERPARAMETERS = {
     "timesteps_per_batch": 4096,
@@ -59,6 +62,15 @@ from highway_configs import get_highway_config
 from ppo import PPO
 
 
+def deep_update(base: dict, overrides: dict) -> dict:
+    for key, value in overrides.items():
+        if isinstance(value, dict) and isinstance(base.get(key), dict):
+            deep_update(base[key], value)
+        else:
+            base[key] = value
+    return base
+
+
 train_seed = int(os.environ["TRAIN_SEED"])
 out_dir = Path(os.environ["OUT_DIR"])
 config_name = os.environ["CONFIG_NAME"]
@@ -69,6 +81,8 @@ eval_max_steps = None if eval_max_steps_raw in {"", "none", "full"} else int(eva
 eval_seeds = json.loads(os.environ["EVAL_SEEDS"])
 hyperparameters = json.loads(os.environ["HYPERPARAMETERS"])
 torch_num_threads = int(os.environ.get("TORCH_NUM_THREADS", "1"))
+ego_start_lane_policy = os.environ.get("EGO_START_LANE_POLICY", "random")
+config_overrides = json.loads(os.environ.get("CONFIG_OVERRIDES", "{}"))
 
 out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -94,7 +108,8 @@ if "continuous-spawn-highway-v0" not in registry:
 
 def controlled_config() -> dict:
     config = get_highway_config(config_name)
-    config["ego_start_lane_policy"] = "center"
+    deep_update(config, config_overrides)
+    config["ego_start_lane_policy"] = ego_start_lane_policy
     return config
 
 
@@ -130,6 +145,7 @@ run_config_path.write_text(
             "eval_type": "full" if eval_max_steps is None else "capped",
             "hyperparameters": hyperparameters,
             "ego_start_lane_policy": controlled_config().get("ego_start_lane_policy"),
+            "config_overrides": config_overrides,
             "torch_version": torch.__version__,
             "cuda_available": torch.cuda.is_available(),
             "torch_num_threads": torch_num_threads,
@@ -372,7 +388,8 @@ def main() -> int:
                 "eval_max_steps": EVAL_MAX_STEPS,
                 "eval_type": "full" if EVAL_MAX_STEPS is None else "capped",
                 "hyperparameters": HYPERPARAMETERS,
-                "ego_start_lane_policy": "center",
+                "ego_start_lane_policy": EGO_START_LANE_POLICY,
+                "config_overrides": CONFIG_OVERRIDES,
                 "torch_num_threads": TORCH_NUM_THREADS,
                 "python": str(PYTHON),
             },
@@ -401,6 +418,8 @@ def main() -> int:
             "EVAL_MAX_STEPS": "" if EVAL_MAX_STEPS is None else str(EVAL_MAX_STEPS),
             "EVAL_SEEDS": json.dumps(EVAL_SEEDS),
             "HYPERPARAMETERS": json.dumps(HYPERPARAMETERS),
+            "EGO_START_LANE_POLICY": EGO_START_LANE_POLICY,
+            "CONFIG_OVERRIDES": json.dumps(CONFIG_OVERRIDES),
             "TORCH_NUM_THREADS": str(TORCH_NUM_THREADS),
             "OMP_NUM_THREADS": str(TORCH_NUM_THREADS),
             "MKL_NUM_THREADS": str(TORCH_NUM_THREADS),

@@ -1,0 +1,2 @@
+﻿"model","env_id","config_name","runs","train_seeds","eval_episodes_per_run","total_eval_episodes","avg_final_training_return","avg_final_training_length","avg_of_eval_avg_episodic_return","avg_of_eval_avg_episodic_length","avg_collision_rate","per_run_summary"
+"self_attention","highway-v0","highway_v0_stage_2_benchmark_v4","3","12345;23456;34567","50","150","142.437781","170.271656","384.136811","454.6","0.34","C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_highwayv0_benchmark_v4_3run_100k_20260506\per_run_summary.csv"

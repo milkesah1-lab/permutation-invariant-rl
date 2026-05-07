@@ -1,0 +1,18 @@
+﻿[
+    {
+        "RunId":  "self_attention_highwayv0_benchmark_v4_100k_seed23456_20260506_103324",
+        "Seed":  "23456",
+        "Pid":  34696,
+        "OutDir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v4_100k_seed23456_20260506_103324",
+        "RunnerStdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\self_attention_highwayv0_benchmark_v4_100k_seed23456_20260506_103324.stdout.log",
+        "RunnerStderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\self_attention_highwayv0_benchmark_v4_100k_seed23456_20260506_103324.stderr.log"
+    },
+    {
+        "RunId":  "self_attention_highwayv0_benchmark_v4_100k_seed34567_20260506_103327",
+        "Seed":  "34567",
+        "Pid":  21096,
+        "OutDir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v4_100k_seed34567_20260506_103327",
+        "RunnerStdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\self_attention_highwayv0_benchmark_v4_100k_seed34567_20260506_103327.stdout.log",
+        "RunnerStderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\self_attention_highwayv0_benchmark_v4_100k_seed34567_20260506_103327.stderr.log"
+    }
+]

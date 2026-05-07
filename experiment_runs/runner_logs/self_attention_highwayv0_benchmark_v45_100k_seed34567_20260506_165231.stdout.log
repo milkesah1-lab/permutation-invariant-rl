@@ -1,0 +1,13 @@
+Run ID: self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\self_attention_model
+Env: highway-v0
+Config: highway_v0_stage_2_benchmark_v45
+Training seed: 34567
+Eval type: full
+Completed highway-v0 mean+max study.
+Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\training_stdout.log
+Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\training_summary.csv
+Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\evaluation_summary.csv
+Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\evaluation_per_episode.csv

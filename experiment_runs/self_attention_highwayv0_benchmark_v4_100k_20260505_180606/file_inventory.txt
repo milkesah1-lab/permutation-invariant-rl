@@ -1,0 +1,16 @@
+﻿
+Name                       Length LastWriteTime      
+----                       ------ -------------      
+checkpoint_actor.pth        98074 05/05/2026 18:40:51
+checkpoint_critic.pth       97198 05/05/2026 18:40:51
+evaluation_per_episode.csv   3796 05/05/2026 18:43:12
+evaluation_summary.csv        576 05/05/2026 18:43:12
+run_config.json              1266 05/05/2026 18:06:18
+run_summary.json             1359 05/05/2026 18:43:12
+study_config.json            1320 05/05/2026 18:06:07
+training_log.csv             1224 05/05/2026 18:40:51
+training_stdout.log          7811 05/05/2026 18:43:12
+training_summary.csv          703 05/05/2026 18:40:51
+
+
+

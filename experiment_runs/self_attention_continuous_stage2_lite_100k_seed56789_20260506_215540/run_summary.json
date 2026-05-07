@@ -1,0 +1,20 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\\training_log.csv",
+    "final_training_return": 73.550233,
+    "final_training_episode_length": 93.795455,
+    "final_training_timesteps": 103349
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\\evaluation_per_episode.csv",
+    "avg_episodic_return": 219.3942611088909,
+    "avg_episodic_length": 270.58,
+    "collision_rate": 0.56
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\\checkpoint_critic.pth"
+  }
+}

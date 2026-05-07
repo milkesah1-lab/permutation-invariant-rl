@@ -1,0 +1,25 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_v4_100k_seed23456_20260505_192829\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_v4_100k_seed23456_20260505_192829\\training_log.csv",
+    "final_training_return": 42.370844,
+    "final_training_episode_length": 52.897436,
+    "final_training_timesteps": 103127
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_v4_100k_seed23456_20260505_192829\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_v4_100k_seed23456_20260505_192829\\evaluation_per_episode.csv",
+    "avg_episodic_return": 412.69622482776185,
+    "avg_episodic_length": 493.96,
+    "collision_rate": 0.24,
+    "lane_counts": {
+      "0": 12,
+      "1": 21,
+      "2": 17
+    }
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_v4_100k_seed23456_20260505_192829\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_v4_100k_seed23456_20260505_192829\\checkpoint_critic.pth"
+  }
+}

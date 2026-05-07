@@ -1,0 +1,2 @@
+model,train_seed,config_name,eval_episodes,eval_type,eval_max_steps,avg_episodic_return,avg_episodic_length,collision_rate,per_episode_csv,actor_checkpoint
+self_attention,56789,curriculum_stage_2_easy_overtake,50,full,,219.394261,270.58,0.56,C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\evaluation_per_episode.csv,C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_100k_seed56789_20260506_215540\checkpoint_actor.pth

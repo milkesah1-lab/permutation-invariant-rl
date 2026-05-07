@@ -1,0 +1,40 @@
+﻿{
+    "spawn_probability":  0.07,
+    "spawn_interval":  4,
+    "max_vehicles":  10,
+    "spawn_min_gap":  24,
+    "lead_vehicle_distance_range":  [
+                                        30,
+                                        44
+                                    ],
+    "lead_vehicle_speed_range":  [
+                                     14,
+                                     18
+                                 ],
+    "same_lane_blocker_probability":  0.15,
+    "same_lane_blocker_distance_range":  [
+                                             30,
+                                             42
+                                         ],
+    "same_lane_blocker_speed_range":  [
+                                          14,
+                                          18
+                                      ],
+    "scenario_probabilities":  {
+                                   "overtake_easy":  0.8,
+                                   "overtake_blocked":  0.1,
+                                   "stay_best":  0.1
+                               },
+    "blocked_adjacent_front_distance_range":  [
+                                                  22,
+                                                  34
+                                              ],
+    "blocked_adjacent_rear_distance_range":  [
+                                                 18,
+                                                 30
+                                             ],
+    "semi_open_adjacent_front_distance_range":  [
+                                                    38,
+                                                    55
+                                                ]
+}

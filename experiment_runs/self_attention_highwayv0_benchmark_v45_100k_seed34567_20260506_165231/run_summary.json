@@ -1,0 +1,25 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\\training_log.csv",
+    "final_training_return": 180.982126,
+    "final_training_episode_length": 217.578947,
+    "final_training_timesteps": 103796
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\\evaluation_per_episode.csv",
+    "avg_episodic_return": 500.4604954155506,
+    "avg_episodic_length": 600.0,
+    "collision_rate": 0.0,
+    "lane_counts": {
+      "0": 12,
+      "1": 21,
+      "2": 17
+    }
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\self_attention_highwayv0_benchmark_v45_100k_seed34567_20260506_165231\\checkpoint_critic.pth"
+  }
+}
