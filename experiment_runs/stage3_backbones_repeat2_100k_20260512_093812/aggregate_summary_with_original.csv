@@ -1,0 +1,5 @@
+model_label,display_name,runs,sources,avg_eval_return,avg_eval_length,collision_rate
+basic_mlp,Basic MLP,3,original_20260424;repeat_20260512;repeat_20260512,150.74893033333333,187.75333333333333,0.7000000000000001
+deep_sets_mean,Deep Sets mean,3,original_20260424;repeat_20260512;repeat_20260512,163.50928933333333,204.18666666666664,0.7799999999999999
+deep_sets_mean_max,Deep Sets mean+max,3,original_20260424;repeat_20260512;repeat_20260512,181.96013200000002,225.75333333333333,0.7333333333333333
+self_attention,Self-attention,3,original_20260424;repeat_20260512;repeat_20260512,136.314478,170.12666666666667,0.86

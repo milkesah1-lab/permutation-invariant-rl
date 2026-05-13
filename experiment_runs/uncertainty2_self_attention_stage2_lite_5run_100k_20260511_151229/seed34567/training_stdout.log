@@ -1,0 +1,297 @@
+Training seed: 34567
+Config: curriculum_stage_2_easy_overtake
+Target timesteps: 100000
+Eval type: full
+Eval action mode: safeguarded
+Safeguard threshold: 0.0005
+MC samples: 5
+Evaluation seeds: 1000..1049 (50 episodes)
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567
+Successfully set seed to 34567
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 100000 timesteps
+the uncertainty penalty lambda is 0.01
+C:\Users\milke\miniconda3\envs\highway\Lib\site-packages\numpy\core\fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+C:\Users\milke\miniconda3\envs\highway\Lib\site-packages\numpy\core\_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 10.85
+Average Episodic Return: 5.898
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.01099
+Average Critic Uncertainty: nan
+Timesteps So Far: 4103
+Iteration took: 81.28 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 12.28
+Average Episodic Return: 6.991
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00806
+Average Critic Uncertainty: nan
+Timesteps So Far: 8218
+Iteration took: 80.55 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 16.55
+Average Episodic Return: 10.279
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.01539
+Average Critic Uncertainty: nan
+Timesteps So Far: 12323
+Iteration took: 78.33 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 27.81
+Average Episodic Return: 19.431
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00495
+Average Critic Uncertainty: nan
+Timesteps So Far: 16439
+Iteration took: 76.96 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 33.69
+Average Episodic Return: 24.501
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00086
+Average Critic Uncertainty: nan
+Timesteps So Far: 20549
+Iteration took: 76.6 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 41.07
+Average Episodic Return: 30.107
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00268
+Average Critic Uncertainty: nan
+Timesteps So Far: 24656
+Iteration took: 76.17 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 36.98
+Average Episodic Return: 27.318
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00046
+Average Critic Uncertainty: nan
+Timesteps So Far: 28761
+Iteration took: 76.81 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 42.39
+Average Episodic Return: 31.498
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00378
+Average Critic Uncertainty: nan
+Timesteps So Far: 32873
+Iteration took: 79.62 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #9 --------------------
+Average Episodic Length: 47.15
+Average Episodic Return: 35.604
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00012
+Average Critic Uncertainty: nan
+Timesteps So Far: 36975
+Iteration took: 87.99 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #10 --------------------
+Average Episodic Length: 45.11
+Average Episodic Return: 34.086
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00223
+Average Critic Uncertainty: nan
+Timesteps So Far: 41080
+Iteration took: 78.38 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #11 --------------------
+Average Episodic Length: 46.93
+Average Episodic Return: 34.662
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00112
+Average Critic Uncertainty: nan
+Timesteps So Far: 45210
+Iteration took: 79.78 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #12 --------------------
+Average Episodic Length: 54.73
+Average Episodic Return: 41.489
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00196
+Average Critic Uncertainty: nan
+Timesteps So Far: 49424
+Iteration took: 81.02 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #13 --------------------
+Average Episodic Length: 59.34
+Average Episodic Return: 45.401
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00178
+Average Critic Uncertainty: nan
+Timesteps So Far: 53578
+Iteration took: 82.18 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #14 --------------------
+Average Episodic Length: 61.82
+Average Episodic Return: 46.834
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00119
+Average Critic Uncertainty: nan
+Timesteps So Far: 57720
+Iteration took: 79.47 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #15 --------------------
+Average Episodic Length: 60.87
+Average Episodic Return: 46.711
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00083
+Average Critic Uncertainty: nan
+Timesteps So Far: 61859
+Iteration took: 78.13 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #16 --------------------
+Average Episodic Length: 72.05
+Average Episodic Return: 56.204
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.0016
+Average Critic Uncertainty: nan
+Timesteps So Far: 65966
+Iteration took: 78.48 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #17 --------------------
+Average Episodic Length: 75.2
+Average Episodic Return: 59.001
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00047
+Average Critic Uncertainty: nan
+Timesteps So Far: 70102
+Iteration took: 78.31 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #18 --------------------
+Average Episodic Length: 102.68
+Average Episodic Return: 81.405
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00072
+Average Critic Uncertainty: nan
+Timesteps So Far: 74209
+Iteration took: 77.81 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #19 --------------------
+Average Episodic Length: 98.5
+Average Episodic Return: 78.817
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00034
+Average Critic Uncertainty: nan
+Timesteps So Far: 78346
+Iteration took: 77.89 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #20 --------------------
+Average Episodic Length: 104.72
+Average Episodic Return: 82.947
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00148
+Average Critic Uncertainty: nan
+Timesteps So Far: 82535
+Iteration took: 76.97 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #21 --------------------
+Average Episodic Length: 111.79
+Average Episodic Return: 89.302
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00099
+Average Critic Uncertainty: nan
+Timesteps So Far: 86783
+Iteration took: 81.07 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #22 --------------------
+Average Episodic Length: 103.72
+Average Episodic Return: 83.255
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00101
+Average Critic Uncertainty: nan
+Timesteps So Far: 90932
+Iteration took: 76.22 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #23 --------------------
+Average Episodic Length: 121.35
+Average Episodic Return: 97.207
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00094
+Average Critic Uncertainty: nan
+Timesteps So Far: 95058
+Iteration took: 77.54 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #24 --------------------
+Average Episodic Length: 108.39
+Average Episodic Return: 85.395
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00044
+Average Critic Uncertainty: nan
+Timesteps So Far: 99177
+Iteration took: 79.69 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #25 --------------------
+Average Episodic Length: 141.72
+Average Episodic Return: 114.712
+Average Raw Episodic Return (without uncertainty penalty): 0.0
+Average Loss: -0.00087
+Average Critic Uncertainty: nan
+Timesteps So Far: 103287
+Iteration took: 82.97 secs
+------------------------------------------------------
+
+Training CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\training_log.csv
+Training summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\training_summary.csv
+Evaluation per-episode CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\evaluation_per_episode.csv
+Evaluation summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\evaluation_summary.csv
+Actor checkpoint: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\checkpoint_actor.pth
+Critic checkpoint: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\checkpoint_critic.pth

@@ -1,0 +1,12 @@
+Run ID: stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed34567
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed34567
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\baseline1
+Config: curriculum_stage_2_easy_overtake
+Training seed: 34567
+Eval type: full
+Completed single mean+max study.
+Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed34567\training_stdout.log
+Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed34567\training_summary.csv
+Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed34567\evaluation_summary.csv
+Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed34567\evaluation_per_episode.csv

@@ -1,0 +1,28 @@
+﻿{
+    "run_id":  "stage2_backbones_5x200k_fresh_20260509_053756",
+    "pid":  28204,
+    "started_at":  "2026-05-09T05:37:56",
+    "python":  "C:\\Users\\milke\\miniconda3\\envs\\highway\\python.exe",
+    "script":  "C:\\Users\\milke\\groupCoursework\\FYP\\run_stage2_backbones_5x200k_study.py",
+    "output_dir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_fresh_20260509_053756",
+    "stdout_log":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_fresh_20260509_053756\\orchestrator_stdout.log",
+    "stderr_log":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_fresh_20260509_053756\\orchestrator_stderr.log",
+    "models":  [
+                   "mlp_baseline",
+                   "deep_sets_mean",
+                   "deep_sets_mean_max",
+                   "self_attention"
+               ],
+    "train_seeds":  [
+                        12345,
+                        23456,
+                        34567,
+                        45678,
+                        56789
+                    ],
+    "eval_seeds":  "1000-1049",
+    "total_timesteps_per_run":  200000,
+    "env":  "continuous-spawn-highway-v0",
+    "config":  "curriculum_stage_2_easy_overtake",
+    "ego_start_lane_policy":  "random"
+}

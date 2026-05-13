@@ -1,0 +1,33 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\\uncertainty2_self_attention_threshold\\seed12345\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\\uncertainty2_self_attention_threshold\\seed12345\\training_log.csv",
+    "final_training_return": 53.765,
+    "final_training_episode_length": 61.21,
+    "final_training_timesteps": 102859
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\\uncertainty2_self_attention_threshold\\seed12345\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\\uncertainty2_self_attention_threshold\\seed12345\\evaluation_per_episode.csv",
+    "avg_episodic_return": 155.8360899543493,
+    "avg_episodic_length": 174.66,
+    "collision_rate": 1.0,
+    "lane_counts": {
+      "0": 12,
+      "1": 21,
+      "2": 17
+    },
+    "eval_action_mode": "safeguarded",
+    "safeguard_threshold": 0.001,
+    "mc_samples": 5,
+    "avg_uncertainty": 0.0030059348005731373,
+    "avg_max_uncertainty": 0.014673680970445276,
+    "avg_activations_per_episode": 146.34,
+    "avg_activation_rate": 0.8355751987747704,
+    "total_activations": 7317
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\\uncertainty2_self_attention_threshold\\seed12345\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\\uncertainty2_self_attention_threshold\\seed12345\\checkpoint_critic.pth"
+  }
+}

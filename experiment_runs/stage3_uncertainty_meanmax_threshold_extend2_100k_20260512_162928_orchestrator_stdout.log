@@ -1,0 +1,56 @@
+Run ID: stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928
+Model: Uncertainty mean+max threshold (uncertainty_aware_mean+max_backbone)
+Config: curriculum_stage_3_mixed_traffic
+Target timesteps: 100000
+Train seeds: [45678, 56789]
+Eval seeds: 1000..1049 (50 episodes)
+Safeguard threshold: 0.0005
+MC samples: 5
+
+Running Uncertainty mean+max threshold | seed=45678 | timesteps=100000
+Command:
+$env:MODEL_SUBDIR='uncertainty_aware_mean+max_backbone'; $env:MODEL_LABEL='uncertainty_meanmax_threshold'; $env:HIGHWAY_CONFIG='curriculum_stage_3_mixed_traffic'; $env:TOTAL_TIMESTEPS='100000'; $env:TRAIN_SEED='45678'; $env:EVAL_SEEDS='[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049]'; $env:EVAL_MAX_STEPS='full'; $env:EVAL_ACTION_MODE='safeguarded'; $env:SAFEGUARD_THRESHOLD='0.0005'; $env:MC_SAMPLES='5'; $env:TORCH_NUM_THREADS='1'; $env:RUN_ID='stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678'; $env:EGO_START_LANE_POLICY='random'; & 'C:\Users\milke\miniconda3\envs\highway\python.exe' 'C:\Users\milke\groupCoursework\FYP\run_meanmax_single_stage_study.py'
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678.log
+[uncertainty_meanmax_threshold:45678] Run ID: stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678
+[uncertainty_meanmax_threshold:45678] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678
+[uncertainty_meanmax_threshold:45678] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[uncertainty_meanmax_threshold:45678] Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware_mean+max_backbone
+[uncertainty_meanmax_threshold:45678] Config: curriculum_stage_3_mixed_traffic
+[uncertainty_meanmax_threshold:45678] Training seed: 45678
+[uncertainty_meanmax_threshold:45678] Eval type: full
+[uncertainty_meanmax_threshold:45678] Eval action mode: safeguarded
+[uncertainty_meanmax_threshold:45678] Safeguard threshold: 0.0005
+[uncertainty_meanmax_threshold:45678] MC samples: 5
+[uncertainty_meanmax_threshold:45678] Completed single mean+max study.
+[uncertainty_meanmax_threshold:45678] Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678\training_stdout.log
+[uncertainty_meanmax_threshold:45678] Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678\training_summary.csv
+[uncertainty_meanmax_threshold:45678] Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678\evaluation_summary.csv
+[uncertainty_meanmax_threshold:45678] Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed45678\evaluation_per_episode.csv
+
+Running Uncertainty mean+max threshold | seed=56789 | timesteps=100000
+Command:
+$env:MODEL_SUBDIR='uncertainty_aware_mean+max_backbone'; $env:MODEL_LABEL='uncertainty_meanmax_threshold'; $env:HIGHWAY_CONFIG='curriculum_stage_3_mixed_traffic'; $env:TOTAL_TIMESTEPS='100000'; $env:TRAIN_SEED='56789'; $env:EVAL_SEEDS='[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049]'; $env:EVAL_MAX_STEPS='full'; $env:EVAL_ACTION_MODE='safeguarded'; $env:SAFEGUARD_THRESHOLD='0.0005'; $env:MC_SAMPLES='5'; $env:TORCH_NUM_THREADS='1'; $env:RUN_ID='stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789'; $env:EGO_START_LANE_POLICY='random'; & 'C:\Users\milke\miniconda3\envs\highway\python.exe' 'C:\Users\milke\groupCoursework\FYP\run_meanmax_single_stage_study.py'
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789.log
+[uncertainty_meanmax_threshold:56789] Run ID: stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789
+[uncertainty_meanmax_threshold:56789] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789
+[uncertainty_meanmax_threshold:56789] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[uncertainty_meanmax_threshold:56789] Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware_mean+max_backbone
+[uncertainty_meanmax_threshold:56789] Config: curriculum_stage_3_mixed_traffic
+[uncertainty_meanmax_threshold:56789] Training seed: 56789
+[uncertainty_meanmax_threshold:56789] Eval type: full
+[uncertainty_meanmax_threshold:56789] Eval action mode: safeguarded
+[uncertainty_meanmax_threshold:56789] Safeguard threshold: 0.0005
+[uncertainty_meanmax_threshold:56789] MC samples: 5
+[uncertainty_meanmax_threshold:56789] Completed single mean+max study.
+[uncertainty_meanmax_threshold:56789] Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789\training_stdout.log
+[uncertainty_meanmax_threshold:56789] Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789\training_summary.csv
+[uncertainty_meanmax_threshold:56789] Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789\evaluation_summary.csv
+[uncertainty_meanmax_threshold:56789] Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\seed56789\evaluation_per_episode.csv
+
+Stage 3 uncertainty mean+max threshold study complete.
+Per-run summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\per_run_summary.csv
+Aggregate summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\aggregate_summary.csv
+Combined per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\combined_evaluation_per_episode.csv
+Combined 5-seed per-run summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\combined_5seed_per_run_summary.csv
+Combined 5-seed aggregate summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\combined_5seed_aggregate_summary.csv

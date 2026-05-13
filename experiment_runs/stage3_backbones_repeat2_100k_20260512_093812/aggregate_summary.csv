@@ -1,0 +1,5 @@
+model_label,display_name,runs,train_seeds,target_timesteps,avg_train_return,avg_train_length,avg_eval_return,avg_eval_length,collision_rate
+basic_mlp,Basic MLP,2,12345;23456,100000,22.273201,32.5855825,141.104615,176.05,0.6699999999999999
+deep_sets_mean,Deep Sets mean,2,12345;23456,100000,32.3008815,44.835667,144.2590265,181.34,0.8300000000000001
+deep_sets_mean_max,Deep Sets mean+max,2,12345;23456,100000,27.823195,39.1356035,164.2707255,203.95,0.78
+self_attention,Self-attention,2,12345;23456,100000,47.8276985,62.2527475,109.56804,136.76999999999998,0.9299999999999999

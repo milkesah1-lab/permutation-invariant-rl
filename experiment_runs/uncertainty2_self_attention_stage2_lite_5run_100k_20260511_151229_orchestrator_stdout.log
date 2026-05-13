@@ -1,0 +1,81 @@
+Run ID: uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model: Uncertainty2 self-attention threshold (uncertainty_aware2_PPO_self_attention_backbone)
+Env: continuous-spawn-highway-v0
+Base config: curriculum_stage_2_easy_overtake
+Config variant: curriculum_stage_2_easy_overtake_lite
+Target timesteps: 100000
+Train seeds: [12345, 23456, 34567, 45678, 56789]
+Eval seeds: 1000..1049 (50 episodes)
+Eval action mode: safeguarded
+Safeguard threshold: 0.0005
+MC samples: 5
+Resume: False
+
+Running Uncertainty2 self-attention threshold (uncertainty_aware2_PPO_self_attention_backbone) | seed=12345 | timesteps=100000
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\uncertainty2_self_attention_threshold_seed12345.log
+[uncertainty2_self_attention_threshold:12345] Run ID: uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed12345
+[uncertainty2_self_attention_threshold:12345] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed12345
+[uncertainty2_self_attention_threshold:12345] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[uncertainty2_self_attention_threshold:12345] Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware2_PPO_self_attention_backbone
+[uncertainty2_self_attention_threshold:12345] Config: curriculum_stage_2_easy_overtake
+[uncertainty2_self_attention_threshold:12345] Training seed: 12345
+[uncertainty2_self_attention_threshold:12345] Eval type: full
+[uncertainty2_self_attention_threshold:12345] Eval action mode: safeguarded
+[uncertainty2_self_attention_threshold:12345] Safeguard threshold: 0.0005
+[uncertainty2_self_attention_threshold:12345] MC samples: 5
+[uncertainty2_self_attention_threshold:12345] Completed single mean+max study.
+[uncertainty2_self_attention_threshold:12345] Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed12345\training_stdout.log
+[uncertainty2_self_attention_threshold:12345] Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed12345\training_summary.csv
+[uncertainty2_self_attention_threshold:12345] Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed12345\evaluation_summary.csv
+[uncertainty2_self_attention_threshold:12345] Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed12345\evaluation_per_episode.csv
+
+Running Uncertainty2 self-attention threshold (uncertainty_aware2_PPO_self_attention_backbone) | seed=23456 | timesteps=100000
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\uncertainty2_self_attention_threshold_seed23456.log
+[uncertainty2_self_attention_threshold:23456] Run ID: uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed23456
+[uncertainty2_self_attention_threshold:23456] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed23456
+[uncertainty2_self_attention_threshold:23456] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[uncertainty2_self_attention_threshold:23456] Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware2_PPO_self_attention_backbone
+[uncertainty2_self_attention_threshold:23456] Config: curriculum_stage_2_easy_overtake
+[uncertainty2_self_attention_threshold:23456] Training seed: 23456
+[uncertainty2_self_attention_threshold:23456] Eval type: full
+[uncertainty2_self_attention_threshold:23456] Eval action mode: safeguarded
+[uncertainty2_self_attention_threshold:23456] Safeguard threshold: 0.0005
+[uncertainty2_self_attention_threshold:23456] MC samples: 5
+[uncertainty2_self_attention_threshold:23456] Completed single mean+max study.
+[uncertainty2_self_attention_threshold:23456] Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed23456\training_stdout.log
+[uncertainty2_self_attention_threshold:23456] Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed23456\training_summary.csv
+[uncertainty2_self_attention_threshold:23456] Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed23456\evaluation_summary.csv
+[uncertainty2_self_attention_threshold:23456] Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed23456\evaluation_per_episode.csv
+
+Running Uncertainty2 self-attention threshold (uncertainty_aware2_PPO_self_attention_backbone) | seed=34567 | timesteps=100000
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\uncertainty2_self_attention_threshold_seed34567.log
+[uncertainty2_self_attention_threshold:34567] Run ID: uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567
+[uncertainty2_self_attention_threshold:34567] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567
+[uncertainty2_self_attention_threshold:34567] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[uncertainty2_self_attention_threshold:34567] Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware2_PPO_self_attention_backbone
+[uncertainty2_self_attention_threshold:34567] Config: curriculum_stage_2_easy_overtake
+[uncertainty2_self_attention_threshold:34567] Training seed: 34567
+[uncertainty2_self_attention_threshold:34567] Eval type: full
+[uncertainty2_self_attention_threshold:34567] Eval action mode: safeguarded
+[uncertainty2_self_attention_threshold:34567] Safeguard threshold: 0.0005
+[uncertainty2_self_attention_threshold:34567] MC samples: 5
+[uncertainty2_self_attention_threshold:34567] Completed single mean+max study.
+[uncertainty2_self_attention_threshold:34567] Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\training_stdout.log
+[uncertainty2_self_attention_threshold:34567] Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\training_summary.csv
+[uncertainty2_self_attention_threshold:34567] Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\evaluation_summary.csv
+[uncertainty2_self_attention_threshold:34567] Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed34567\evaluation_per_episode.csv
+
+Running Uncertainty2 self-attention threshold (uncertainty_aware2_PPO_self_attention_backbone) | seed=45678 | timesteps=100000
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\uncertainty2_self_attention_threshold_seed45678.log
+[uncertainty2_self_attention_threshold:45678] Run ID: uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed45678
+[uncertainty2_self_attention_threshold:45678] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_stage2_lite_5run_100k_20260511_151229\seed45678
+[uncertainty2_self_attention_threshold:45678] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[uncertainty2_self_attention_threshold:45678] Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware2_PPO_self_attention_backbone
+[uncertainty2_self_attention_threshold:45678] Config: curriculum_stage_2_easy_overtake
+[uncertainty2_self_attention_threshold:45678] Training seed: 45678
+[uncertainty2_self_attention_threshold:45678] Eval type: full
+[uncertainty2_self_attention_threshold:45678] Eval action mode: safeguarded
+[uncertainty2_self_attention_threshold:45678] Safeguard threshold: 0.0005
+[uncertainty2_self_attention_threshold:45678] MC samples: 5

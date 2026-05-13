@@ -1,0 +1,28 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\\seed56789\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\\seed56789\\training_log.csv",
+    "final_training_return": 31.635,
+    "final_training_episode_length": 43.61,
+    "final_training_timesteps": 103069
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\\seed56789\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\\seed56789\\evaluation_per_episode.csv",
+    "avg_episodic_return": 187.2963973111295,
+    "avg_episodic_length": 232.74,
+    "collision_rate": 0.78,
+    "eval_action_mode": "safeguarded",
+    "safeguard_threshold": 0.0005,
+    "mc_samples": 5,
+    "avg_uncertainty": 0.00045599439959839846,
+    "avg_max_uncertainty": 0.0018885367549955844,
+    "avg_activations_per_episode": 80.64,
+    "avg_activation_rate": 0.3462208895157608,
+    "total_activations": 4032
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\\seed56789\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage3_uncertainty_meanmax_threshold_extend2_100k_20260512_162928\\seed56789\\checkpoint_critic.pth"
+  }
+}

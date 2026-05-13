@@ -1,0 +1,243 @@
+COMMAND:
+$env:MODEL_SUBDIR='baseline1'; $env:MODEL_LABEL='basic_mlp'; $env:HIGHWAY_CONFIG='curriculum_stage_3_mixed_traffic'; $env:TOTAL_TIMESTEPS='100000'; $env:TRAIN_SEED='12345'; $env:EVAL_SEEDS='[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049]'; $env:EVAL_MAX_STEPS='full'; $env:EVAL_ACTION_MODE='actor'; $env:TORCH_NUM_THREADS='1'; $env:RUN_ID='stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345'; $env:EGO_START_LANE_POLICY='random'; & 'C:\Users\milke\miniconda3\envs\highway\python.exe' 'C:\Users\milke\groupCoursework\FYP\run_meanmax_single_stage_study.py'
+
+Training seed: 12345
+Config: curriculum_stage_3_mixed_traffic
+Target timesteps: 100000
+Eval type: full
+Eval action mode: actor
+Evaluation seeds: 1000..1049 (50 episodes)
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345
+Successfully set seed to 12345
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 100000 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 13.61
+Average Episodic Return: 7.55
+Average Loss: -0.00323
+Timesteps So Far: 4098
+Iteration took: 73.34 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 13.98
+Average Episodic Return: 7.75
+Average Loss: -0.00261
+Timesteps So Far: 8194
+Iteration took: 70.86 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 14.74
+Average Episodic Return: 8.23
+Average Loss: -0.0027
+Timesteps So Far: 12291
+Iteration took: 64.58 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 15.15
+Average Episodic Return: 8.63
+Average Loss: -0.00302
+Timesteps So Far: 16398
+Iteration took: 63.74 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 16.65
+Average Episodic Return: 9.54
+Average Loss: -0.00261
+Timesteps So Far: 20511
+Iteration took: 62.15 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 18.55
+Average Episodic Return: 11.16
+Average Loss: -0.00214
+Timesteps So Far: 24610
+Iteration took: 60.03 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 17.81
+Average Episodic Return: 10.27
+Average Loss: -0.00264
+Timesteps So Far: 28707
+Iteration took: 60.5 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 19.33
+Average Episodic Return: 11.56
+Average Loss: -0.00179
+Timesteps So Far: 32805
+Iteration took: 61.34 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #9 --------------------
+Average Episodic Length: 20.9
+Average Episodic Return: 12.72
+Average Loss: -0.00161
+Timesteps So Far: 36923
+Iteration took: 60.91 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #10 --------------------
+Average Episodic Length: 22.65
+Average Episodic Return: 14.14
+Average Loss: -0.00124
+Timesteps So Far: 41022
+Iteration took: 60.01 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #11 --------------------
+Average Episodic Length: 25.81
+Average Episodic Return: 16.71
+Average Loss: -0.00105
+Timesteps So Far: 45152
+Iteration took: 60.42 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #12 --------------------
+Average Episodic Length: 23.69
+Average Episodic Return: 14.87
+Average Loss: -0.00082
+Timesteps So Far: 49251
+Iteration took: 59.71 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #13 --------------------
+Average Episodic Length: 25.3
+Average Episodic Return: 16.72
+Average Loss: -0.00062
+Timesteps So Far: 53350
+Iteration took: 61.58 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #14 --------------------
+Average Episodic Length: 22.82
+Average Episodic Return: 14.83
+Average Loss: -0.0005
+Timesteps So Far: 57458
+Iteration took: 60.3 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #15 --------------------
+Average Episodic Length: 24.71
+Average Episodic Return: 15.64
+Average Loss: -0.0004
+Timesteps So Far: 61560
+Iteration took: 59.39 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #16 --------------------
+Average Episodic Length: 26.51
+Average Episodic Return: 17.48
+Average Loss: -0.00039
+Timesteps So Far: 65669
+Iteration took: 59.51 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #17 --------------------
+Average Episodic Length: 24.71
+Average Episodic Return: 15.62
+Average Loss: -0.00051
+Timesteps So Far: 69771
+Iteration took: 60.68 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #18 --------------------
+Average Episodic Length: 24.1
+Average Episodic Return: 15.24
+Average Loss: -0.00057
+Timesteps So Far: 73868
+Iteration took: 64.59 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #19 --------------------
+Average Episodic Length: 27.09
+Average Episodic Return: 17.49
+Average Loss: -0.00061
+Timesteps So Far: 77986
+Iteration took: 70.87 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #20 --------------------
+Average Episodic Length: 27.78
+Average Episodic Return: 18.21
+Average Loss: -0.00049
+Timesteps So Far: 82098
+Iteration took: 61.62 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #21 --------------------
+Average Episodic Length: 27.58
+Average Episodic Return: 17.93
+Average Loss: -0.00049
+Timesteps So Far: 86207
+Iteration took: 60.45 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #22 --------------------
+Average Episodic Length: 29.29
+Average Episodic Return: 19.18
+Average Loss: -0.00042
+Timesteps So Far: 90308
+Iteration took: 61.83 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #23 --------------------
+Average Episodic Length: 26.71
+Average Episodic Return: 17.21
+Average Loss: -0.00065
+Timesteps So Far: 94421
+Iteration took: 63.39 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #24 --------------------
+Average Episodic Length: 29.05
+Average Episodic Return: 19.13
+Average Loss: -0.00052
+Timesteps So Far: 98517
+Iteration took: 62.98 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #25 --------------------
+Average Episodic Length: 29.69
+Average Episodic Return: 19.57
+Average Loss: -0.0006
+Timesteps So Far: 102614
+Iteration took: 61.81 secs
+------------------------------------------------------
+
+Training CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\training_log.csv
+Training summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\training_summary.csv
+Evaluation per-episode CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\evaluation_per_episode.csv
+Evaluation summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\evaluation_summary.csv
+Actor checkpoint: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\checkpoint_actor.pth
+Critic checkpoint: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\checkpoint_critic.pth

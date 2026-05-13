@@ -1,0 +1,239 @@
+Training seed: 45678
+Config: curriculum_stage_2_easy_overtake
+Target timesteps: 100000
+Eval type: full
+Evaluation seeds: 1000..1049 (50 episodes)
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678
+Successfully set seed to 45678
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 100000 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 21.37
+Average Episodic Return: 14.07
+Average Loss: -0.00271
+Timesteps So Far: 4124
+Iteration took: 60.97 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 21.79
+Average Episodic Return: 14.34
+Average Loss: -0.00184
+Timesteps So Far: 8221
+Iteration took: 58.94 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 26.3
+Average Episodic Return: 18.17
+Average Loss: -0.00055
+Timesteps So Far: 12324
+Iteration took: 61.36 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 25.32
+Average Episodic Return: 17.01
+Average Loss: -0.00055
+Timesteps So Far: 16451
+Iteration took: 60.41 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 24.95
+Average Episodic Return: 16.94
+Average Loss: -0.00104
+Timesteps So Far: 20593
+Iteration took: 70.0 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 26.44
+Average Episodic Return: 18.55
+Average Loss: -0.00105
+Timesteps So Far: 24691
+Iteration took: 121.26 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 29.55
+Average Episodic Return: 20.53
+Average Loss: -0.00052
+Timesteps So Far: 28799
+Iteration took: 95.84 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 29.63
+Average Episodic Return: 20.78
+Average Loss: -0.00121
+Timesteps So Far: 32917
+Iteration took: 69.65 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #9 --------------------
+Average Episodic Length: 29.26
+Average Episodic Return: 20.48
+Average Loss: -0.00088
+Timesteps So Far: 37013
+Iteration took: 57.75 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #10 --------------------
+Average Episodic Length: 28.3
+Average Episodic Return: 19.84
+Average Loss: -0.00058
+Timesteps So Far: 41117
+Iteration took: 58.44 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #11 --------------------
+Average Episodic Length: 32.9
+Average Episodic Return: 23.27
+Average Loss: -0.00069
+Timesteps So Far: 45229
+Iteration took: 55.52 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #12 --------------------
+Average Episodic Length: 33.88
+Average Episodic Return: 24.23
+Average Loss: -0.00053
+Timesteps So Far: 49329
+Iteration took: 57.1 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #13 --------------------
+Average Episodic Length: 32.02
+Average Episodic Return: 22.71
+Average Loss: -0.00073
+Timesteps So Far: 53427
+Iteration took: 57.88 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #14 --------------------
+Average Episodic Length: 31.53
+Average Episodic Return: 22.33
+Average Loss: -0.00048
+Timesteps So Far: 57589
+Iteration took: 59.35 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #15 --------------------
+Average Episodic Length: 32.22
+Average Episodic Return: 22.86
+Average Loss: -0.00064
+Timesteps So Far: 61713
+Iteration took: 61.94 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #16 --------------------
+Average Episodic Length: 35.74
+Average Episodic Return: 25.53
+Average Loss: -0.00089
+Timesteps So Far: 65823
+Iteration took: 123.87 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #17 --------------------
+Average Episodic Length: 31.23
+Average Episodic Return: 22.09
+Average Loss: -0.00053
+Timesteps So Far: 69945
+Iteration took: 62.98 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #18 --------------------
+Average Episodic Length: 32.81
+Average Episodic Return: 23.4
+Average Loss: -0.00067
+Timesteps So Far: 74046
+Iteration took: 72.1 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #19 --------------------
+Average Episodic Length: 34.1
+Average Episodic Return: 24.53
+Average Loss: -0.0005
+Timesteps So Far: 78172
+Iteration took: 74.94 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #20 --------------------
+Average Episodic Length: 39.88
+Average Episodic Return: 29.08
+Average Loss: -0.00064
+Timesteps So Far: 82319
+Iteration took: 117.31 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #21 --------------------
+Average Episodic Length: 36.92
+Average Episodic Return: 26.7
+Average Loss: -0.00046
+Timesteps So Far: 86417
+Iteration took: 102.25 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #22 --------------------
+Average Episodic Length: 37.0
+Average Episodic Return: 26.88
+Average Loss: -0.00035
+Timesteps So Far: 90524
+Iteration took: 85.24 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #23 --------------------
+Average Episodic Length: 39.91
+Average Episodic Return: 29.48
+Average Loss: -0.00072
+Timesteps So Far: 94635
+Iteration took: 78.41 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #24 --------------------
+Average Episodic Length: 39.94
+Average Episodic Return: 29.01
+Average Loss: -0.00017
+Timesteps So Far: 98749
+Iteration took: 79.88 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #25 --------------------
+Average Episodic Length: 39.21
+Average Episodic Return: 28.52
+Average Loss: -0.00039
+Timesteps So Far: 102866
+Iteration took: 79.21 secs
+------------------------------------------------------
+
+Training CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678\training_log.csv
+Training summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678\training_summary.csv
+Evaluation per-episode CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678\evaluation_per_episode.csv
+Evaluation summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678\evaluation_summary.csv
+Actor checkpoint: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678\checkpoint_actor.pth
+Critic checkpoint: C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed45678\checkpoint_critic.pth

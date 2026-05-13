@@ -1,0 +1,12 @@
+Run ID: self_attention_continuous_stage2_lite_5run_100k_20260510_210945\seed56789
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_5run_100k_20260510_210945\seed56789
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\self_attention_model
+Config: curriculum_stage_2_easy_overtake
+Training seed: 56789
+Eval type: full
+Completed single mean+max study.
+Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_5run_100k_20260510_210945\seed56789\training_stdout.log
+Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_5run_100k_20260510_210945\seed56789\training_summary.csv
+Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_5run_100k_20260510_210945\seed56789\evaluation_summary.csv
+Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_5run_100k_20260510_210945\seed56789\evaluation_per_episode.csv

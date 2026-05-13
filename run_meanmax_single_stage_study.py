@@ -19,6 +19,7 @@ PYTHON = Path(os.environ.get("PYTHON_EXE", DEFAULT_PYTHON if DEFAULT_PYTHON.exis
 DEFAULT_RUN_ID = f"meanmax_single_stage2_full_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 RUN_ID = os.environ.get("RUN_ID", DEFAULT_RUN_ID)
 OUT_DIR = ROOT / "experiment_runs" / RUN_ID
+COMMAND_HEADER = os.environ.get("COMMAND_HEADER", "").strip()
 
 MODEL_LABEL = os.environ.get("MODEL_LABEL", "deep_sets_mean_max")
 CONFIG_NAME = os.environ.get("HIGHWAY_CONFIG", "curriculum_stage_2_easy_overtake")
@@ -30,6 +31,9 @@ EVAL_MAX_STEPS = None if EVAL_MAX_STEPS_RAW in {"", "none", "full"} else int(EVA
 TORCH_NUM_THREADS = int(os.environ.get("TORCH_NUM_THREADS", "1"))
 EGO_START_LANE_POLICY = os.environ.get("EGO_START_LANE_POLICY", "random")
 CONFIG_OVERRIDES = json.loads(os.environ.get("CONFIG_OVERRIDES", "{}"))
+EVAL_ACTION_MODE = os.environ.get("EVAL_ACTION_MODE", "actor").strip().lower()
+SAFEGUARD_THRESHOLD = float(os.environ.get("SAFEGUARD_THRESHOLD", "0.0005"))
+MC_SAMPLES = int(os.environ.get("MC_SAMPLES", "5"))
 
 HYPERPARAMETERS = {
     "timesteps_per_batch": 4096,
@@ -40,6 +44,13 @@ HYPERPARAMETERS = {
     "clip": 0.2,
     "fixed_cov_var": 0.08,
 }
+
+if "LAMBDA_U" in os.environ:
+    HYPERPARAMETERS["lambda_u"] = float(os.environ["LAMBDA_U"])
+if "DROPOUT_P" in os.environ:
+    HYPERPARAMETERS["dropout_p"] = float(os.environ["DROPOUT_P"])
+if "PPO_MC_SAMPLES" in os.environ:
+    HYPERPARAMETERS["mc_samples"] = int(os.environ["PPO_MC_SAMPLES"])
 
 
 CHILD_CODE = r"""
@@ -83,6 +94,14 @@ hyperparameters = json.loads(os.environ["HYPERPARAMETERS"])
 torch_num_threads = int(os.environ.get("TORCH_NUM_THREADS", "1"))
 ego_start_lane_policy = os.environ.get("EGO_START_LANE_POLICY", "random")
 config_overrides = json.loads(os.environ.get("CONFIG_OVERRIDES", "{}"))
+eval_action_mode = os.environ.get("EVAL_ACTION_MODE", "actor").strip().lower()
+safeguard_threshold = float(os.environ.get("SAFEGUARD_THRESHOLD", "0.0005"))
+mc_samples = int(os.environ.get("MC_SAMPLES", "5"))
+
+if eval_action_mode not in {"actor", "safeguarded"}:
+    raise ValueError(f"Unsupported EVAL_ACTION_MODE={eval_action_mode!r}")
+if eval_action_mode == "safeguarded" and not hasattr(PPO, "get_safeguarded_action"):
+    raise AttributeError("Safeguarded evaluation requested, but PPO has no get_safeguarded_action method")
 
 out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -143,6 +162,9 @@ run_config_path.write_text(
             "eval_seeds": eval_seeds,
             "eval_max_steps": eval_max_steps,
             "eval_type": "full" if eval_max_steps is None else "capped",
+            "eval_action_mode": eval_action_mode,
+            "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else None,
+            "mc_samples": mc_samples if eval_action_mode == "safeguarded" else None,
             "hyperparameters": hyperparameters,
             "ego_start_lane_policy": controlled_config().get("ego_start_lane_policy"),
             "config_overrides": config_overrides,
@@ -159,6 +181,10 @@ print(f"Training seed: {train_seed}", flush=True)
 print(f"Config: {config_name}", flush=True)
 print(f"Target timesteps: {target_timesteps}", flush=True)
 print(f"Eval type: {'full' if eval_max_steps is None else f'capped at {eval_max_steps}'}", flush=True)
+print(f"Eval action mode: {eval_action_mode}", flush=True)
+if eval_action_mode == "safeguarded":
+    print(f"Safeguard threshold: {safeguard_threshold}", flush=True)
+    print(f"MC samples: {mc_samples}", flush=True)
 print(f"Evaluation seeds: {eval_seeds[0]}..{eval_seeds[-1]} ({len(eval_seeds)} episodes)", flush=True)
 print(f"Output directory: {out_dir}", flush=True)
 
@@ -192,7 +218,9 @@ with training_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
         "timesteps_so_far",
         "avg_episodic_return",
         "avg_episodic_length",
+        "avg_raw_episodic_return",
         "avg_loss",
+        "avg_critic_uncertainty",
         "iteration_seconds",
         "training_csv",
         "actor_checkpoint",
@@ -210,7 +238,9 @@ with training_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
             "timesteps_so_far": last_training.get("timesteps_so_far", ""),
             "avg_episodic_return": last_training.get("avg_episodic_return", ""),
             "avg_episodic_length": last_training.get("avg_episodic_length", ""),
+            "avg_raw_episodic_return": last_training.get("avg_raw_episodic_return", ""),
             "avg_loss": last_training.get("avg_loss", ""),
+            "avg_critic_uncertainty": last_training.get("avg_critic_uncertainty", ""),
             "iteration_seconds": last_training.get("iteration_seconds", ""),
             "training_csv": str(training_csv),
             "actor_checkpoint": str(actor_path),
@@ -238,11 +268,23 @@ with torch.no_grad():
         terminated = False
         truncated = False
         scenario = reset_info.get("scenario", "unknown")
+        uncertainties = []
+        activation_count = 0
 
         while not done:
-            obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
-            action = policy(obs_t).detach().cpu().numpy()
-            action = np.clip(action, eval_env.action_space.low, eval_env.action_space.high)
+            if eval_action_mode == "safeguarded":
+                action, uncertainty, activated = model.get_safeguarded_action(
+                    obs,
+                    threshold=safeguard_threshold,
+                    mc_samples=mc_samples,
+                )
+                uncertainties.append(float(uncertainty))
+                if activated:
+                    activation_count += 1
+            else:
+                obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
+                action = policy(obs_t).detach().cpu().numpy()
+                action = np.clip(action, eval_env.action_space.low, eval_env.action_space.high)
 
             obs, reward, terminated, truncated, info = eval_env.step(action)
             done = bool(terminated or truncated)
@@ -270,6 +312,13 @@ with torch.no_grad():
                 "terminated": int(terminated),
                 "truncated": int(truncated),
                 "scenario": scenario,
+                "eval_action_mode": eval_action_mode,
+                "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else "",
+                "mc_samples": mc_samples if eval_action_mode == "safeguarded" else "",
+                "avg_uncertainty": float(np.mean(uncertainties)) if uncertainties else "",
+                "max_uncertainty": float(np.max(uncertainties)) if uncertainties else "",
+                "activation_count": activation_count if eval_action_mode == "safeguarded" else "",
+                "activation_rate": (activation_count / episodic_length) if eval_action_mode == "safeguarded" and episodic_length else "",
             }
         )
 
@@ -289,6 +338,13 @@ with per_episode_csv.open("w", newline="", encoding="utf-8") as csv_file:
         "terminated",
         "truncated",
         "scenario",
+        "eval_action_mode",
+        "safeguard_threshold",
+        "mc_samples",
+        "avg_uncertainty",
+        "max_uncertainty",
+        "activation_count",
+        "activation_rate",
     ]
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()
@@ -297,6 +353,14 @@ with per_episode_csv.open("w", newline="", encoding="utf-8") as csv_file:
 avg_return = float(np.mean([row["episodic_return"] for row in per_episode_rows]))
 avg_length = float(np.mean([row["episodic_length"] for row in per_episode_rows]))
 collision_rate = float(np.mean([row["collided"] for row in per_episode_rows]))
+uncertainty_rows = [row for row in per_episode_rows if row["avg_uncertainty"] != ""]
+avg_uncertainty = float(np.mean([row["avg_uncertainty"] for row in uncertainty_rows])) if uncertainty_rows else ""
+avg_max_uncertainty = float(np.mean([row["max_uncertainty"] for row in uncertainty_rows])) if uncertainty_rows else ""
+avg_activations_per_episode = (
+    float(np.mean([row["activation_count"] for row in uncertainty_rows])) if uncertainty_rows else ""
+)
+avg_activation_rate = float(np.mean([row["activation_rate"] for row in uncertainty_rows])) if uncertainty_rows else ""
+total_activations = int(sum(row["activation_count"] for row in uncertainty_rows)) if uncertainty_rows else ""
 
 evaluation_summary_csv = out_dir / "evaluation_summary.csv"
 with evaluation_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
@@ -307,9 +371,17 @@ with evaluation_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
         "eval_episodes",
         "eval_type",
         "eval_max_steps",
+        "eval_action_mode",
+        "safeguard_threshold",
+        "mc_samples",
         "avg_episodic_return",
         "avg_episodic_length",
         "collision_rate",
+        "avg_uncertainty",
+        "avg_max_uncertainty",
+        "avg_activations_per_episode",
+        "avg_activation_rate",
+        "total_activations",
         "per_episode_csv",
         "actor_checkpoint",
     ]
@@ -323,9 +395,17 @@ with evaluation_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
             "eval_episodes": len(eval_seeds),
             "eval_type": "full" if eval_max_steps is None else "capped",
             "eval_max_steps": "" if eval_max_steps is None else eval_max_steps,
+            "eval_action_mode": eval_action_mode,
+            "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else "",
+            "mc_samples": mc_samples if eval_action_mode == "safeguarded" else "",
             "avg_episodic_return": round(avg_return, 6),
             "avg_episodic_length": round(avg_length, 6),
             "collision_rate": round(collision_rate, 6),
+            "avg_uncertainty": round(avg_uncertainty, 6) if avg_uncertainty != "" else "",
+            "avg_max_uncertainty": round(avg_max_uncertainty, 6) if avg_max_uncertainty != "" else "",
+            "avg_activations_per_episode": round(avg_activations_per_episode, 6) if avg_activations_per_episode != "" else "",
+            "avg_activation_rate": round(avg_activation_rate, 6) if avg_activation_rate != "" else "",
+            "total_activations": total_activations,
             "per_episode_csv": str(per_episode_csv),
             "actor_checkpoint": str(actor_path),
         }
@@ -348,6 +428,16 @@ summary_json.write_text(
                 "avg_episodic_return": avg_return,
                 "avg_episodic_length": avg_length,
                 "collision_rate": collision_rate,
+                "eval_action_mode": eval_action_mode,
+                "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else None,
+                "mc_samples": mc_samples if eval_action_mode == "safeguarded" else None,
+                "avg_uncertainty": avg_uncertainty if avg_uncertainty != "" else None,
+                "avg_max_uncertainty": avg_max_uncertainty if avg_max_uncertainty != "" else None,
+                "avg_activations_per_episode": (
+                    avg_activations_per_episode if avg_activations_per_episode != "" else None
+                ),
+                "avg_activation_rate": avg_activation_rate if avg_activation_rate != "" else None,
+                "total_activations": total_activations if total_activations != "" else None,
             },
             "checkpoints": {
                 "actor": str(actor_path),
@@ -387,6 +477,9 @@ def main() -> int:
                 "eval_seeds": EVAL_SEEDS,
                 "eval_max_steps": EVAL_MAX_STEPS,
                 "eval_type": "full" if EVAL_MAX_STEPS is None else "capped",
+                "eval_action_mode": EVAL_ACTION_MODE,
+                "safeguard_threshold": SAFEGUARD_THRESHOLD if EVAL_ACTION_MODE == "safeguarded" else None,
+                "mc_samples": MC_SAMPLES if EVAL_ACTION_MODE == "safeguarded" else None,
                 "hyperparameters": HYPERPARAMETERS,
                 "ego_start_lane_policy": EGO_START_LANE_POLICY,
                 "config_overrides": CONFIG_OVERRIDES,
@@ -405,6 +498,10 @@ def main() -> int:
     print(f"Config: {CONFIG_NAME}", flush=True)
     print(f"Training seed: {TRAIN_SEED}", flush=True)
     print(f"Eval type: {'full' if EVAL_MAX_STEPS is None else f'capped at {EVAL_MAX_STEPS}'}", flush=True)
+    print(f"Eval action mode: {EVAL_ACTION_MODE}", flush=True)
+    if EVAL_ACTION_MODE == "safeguarded":
+        print(f"Safeguard threshold: {SAFEGUARD_THRESHOLD}", flush=True)
+        print(f"MC samples: {MC_SAMPLES}", flush=True)
 
     env = os.environ.copy()
     env.update(
@@ -420,6 +517,9 @@ def main() -> int:
             "HYPERPARAMETERS": json.dumps(HYPERPARAMETERS),
             "EGO_START_LANE_POLICY": EGO_START_LANE_POLICY,
             "CONFIG_OVERRIDES": json.dumps(CONFIG_OVERRIDES),
+            "EVAL_ACTION_MODE": EVAL_ACTION_MODE,
+            "SAFEGUARD_THRESHOLD": str(SAFEGUARD_THRESHOLD),
+            "MC_SAMPLES": str(MC_SAMPLES),
             "TORCH_NUM_THREADS": str(TORCH_NUM_THREADS),
             "OMP_NUM_THREADS": str(TORCH_NUM_THREADS),
             "MKL_NUM_THREADS": str(TORCH_NUM_THREADS),
@@ -427,7 +527,17 @@ def main() -> int:
     )
 
     log_path = OUT_DIR / "training_stdout.log"
+    command_path = OUT_DIR / "command.txt"
+    if COMMAND_HEADER:
+        command_path.write_text(COMMAND_HEADER + "\n", encoding="utf-8")
+
     with log_path.open("w", encoding="utf-8") as log_file:
+        if COMMAND_HEADER:
+            log_file.write("COMMAND:\n")
+            log_file.write(COMMAND_HEADER)
+            log_file.write("\n\n")
+            log_file.flush()
+
         subprocess.run(
             [str(PYTHON), "-c", CHILD_CODE],
             cwd=str(MODEL_DIR),

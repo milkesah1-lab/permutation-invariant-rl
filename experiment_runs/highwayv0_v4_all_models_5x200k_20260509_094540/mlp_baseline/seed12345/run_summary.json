@@ -1,0 +1,33 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540\\mlp_baseline\\seed12345\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540\\mlp_baseline\\seed12345\\training_log.csv",
+    "final_training_return": 117.046614,
+    "final_training_episode_length": 142.62069,
+    "final_training_timesteps": 202667
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540\\mlp_baseline\\seed12345\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540\\mlp_baseline\\seed12345\\evaluation_per_episode.csv",
+    "avg_episodic_return": 450.85801869618854,
+    "avg_episodic_length": 540.5,
+    "collision_rate": 0.2,
+    "lane_counts": {
+      "0": 12,
+      "1": 21,
+      "2": 17
+    },
+    "eval_action_mode": "actor",
+    "safeguard_threshold": null,
+    "mc_samples": null,
+    "avg_uncertainty": "",
+    "avg_max_uncertainty": "",
+    "avg_activations_per_episode": "",
+    "avg_activation_rate": "",
+    "total_activations": ""
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540\\mlp_baseline\\seed12345\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540\\mlp_baseline\\seed12345\\checkpoint_critic.pth"
+  }
+}

@@ -1,0 +1,11 @@
+Config: curriculum_stage_2_easy_overtake
+Target timesteps: 200000
+Train seeds: [12345, 23456, 34567, 45678, 56789]
+Eval seeds: 1000..1049 (50 episodes)
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+
+=== Self-attention | output: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_stage2_5x200k_foreground_20260508_162148 ===
+Skipping Self-attention seed=12345 (already completed)
+Skipping Self-attention seed=23456 (already completed)
+Running Self-attention | seed=34567 | timesteps=200000
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_stage2_5x200k_foreground_20260508_162148\self_attention_seed34567.log

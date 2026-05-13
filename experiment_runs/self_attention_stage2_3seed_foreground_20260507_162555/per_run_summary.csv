@@ -1,0 +1,4 @@
+"model","train_seed","config_name","target_timesteps","avg_train_return","avg_train_length","avg_eval_return","avg_eval_length","collision_rate","run_dir"
+"self_attention","12345","curriculum_stage_2_easy_overtake","100000","32.862306","42","82.054629","98.2","1","C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_stage2_3seed_foreground_20260507_162555\seed12345"
+"self_attention","23456","curriculum_stage_2_easy_overtake","100000","63.087061","80","160.036268","197.16","0.68","C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_stage2_3seed_foreground_20260507_162555\seed23456"
+"self_attention","34567","curriculum_stage_2_easy_overtake","100000","88.426018","110.864865","257.981692","313.84","0.44","C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_stage2_3seed_foreground_20260507_162555\seed34567"

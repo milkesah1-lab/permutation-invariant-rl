@@ -1,0 +1,19 @@
+﻿{
+    "pid":  14752,
+    "started_at":  "2026-05-10T07:49:32",
+    "run_id":  "baseline_continuous_stage2_lite_5run_100k_20260510_074930",
+    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\baseline_continuous_stage2_lite_5run_100k_20260510_074930_orchestrator_stdout.log",
+    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\baseline_continuous_stage2_lite_5run_100k_20260510_074930_orchestrator_stderr.log",
+    "model":  "mlp_baseline",
+    "env":  "continuous-spawn-highway-v0",
+    "config":  "curriculum_stage_2_easy_overtake_lite",
+    "total_timesteps_per_run":  100000,
+    "train_seeds":  [
+                        12345,
+                        23456,
+                        34567,
+                        45678,
+                        56789
+                    ],
+    "eval_seeds":  "1000-1049"
+}

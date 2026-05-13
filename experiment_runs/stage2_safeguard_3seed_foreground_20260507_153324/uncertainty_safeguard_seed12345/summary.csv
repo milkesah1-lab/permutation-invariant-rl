@@ -1,0 +1,2 @@
+threshold,episodes,avg_episodic_return,avg_episodic_length,collision_rate,avg_uncertainty_per_episode,avg_episode_max_uncertainty,avg_activations_per_episode,avg_activation_rate_per_episode,total_activations
+0.0005,50,296.2629327680766,363.02,0.4,0.0009067639946302148,0.0040646147029474375,234.1,0.6562898738020185,11705

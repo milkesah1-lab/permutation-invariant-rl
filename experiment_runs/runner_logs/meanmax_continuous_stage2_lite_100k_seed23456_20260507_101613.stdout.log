@@ -1,0 +1,12 @@
+Run ID: meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\mean+max
+Config: curriculum_stage_2_easy_overtake
+Training seed: 23456
+Eval type: full
+Completed single mean+max study.
+Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613\training_stdout.log
+Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613\training_summary.csv
+Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613\evaluation_summary.csv
+Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613\evaluation_per_episode.csv

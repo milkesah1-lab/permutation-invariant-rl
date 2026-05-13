@@ -1,0 +1,18 @@
+﻿[
+    {
+        "RunId":  "meanmax_continuous_stage2_lite_100k_seed12345_20260507_101611",
+        "Seed":  "12345",
+        "Pid":  20228,
+        "OutDir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_continuous_stage2_lite_100k_seed12345_20260507_101611",
+        "RunnerStdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_continuous_stage2_lite_100k_seed12345_20260507_101611.stdout.log",
+        "RunnerStderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_continuous_stage2_lite_100k_seed12345_20260507_101611.stderr.log"
+    },
+    {
+        "RunId":  "meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613",
+        "Seed":  "23456",
+        "Pid":  24136,
+        "OutDir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613",
+        "RunnerStdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613.stdout.log",
+        "RunnerStderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_continuous_stage2_lite_100k_seed23456_20260507_101613.stderr.log"
+    }
+]

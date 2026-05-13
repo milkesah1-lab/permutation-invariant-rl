@@ -1,0 +1,14 @@
+Run ID: highwayv0_v4_all_models_5x200k_20260509_094540\mlp_baseline\seed12345
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\highwayv0_v4_all_models_5x200k_20260509_094540\mlp_baseline\seed12345
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\baseline1
+Env: highway-v0
+Config: highway_v0_stage_2_benchmark_v4
+Training seed: 12345
+Eval type: full
+Eval action mode: actor
+Completed highway-v0 mean+max study.
+Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\highwayv0_v4_all_models_5x200k_20260509_094540\mlp_baseline\seed12345\training_stdout.log
+Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\highwayv0_v4_all_models_5x200k_20260509_094540\mlp_baseline\seed12345\training_summary.csv
+Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\highwayv0_v4_all_models_5x200k_20260509_094540\mlp_baseline\seed12345\evaluation_summary.csv
+Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\highwayv0_v4_all_models_5x200k_20260509_094540\mlp_baseline\seed12345\evaluation_per_episode.csv

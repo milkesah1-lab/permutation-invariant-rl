@@ -1,0 +1,5 @@
+Mean+max checkpoint evaluation complete.
+Summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_safeguard_3seed_comparison_20260507_140757\meanmax_baseline_seed12345\summary.csv
+Per-episode CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_safeguard_3seed_comparison_20260507_140757\meanmax_baseline_seed12345\per_episode.csv
+Run config: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_safeguard_3seed_comparison_20260507_140757\meanmax_baseline_seed12345\run_config.json
+return=197.87 | length=246.60 | collision=0.760

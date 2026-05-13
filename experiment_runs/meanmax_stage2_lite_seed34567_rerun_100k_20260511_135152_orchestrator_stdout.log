@@ -1,0 +1,30 @@
+Run ID: meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model: Deep Sets mean+max seed 34567 rerun (mean+max)
+Env: continuous-spawn-highway-v0
+Base config: curriculum_stage_2_easy_overtake
+Config variant: curriculum_stage_2_easy_overtake_lite
+Target timesteps: 100000
+Train seeds: [34567]
+Eval seeds: 1000..1049 (50 episodes)
+Resume: False
+
+Running Deep Sets mean+max seed 34567 rerun (mean+max) | seed=34567 | timesteps=100000
+Log: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\deep_sets_mean_max_seed34567.log
+[deep_sets_mean_max:34567] Run ID: meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\seed34567
+[deep_sets_mean_max:34567] Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\seed34567
+[deep_sets_mean_max:34567] Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+[deep_sets_mean_max:34567] Model directory: C:\Users\milke\groupCoursework\FYP\mean+max
+[deep_sets_mean_max:34567] Config: curriculum_stage_2_easy_overtake
+[deep_sets_mean_max:34567] Training seed: 34567
+[deep_sets_mean_max:34567] Eval type: full
+[deep_sets_mean_max:34567] Completed single mean+max study.
+[deep_sets_mean_max:34567] Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\seed34567\training_stdout.log
+[deep_sets_mean_max:34567] Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\seed34567\training_summary.csv
+[deep_sets_mean_max:34567] Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\seed34567\evaluation_summary.csv
+[deep_sets_mean_max:34567] Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\seed34567\evaluation_per_episode.csv
+
+Completed Deep Sets mean+max seed 34567 rerun continuous stage2 lite 5-run study.
+Per-run summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\per_run_summary.csv
+Aggregate summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_stage2_lite_seed34567_rerun_100k_20260511_135152\aggregate_summary.csv

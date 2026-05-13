@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\milke\groupCoursework\FYP\run_baseline_continuous_stage2_lite_5run_100k.py", line 362, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\milke\groupCoursework\FYP\run_baseline_continuous_stage2_lite_5run_100k.py", line 350, in main
+    results = [run_seed(int(seed)) for seed in TRAIN_SEEDS]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milke\groupCoursework\FYP\run_baseline_continuous_stage2_lite_5run_100k.py", line 350, in <listcomp>
+    results = [run_seed(int(seed)) for seed in TRAIN_SEEDS]
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\milke\groupCoursework\FYP\run_baseline_continuous_stage2_lite_5run_100k.py", line 188, in run_seed
+    raise RuntimeError(f"{MODEL_LABEL} seed={train_seed} failed with exit code {return_code}")
+RuntimeError: self_attention seed=12345 failed with exit code 1

@@ -1,0 +1,13 @@
+source,model_label,display_name,train_seed,final_train_return,final_train_length,avg_eval_return,avg_eval_length,collision_rate
+original_20260424,basic_mlp,Basic MLP,,25.961352,37.116071,170.037561,211.16,0.76
+original_20260424,deep_sets_mean,Deep Sets mean,,25.24763,36.04386,202.009815,249.88,0.68
+original_20260424,deep_sets_mean_max,Deep Sets mean+max,,29.611903,42.112245,217.338945,269.36,0.64
+original_20260424,self_attention,Self-attention,,94.026821,117.942857,189.807354,236.84,0.72
+repeat_20260512,basic_mlp,Basic MLP,12345,19.572781,29.688406,149.721667,187.12,0.5
+repeat_20260512,basic_mlp,Basic MLP,23456,24.973621,35.482759,132.487563,164.98,0.84
+repeat_20260512,deep_sets_mean,Deep Sets mean,12345,34.594688,47.732558,149.844174,187.68,0.8
+repeat_20260512,deep_sets_mean,Deep Sets mean,23456,30.007075,41.938776,138.673879,175.0,0.86
+repeat_20260512,deep_sets_mean_max,Deep Sets mean+max,12345,29.287537,41.474747,202.096006,251.46,0.7
+repeat_20260512,deep_sets_mean_max,Deep Sets mean+max,23456,26.358853,36.79646,126.445445,156.44,0.86
+repeat_20260512,self_attention,Self-attention,12345,33.919707,45.582418,60.348255,76.88,1.0
+repeat_20260512,self_attention,Self-attention,23456,61.73569,78.923077,158.787825,196.66,0.86

@@ -1,0 +1,2 @@
+"model","runs","train_seeds","avg_train_return","avg_train_length","avg_eval_return","avg_eval_length","collision_rate"
+"deep_sets_mean","3","12345;23456;34567","31.1039243333333","42.4476246666667","206.700140666667","252.833333333333","0.58"

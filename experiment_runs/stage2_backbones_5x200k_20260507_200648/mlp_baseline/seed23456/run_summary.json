@@ -1,0 +1,20 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_20260507_200648\\mlp_baseline\\seed23456\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_20260507_200648\\mlp_baseline\\seed23456\\training_log.csv",
+    "final_training_return": 43.867268,
+    "final_training_episode_length": 57.08,
+    "final_training_timesteps": 202173
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_20260507_200648\\mlp_baseline\\seed23456\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_20260507_200648\\mlp_baseline\\seed23456\\evaluation_per_episode.csv",
+    "avg_episodic_return": 175.28027590620295,
+    "avg_episodic_length": 213.74,
+    "collision_rate": 0.7
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_20260507_200648\\mlp_baseline\\seed23456\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\stage2_backbones_5x200k_20260507_200648\\mlp_baseline\\seed23456\\checkpoint_critic.pth"
+  }
+}

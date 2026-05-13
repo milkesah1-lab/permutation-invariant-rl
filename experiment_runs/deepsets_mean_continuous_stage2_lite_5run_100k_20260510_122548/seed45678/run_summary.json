@@ -1,0 +1,20 @@
+{
+  "training": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\\seed45678\\training_summary.csv",
+    "training_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\\seed45678\\training_log.csv",
+    "final_training_return": 28.522866,
+    "final_training_episode_length": 39.209524,
+    "final_training_timesteps": 102866
+  },
+  "evaluation": {
+    "summary_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\\seed45678\\evaluation_summary.csv",
+    "per_episode_csv": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\\seed45678\\evaluation_per_episode.csv",
+    "avg_episodic_return": 133.40860924677258,
+    "avg_episodic_length": 166.14,
+    "collision_rate": 0.76
+  },
+  "checkpoints": {
+    "actor": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\\seed45678\\checkpoint_actor.pth",
+    "critic": "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\\seed45678\\checkpoint_critic.pth"
+  }
+}

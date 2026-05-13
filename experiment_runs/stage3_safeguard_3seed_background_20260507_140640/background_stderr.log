@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\milke\groupCoursework\FYP\run_stage3_safeguard_3seed_comparison.py", line 299, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\milke\groupCoursework\FYP\run_stage3_safeguard_3seed_comparison.py", line 175, in main
+    output_dir = run_job(job)
+                 ^^^^^^^^^^^^
+  File "C:\Users\milke\groupCoursework\FYP\run_stage3_safeguard_3seed_comparison.py", line 155, in run_job
+    raise RuntimeError(f"{variant} seed={seed} failed with exit code {return_code}")
+RuntimeError: meanmax_baseline seed=12345 failed with exit code 1

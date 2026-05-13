@@ -1,0 +1,80 @@
+Training seed: 23456
+Config: curriculum_stage_2_easy_overtake
+Target timesteps: 200000
+Eval type: full
+Evaluation seeds: 1000..1049 (50 episodes)
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\deep_sets_mean\seed23456
+Successfully set seed to 23456
+Learning... Running 300 timesteps per episode, 4096 timesteps per batch for a total of 200000 timesteps
+
+-------------------- Iteration #1 --------------------
+Average Episodic Length: 23.42
+Average Episodic Return: 15.17
+Average Loss: -0.00241
+Timesteps So Far: 4099
+Iteration took: 39.98 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #2 --------------------
+Average Episodic Length: 22.76
+Average Episodic Return: 14.59
+Average Loss: -0.00105
+Timesteps So Far: 8196
+Iteration took: 38.56 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #3 --------------------
+Average Episodic Length: 24.69
+Average Episodic Return: 15.95
+Average Loss: -0.0006
+Timesteps So Far: 12320
+Iteration took: 42.83 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #4 --------------------
+Average Episodic Length: 25.52
+Average Episodic Return: 16.6
+Average Loss: -0.00145
+Timesteps So Far: 16429
+Iteration took: 65.28 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #5 --------------------
+Average Episodic Length: 31.48
+Average Episodic Return: 22.09
+Average Loss: -0.00072
+Timesteps So Far: 20553
+Iteration took: 81.34 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #6 --------------------
+Average Episodic Length: 22.97
+Average Episodic Return: 14.91
+Average Loss: -0.00052
+Timesteps So Far: 24664
+Iteration took: 58.19 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #7 --------------------
+Average Episodic Length: 27.89
+Average Episodic Return: 18.89
+Average Loss: -0.00076
+Timesteps So Far: 28764
+Iteration took: 47.63 secs
+------------------------------------------------------
+
+
+-------------------- Iteration #8 --------------------
+Average Episodic Length: 31.06
+Average Episodic Return: 21.25
+Average Loss: -0.00034
+Timesteps So Far: 32864
+Iteration took: 51.74 secs
+------------------------------------------------------
+

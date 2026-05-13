@@ -1,0 +1,8 @@
+﻿{
+    "pid":  13092,
+    "started_at":  "2026-05-10T05:07:32",
+    "run_id":  "highwayv0_v4_all_models_5x200k_20260509_094540",
+    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540_resume_20260510_050732_orchestrator_stdout.log",
+    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\highwayv0_v4_all_models_5x200k_20260509_094540_resume_20260510_050732_orchestrator_stderr.log",
+    "resume":  true
+}

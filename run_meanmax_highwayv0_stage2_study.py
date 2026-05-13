@@ -29,6 +29,9 @@ EVAL_SEEDS = json.loads(os.environ.get("EVAL_SEEDS", json.dumps(list(range(1000,
 EVAL_MAX_STEPS_RAW = os.environ.get("EVAL_MAX_STEPS", "").strip().lower()
 EVAL_MAX_STEPS = None if EVAL_MAX_STEPS_RAW in {"", "none", "full"} else int(EVAL_MAX_STEPS_RAW)
 TORCH_NUM_THREADS = int(os.environ.get("TORCH_NUM_THREADS", "1"))
+EVAL_ACTION_MODE = os.environ.get("EVAL_ACTION_MODE", "actor")
+SAFEGUARD_THRESHOLD = float(os.environ.get("SAFEGUARD_THRESHOLD", "0.001"))
+MC_SAMPLES = int(os.environ.get("MC_SAMPLES", "5"))
 
 HYPERPARAMETERS = {
     "timesteps_per_batch": 4096,
@@ -157,6 +160,9 @@ eval_max_steps = None if eval_max_steps_raw in {"", "none", "full"} else int(eva
 eval_seeds = json.loads(os.environ["EVAL_SEEDS"])
 hyperparameters = json.loads(os.environ["HYPERPARAMETERS"])
 torch_num_threads = int(os.environ.get("TORCH_NUM_THREADS", "1"))
+eval_action_mode = os.environ.get("EVAL_ACTION_MODE", "actor")
+safeguard_threshold = float(os.environ.get("SAFEGUARD_THRESHOLD", "0.001"))
+mc_samples = int(os.environ.get("MC_SAMPLES", "5"))
 
 out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -353,12 +359,15 @@ run_config_path.write_text(
             "urgency_wrapper": "HighwayUrgencyObservation",
             "duration": probe_base_config.get("duration"),
             "policy_frequency": probe_base_config.get("policy_frequency"),
-            "torch_version": torch.__version__,
-            "cuda_available": torch.cuda.is_available(),
-            "torch_num_threads": torch_num_threads,
-        },
-        indent=2,
-    ),
+        "torch_version": torch.__version__,
+        "cuda_available": torch.cuda.is_available(),
+        "torch_num_threads": torch_num_threads,
+        "eval_action_mode": eval_action_mode,
+        "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else None,
+        "mc_samples": mc_samples if eval_action_mode == "safeguarded" else None,
+    },
+    indent=2,
+),
     encoding="utf-8",
 )
 
@@ -367,6 +376,10 @@ print(f"Config: {config_name}", flush=True)
 print(f"Training seed: {train_seed}", flush=True)
 print(f"Target timesteps: {target_timesteps}", flush=True)
 print(f"Eval type: {'full' if eval_max_steps is None else f'capped at {eval_max_steps}'}", flush=True)
+print(f"Eval action mode: {eval_action_mode}", flush=True)
+if eval_action_mode == "safeguarded":
+    print(f"Safeguard threshold: {safeguard_threshold}", flush=True)
+    print(f"MC samples: {mc_samples}", flush=True)
 print(f"Observation space: {probe_obs_shape}", flush=True)
 print(f"Evaluation seeds: {eval_seeds[0]}..{eval_seeds[-1]} ({len(eval_seeds)} episodes)", flush=True)
 print(f"Output directory: {out_dir}", flush=True)
@@ -449,11 +462,23 @@ with torch.no_grad():
         terminated = False
         truncated = False
         lane = start_lane(eval_env)
+        uncertainties = []
+        activation_count = 0
 
         while not done:
-            obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
-            action = policy(obs_t).detach().cpu().numpy()
-            action = np.clip(action, eval_env.action_space.low, eval_env.action_space.high)
+            if eval_action_mode == "safeguarded":
+                action, uncertainty, activated = model.get_safeguarded_action(
+                    obs,
+                    threshold=safeguard_threshold,
+                    mc_samples=mc_samples,
+                )
+                uncertainties.append(float(uncertainty))
+                if activated:
+                    activation_count += 1
+            else:
+                obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
+                action = policy(obs_t).detach().cpu().numpy()
+                action = np.clip(action, eval_env.action_space.low, eval_env.action_space.high)
 
             obs, reward, terminated, truncated, _ = eval_env.step(action)
             done = bool(terminated or truncated)
@@ -481,6 +506,13 @@ with torch.no_grad():
                 "capped": int(capped),
                 "terminated": int(terminated),
                 "truncated": int(truncated),
+                "eval_action_mode": eval_action_mode,
+                "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else "",
+                "mc_samples": mc_samples if eval_action_mode == "safeguarded" else "",
+                "avg_uncertainty": float(np.mean(uncertainties)) if uncertainties else "",
+                "max_uncertainty": float(np.max(uncertainties)) if uncertainties else "",
+                "activation_count": activation_count if eval_action_mode == "safeguarded" else "",
+                "activation_rate": float(activation_count / episodic_length) if uncertainties and episodic_length else "",
             }
         )
 
@@ -501,6 +533,13 @@ with per_episode_csv.open("w", newline="", encoding="utf-8") as csv_file:
         "capped",
         "terminated",
         "truncated",
+        "eval_action_mode",
+        "safeguard_threshold",
+        "mc_samples",
+        "avg_uncertainty",
+        "max_uncertainty",
+        "activation_count",
+        "activation_rate",
     ]
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()
@@ -511,6 +550,12 @@ avg_length = float(np.mean([row["episodic_length"] for row in per_episode_rows])
 collision_rate = float(np.mean([row["collided"] for row in per_episode_rows]))
 lanes = [row["start_lane"] for row in per_episode_rows]
 lane_counts = {str(lane): lanes.count(lane) for lane in sorted(set(lanes), key=str)}
+uncertainty_rows = [row for row in per_episode_rows if row["avg_uncertainty"] != ""]
+avg_uncertainty = float(np.mean([row["avg_uncertainty"] for row in uncertainty_rows])) if uncertainty_rows else ""
+avg_max_uncertainty = float(np.mean([row["max_uncertainty"] for row in uncertainty_rows])) if uncertainty_rows else ""
+avg_activations = float(np.mean([row["activation_count"] for row in uncertainty_rows])) if uncertainty_rows else ""
+avg_activation_rate = float(np.mean([row["activation_rate"] for row in uncertainty_rows])) if uncertainty_rows else ""
+total_activations = int(np.sum([row["activation_count"] for row in uncertainty_rows])) if uncertainty_rows else ""
 
 evaluation_summary_csv = out_dir / "evaluation_summary.csv"
 with evaluation_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
@@ -526,6 +571,14 @@ with evaluation_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
         "avg_episodic_length",
         "collision_rate",
         "lane_counts",
+        "eval_action_mode",
+        "safeguard_threshold",
+        "mc_samples",
+        "avg_uncertainty",
+        "avg_max_uncertainty",
+        "avg_activations_per_episode",
+        "avg_activation_rate",
+        "total_activations",
         "per_episode_csv",
         "actor_checkpoint",
     ]
@@ -544,6 +597,14 @@ with evaluation_summary_csv.open("w", newline="", encoding="utf-8") as csv_file:
             "avg_episodic_length": round(avg_length, 6),
             "collision_rate": round(collision_rate, 6),
             "lane_counts": json.dumps(lane_counts),
+            "eval_action_mode": eval_action_mode,
+            "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else "",
+            "mc_samples": mc_samples if eval_action_mode == "safeguarded" else "",
+            "avg_uncertainty": round(avg_uncertainty, 8) if avg_uncertainty != "" else "",
+            "avg_max_uncertainty": round(avg_max_uncertainty, 8) if avg_max_uncertainty != "" else "",
+            "avg_activations_per_episode": round(avg_activations, 6) if avg_activations != "" else "",
+            "avg_activation_rate": round(avg_activation_rate, 8) if avg_activation_rate != "" else "",
+            "total_activations": total_activations,
             "per_episode_csv": str(per_episode_csv),
             "actor_checkpoint": str(actor_path),
         }
@@ -567,6 +628,14 @@ summary_json.write_text(
                 "avg_episodic_length": avg_length,
                 "collision_rate": collision_rate,
                 "lane_counts": lane_counts,
+                "eval_action_mode": eval_action_mode,
+                "safeguard_threshold": safeguard_threshold if eval_action_mode == "safeguarded" else None,
+                "mc_samples": mc_samples if eval_action_mode == "safeguarded" else None,
+                "avg_uncertainty": avg_uncertainty,
+                "avg_max_uncertainty": avg_max_uncertainty,
+                "avg_activations_per_episode": avg_activations,
+                "avg_activation_rate": avg_activation_rate,
+                "total_activations": total_activations,
             },
             "checkpoints": {
                 "actor": str(actor_path),
@@ -610,6 +679,9 @@ def main() -> int:
                 "hyperparameters": HYPERPARAMETERS,
                 "urgency_wrapper": "HighwayUrgencyObservation",
                 "torch_num_threads": TORCH_NUM_THREADS,
+                "eval_action_mode": EVAL_ACTION_MODE,
+                "safeguard_threshold": SAFEGUARD_THRESHOLD if EVAL_ACTION_MODE == "safeguarded" else None,
+                "mc_samples": MC_SAMPLES if EVAL_ACTION_MODE == "safeguarded" else None,
                 "python": str(PYTHON),
             },
             indent=2,
@@ -625,6 +697,10 @@ def main() -> int:
     print(f"Config: {CONFIG_NAME}", flush=True)
     print(f"Training seed: {TRAIN_SEED}", flush=True)
     print(f"Eval type: {'full' if EVAL_MAX_STEPS is None else f'capped at {EVAL_MAX_STEPS}'}", flush=True)
+    print(f"Eval action mode: {EVAL_ACTION_MODE}", flush=True)
+    if EVAL_ACTION_MODE == "safeguarded":
+        print(f"Safeguard threshold: {SAFEGUARD_THRESHOLD}", flush=True)
+        print(f"MC samples: {MC_SAMPLES}", flush=True)
 
     env = os.environ.copy()
     env.update(
@@ -642,6 +718,9 @@ def main() -> int:
             "TORCH_NUM_THREADS": str(TORCH_NUM_THREADS),
             "OMP_NUM_THREADS": str(TORCH_NUM_THREADS),
             "MKL_NUM_THREADS": str(TORCH_NUM_THREADS),
+            "EVAL_ACTION_MODE": EVAL_ACTION_MODE,
+            "SAFEGUARD_THRESHOLD": str(SAFEGUARD_THRESHOLD),
+            "MC_SAMPLES": str(MC_SAMPLES),
         }
     )
 

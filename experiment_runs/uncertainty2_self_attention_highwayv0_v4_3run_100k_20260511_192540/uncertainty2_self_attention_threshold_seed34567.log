@@ -1,0 +1,16 @@
+Run ID: uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\uncertainty2_self_attention_threshold\seed34567
+Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\uncertainty2_self_attention_threshold\seed34567
+Python: C:\Users\milke\miniconda3\envs\highway\python.exe
+Model directory: C:\Users\milke\groupCoursework\FYP\uncertainty_aware2_PPO_self_attention_backbone
+Env: highway-v0
+Config: highway_v0_stage_2_benchmark_v4
+Training seed: 34567
+Eval type: full
+Eval action mode: safeguarded
+Safeguard threshold: 0.001
+MC samples: 5
+Completed highway-v0 mean+max study.
+Training/eval stdout: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\uncertainty2_self_attention_threshold\seed34567\training_stdout.log
+Training summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\uncertainty2_self_attention_threshold\seed34567\training_summary.csv
+Evaluation summary: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\uncertainty2_self_attention_threshold\seed34567\evaluation_summary.csv
+Per-episode evaluation: C:\Users\milke\groupCoursework\FYP\experiment_runs\uncertainty2_self_attention_highwayv0_v4_3run_100k_20260511_192540\uncertainty2_self_attention_threshold\seed34567\evaluation_per_episode.csv
