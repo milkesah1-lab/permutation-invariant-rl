@@ -1,2 +1,0 @@
-model,num_training_runs,eval_episodes_per_run,avg_of_avg_episodic_returns,avg_of_avg_episodic_lengths,avg_of_collision_rates
-deep_sets_mean_max,3,50,49.22585900000001,73.15333333333334,0.9133333333333334

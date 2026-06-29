@@ -1,2 +1,0 @@
-config_name,episodes,avg_episodic_return,avg_episodic_length,collision_rate,actor_checkpoint,load_missing_keys,load_unexpected_keys
-curriculum_stage_2_easy_overtake,50,160.00094178783843,194.08,0.78,C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_vs_uncertainty_3seeds_20260430_173848_seed23456\deep_sets_mean_max_baseline\deep_sets_mean_max_baseline_actor.pth,[],[]

@@ -1,2 +1,0 @@
-model_label,display_name,runs,train_seeds,target_timesteps,avg_train_return,avg_train_length,avg_eval_return,avg_eval_length,collision_rate,avg_uncertainty,avg_max_uncertainty,avg_activations_per_episode,avg_activation_rate,total_activations,safeguard_threshold,mc_samples
-uncertainty_meanmax_threshold,Uncertainty mean+max threshold,3,12345;23456;34567,100000,24.494333333333334,34.90333333333333,213.90986033333334,263.5466666666667,0.6733333333333333,0.0014733333333333334,0.006928666666666666,200.1,0.6106776666666667,30015,0.0005,5

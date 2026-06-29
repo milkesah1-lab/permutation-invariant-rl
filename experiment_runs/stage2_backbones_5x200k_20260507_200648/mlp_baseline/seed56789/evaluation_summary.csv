@@ -1,2 +1,0 @@
-model,train_seed,config_name,eval_episodes,eval_type,eval_max_steps,avg_episodic_return,avg_episodic_length,collision_rate,per_episode_csv,actor_checkpoint
-mlp_baseline,56789,curriculum_stage_2_easy_overtake,50,full,,229.693211,281.06,0.58,C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed56789\evaluation_per_episode.csv,C:\Users\milke\groupCoursework\FYP\experiment_runs\stage2_backbones_5x200k_20260507_200648\mlp_baseline\seed56789\checkpoint_actor.pth

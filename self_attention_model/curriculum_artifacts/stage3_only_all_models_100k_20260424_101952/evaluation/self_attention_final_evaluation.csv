@@ -1,3 +1,0 @@
-model,config,eval_type,episodes,max_steps,avg_episodic_length,avg_episodic_return,collision_rate,checkpoint
-self_attention,curriculum_stage_3_mixed_traffic,capped,10,300,221.0,180.963824,0.3,C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\stage3_only_all_models_100k_20260424_101952\checkpoints\self_attention_curriculum_final_actor.pth
-self_attention,curriculum_stage_3_mixed_traffic,full,10,,99.3,72.429305,0.9,C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\stage3_only_all_models_100k_20260424_101952\checkpoints\self_attention_curriculum_final_actor.pth

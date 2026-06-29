@@ -1,3 +1,0 @@
-lambda_u,runs,train_seeds,target_timesteps,avg_train_return,avg_train_length,avg_raw_train_return,avg_critic_uncertainty,avg_eval_return,avg_eval_length,collision_rate
-0.01,2,12345;23456,100000,26.9115,38.205,27.043,0.001875,178.3353645,220.36,0.77
-0.05,2,12345;23456,100000,30.256500000000003,43.105000000000004,31.006,0.001895,171.4566865,211.79,0.75

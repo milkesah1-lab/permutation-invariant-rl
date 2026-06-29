@@ -1,2 +1,0 @@
-model_label,display_name,runs,train_seeds,target_timesteps,eval_action_mode,avg_train_return,avg_train_length,avg_eval_return,avg_eval_length,collision_rate,safeguard_threshold,mc_samples,avg_uncertainty,avg_max_uncertainty,avg_activations_per_episode,avg_activation_rate,total_activations
-uncertainty2_self_attention_threshold,Uncertainty2 self-attention threshold,3,12345;23456;34567,100000,safeguarded,140.79833333333332,168.15,364.63035399999995,432.78666666666663,0.3933333333333333,0.001,5,0.003114433333333333,0.019321696666666666,343.84,0.8071897199999999,51576

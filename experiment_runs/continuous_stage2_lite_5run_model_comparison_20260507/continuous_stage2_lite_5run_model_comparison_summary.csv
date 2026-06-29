@@ -1,3 +1,0 @@
-﻿"model","runs","avg_eval_return","avg_eval_length","avg_collision_rate","aggregate_summary"
-"deep_sets_mean_max","5","154.572521","189.444","0.764","C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_continuous_stage2_lite_5run_100k_20260507\aggregate_summary.csv"
-"self_attention","5","200.87677","244.908","0.636","C:\Users\milke\groupCoursework\FYP\experiment_runs\self_attention_continuous_stage2_lite_5run_100k_20260506\aggregate_summary.csv"

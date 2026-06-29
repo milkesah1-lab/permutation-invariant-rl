@@ -1,2 +1,0 @@
-﻿"model","env_id","config_name","runs","train_seeds","eval_episodes_per_run","total_eval_episodes","avg_final_training_return","avg_final_training_length","avg_of_eval_avg_episodic_return","avg_of_eval_avg_episodic_length","avg_collision_rate","per_run_summary"
-"deep_sets_mean_max","highway-v0","highway_v0_stage_2_benchmark_v4","3","12345;23456;34567","50","150","39.240736","48.937082","324.905693","386.473333","0.426667","C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_highwayv0_benchmark_v4_3run_100k_20260505\per_run_summary.csv"

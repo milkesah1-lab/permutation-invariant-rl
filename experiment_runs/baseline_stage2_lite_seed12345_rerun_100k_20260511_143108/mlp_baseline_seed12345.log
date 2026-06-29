@@ -1,7 +1,0 @@
-Run ID: baseline_stage2_lite_seed12345_rerun_100k_20260511_143108\seed12345
-Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\baseline_stage2_lite_seed12345_rerun_100k_20260511_143108\seed12345
-Python: C:\Users\milke\miniconda3\envs\highway\python.exe
-Model directory: C:\Users\milke\groupCoursework\FYP\baseline1
-Config: curriculum_stage_2_easy_overtake
-Training seed: 12345
-Eval type: full

@@ -1,7 +1,0 @@
-﻿
-Name                                 Length LastWriteTime      
-----                                 ------ -------------      
-self_attention_v4_vs_v45_summary.csv    565 06/05/2026 19:25:35
-
-
-

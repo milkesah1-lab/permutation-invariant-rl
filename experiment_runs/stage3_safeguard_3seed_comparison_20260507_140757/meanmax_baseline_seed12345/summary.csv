@@ -1,2 +1,0 @@
-config_name,episodes,avg_episodic_return,avg_episodic_length,collision_rate,actor_checkpoint,load_missing_keys,load_unexpected_keys
-curriculum_stage_3_mixed_traffic,50,197.87309712443505,246.6,0.76,C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_vs_uncertainty_3seeds_20260430_173848_seed12345\deep_sets_mean_max_baseline\deep_sets_mean_max_baseline_actor.pth,[],[]

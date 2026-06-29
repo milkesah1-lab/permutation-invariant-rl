@@ -1,2 +1,0 @@
-iteration,timesteps_so_far,avg_episodic_length,avg_episodic_return,avg_loss,iteration_seconds
-1,4105,12.217262,6.620671,-0.003385,51.14

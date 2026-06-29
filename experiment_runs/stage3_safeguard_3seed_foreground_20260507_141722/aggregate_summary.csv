@@ -1,4 +1,0 @@
-"variant","runs","train_seeds","avg_eval_return","avg_eval_length","avg_collision_rate","avg_uncertainty_per_episode","avg_episode_max_uncertainty","avg_activations_per_episode","avg_activation_rate_per_episode","threshold"
-"meanmax_baseline","3","12345;23456;34567","128.881664412256","160.46","0.873333333333333","0","0","0","0",""
-"uncertainty_no_safeguard","3","12345;23456;34567","136.249309887898","169.8","0.833333333333333","0.00143634193456804","0.00589906179928221","0","0","1.0"
-"uncertainty_safeguard","3","12345;23456;34567","201.166664092147","249.206666666667","0.733333333333333","0.00142527402750704","0.00632966861672078","180.113333333333","0.601322211845676","0.0005"

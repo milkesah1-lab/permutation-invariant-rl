@@ -1,8 +1,0 @@
-Run ID: meanmax_vs_uncertainty_3seeds_20260430_173848_seed23456
-Output directory: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_vs_uncertainty_3seeds_20260430_173848_seed23456
-Running deep_sets_mean_max_baseline...
-Running uncertainty_aware_lambda_0.01...
-Completed experiment.
-Summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_vs_uncertainty_3seeds_20260430_173848_seed23456\summary.csv
-Training summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_vs_uncertainty_3seeds_20260430_173848_seed23456\training_final_summary.csv
-Per-episode CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_vs_uncertainty_3seeds_20260430_173848_seed23456\per_episode.csv

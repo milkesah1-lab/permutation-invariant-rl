@@ -1,7 +1,0 @@
-run_index,train_seed,model,iteration,timesteps_so_far,avg_episodic_length,avg_episodic_return,avg_loss,avg_raw_episodic_return,avg_critic_uncertainty,iteration_seconds
-1,12345,deep_sets_mean_max_baseline,25,102978,36.166667,24.454118,-0.001013,,,55.82
-1,12345,uncertainty_aware_lambda_0.01,25,103030,43.84,30.674,5e-05,30.832,0.00078,86.44
-2,23456,deep_sets_mean_max_baseline,25,102837,34.813559,24.183306,-0.000364,,,56.33
-2,23456,uncertainty_aware_lambda_0.01,25,102907,40.1,27.97,-0.00048,28.109,0.00281,99.41
-3,34567,deep_sets_mean_max_baseline,25,102801,31.282443,21.260799,-0.00038,,,40.41
-3,34567,uncertainty_aware_lambda_0.01,25,102862,31.91,21.97,-0.00026,22.084,0.00034,88.81

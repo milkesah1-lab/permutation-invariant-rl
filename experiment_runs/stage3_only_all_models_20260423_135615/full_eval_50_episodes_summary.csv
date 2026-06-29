@@ -1,5 +1,0 @@
-model,config,eval_type,episodes,avg_episodic_length,avg_episodic_return,collision_rate,checkpoint
-basic_mlp,curriculum_stage_3_mixed_traffic,full_50,50,211.3,170.043451,0.8,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\stage3_only_all_models_20260423_135615\checkpoints\basic_mlp_curriculum_final_actor.pth
-deep_sets_mean,curriculum_stage_3_mixed_traffic,full_50,50,183.4,145.718273,0.78,C:\Users\milke\groupCoursework\FYP\Deep_sets_mean_model\curriculum_artifacts\stage3_only_all_models_20260423_135615\checkpoints\deep_sets_mean_curriculum_final_actor.pth
-deep_sets_mean_max,curriculum_stage_3_mixed_traffic,full_50,50,274.32,221.171774,0.72,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\stage3_only_all_models_20260423_135615\checkpoints\deep_sets_mean_max_curriculum_final_actor.pth
-self_attention,curriculum_stage_3_mixed_traffic,full_50,50,248.36,198.735048,0.7,C:\Users\milke\groupCoursework\FYP\self_attention_model\curriculum_artifacts\stage3_only_all_models_20260423_135615\checkpoints\self_attention_curriculum_final_actor.pth

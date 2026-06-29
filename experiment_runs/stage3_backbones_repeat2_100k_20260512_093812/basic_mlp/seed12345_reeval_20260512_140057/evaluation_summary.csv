@@ -1,2 +1,0 @@
-model,train_seed,config_name,eval_episodes,eval_type,eval_max_steps,eval_action_mode,avg_episodic_return,avg_episodic_length,collision_rate,per_episode_csv,actor_checkpoint
-basic_mlp,12345,curriculum_stage_3_mixed_traffic,50,full,,actor,149.721667,187.12,0.5,C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345_reeval_20260512_140057\evaluation_per_episode.csv,C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_backbones_repeat2_100k_20260512_093812\basic_mlp\seed12345\checkpoint_actor.pth

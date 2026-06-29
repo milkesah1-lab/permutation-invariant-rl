@@ -1,8 +1,0 @@
-﻿{
-    "run_id":  "meanmax_highwayv0_benchmark_100k_20260505_150442",
-    "pid":  28608,
-    "out_dir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_benchmark_100k_20260505_150442",
-    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_highwayv0_benchmark_100k_20260505_150442_stdout.log",
-    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_highwayv0_benchmark_100k_20260505_150442_stderr.log",
-    "started_at":  "2026-05-05T15:04:42"
-}

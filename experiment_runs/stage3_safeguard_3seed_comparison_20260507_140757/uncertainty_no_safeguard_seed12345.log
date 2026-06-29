@@ -1,6 +1,0 @@
-Threshold sweep complete.
-Summary CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_safeguard_3seed_comparison_20260507_140757\uncertainty_no_safeguard_seed12345\summary.csv
-Per-episode CSV: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_safeguard_3seed_comparison_20260507_140757\uncertainty_no_safeguard_seed12345\per_episode.csv
-Run config: C:\Users\milke\groupCoursework\FYP\experiment_runs\stage3_safeguard_3seed_comparison_20260507_140757\uncertainty_no_safeguard_seed12345\run_config.json
-
-threshold=1.0000 | return=159.32 | length=199.40 | collision=0.780 | avg_unc=0.000884 | avg_act=0.00

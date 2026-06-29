@@ -1,2 +1,0 @@
-model,run_index,train_seed,config_name,eval_episodes,eval_max_steps,avg_episodic_return,avg_episodic_length,collision_rate,per_episode_csv,actor_checkpoint
-deep_sets_mean_max,3,34567,curriculum_stage_3_mixed_traffic,50,300,46.512695,67.12,0.92,C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_3run_300k_parallel_20260504_172422\run_03_seed_34567\evaluation_per_episode.csv,C:\Users\milke\groupCoursework\FYP\experiment_runs\meanmax_3run_300k_parallel_20260504_172422\run_03_seed_34567\checkpoint_actor.pth

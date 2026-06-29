@@ -1,9 +1,0 @@
-model,config,eval_type,episodes,max_steps,avg_episodic_length,avg_episodic_return,collision_rate,checkpoint
-basic_mlp,curriculum_stage_1_open_lane,capped,10,300,300.0,251.80025,0.0,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_1_open_lane,full,10,,324.1,267.526932,0.4,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_2_easy_overtake,capped,10,300,171.6,139.302571,0.5,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_2_easy_overtake,full,10,,332.6,274.954043,0.4,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_3_mixed_traffic,capped,10,300,196.3,157.882732,0.6,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_3_mixed_traffic,full,10,,257.3,205.360473,0.7,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_4_dense_traffic,capped,10,300,164.7,126.58273,0.7,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth
-basic_mlp,curriculum_stage_4_dense_traffic,full,10,,144.1,107.647728,1.0,C:\Users\milke\groupCoursework\FYP\baseline\curriculum_artifacts\fair_curriculum_all_models_20260423_103950\checkpoints\basic_mlp_curriculum_final_actor.pth

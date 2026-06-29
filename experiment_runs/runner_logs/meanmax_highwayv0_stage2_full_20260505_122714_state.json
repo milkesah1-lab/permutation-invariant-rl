@@ -1,8 +1,0 @@
-﻿{
-    "run_id":  "meanmax_highwayv0_stage2_full_20260505_122714",
-    "pid":  34352,
-    "out_dir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_highwayv0_stage2_full_20260505_122714",
-    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_highwayv0_stage2_full_20260505_122714_stdout.log",
-    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_highwayv0_stage2_full_20260505_122714_stderr.log",
-    "started_at":  "2026-05-05T12:27:15"
-}

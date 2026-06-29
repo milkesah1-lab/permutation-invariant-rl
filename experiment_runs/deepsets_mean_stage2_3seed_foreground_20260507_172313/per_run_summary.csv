@@ -1,4 +1,0 @@
-"model","train_seed","config_name","target_timesteps","avg_train_return","avg_train_length","avg_eval_return","avg_eval_length","collision_rate","run_dir"
-"deep_sets_mean","12345","curriculum_stage_2_easy_overtake","100000","28.625777","39.413462","199.357561","243.08","0.58","C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_stage2_3seed_foreground_20260507_172313\seed12345"
-"deep_sets_mean","23456","curriculum_stage_2_easy_overtake","100000","37.176786","49.929412","203.33514","249.82","0.6","C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_stage2_3seed_foreground_20260507_172313\seed23456"
-"deep_sets_mean","34567","curriculum_stage_2_easy_overtake","100000","27.50921","38","217.407721","265.6","0.56","C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_stage2_3seed_foreground_20260507_172313\seed34567"

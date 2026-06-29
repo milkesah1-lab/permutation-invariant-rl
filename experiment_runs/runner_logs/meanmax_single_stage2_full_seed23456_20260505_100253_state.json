@@ -1,8 +1,0 @@
-﻿{
-    "run_id":  "meanmax_single_stage2_full_seed23456_20260505_100253",
-    "pid":  22068,
-    "out_dir":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\meanmax_single_stage2_full_seed23456_20260505_100253",
-    "stdout":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_single_stage2_full_seed23456_20260505_100253_stdout.log",
-    "stderr":  "C:\\Users\\milke\\groupCoursework\\FYP\\experiment_runs\\runner_logs\\meanmax_single_stage2_full_seed23456_20260505_100253_stderr.log",
-    "started_at":  "2026-05-05T10:02:53"
-}

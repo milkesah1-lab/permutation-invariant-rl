@@ -1,2 +1,0 @@
-model,train_seed,config_name,eval_episodes,eval_type,eval_max_steps,avg_episodic_return,avg_episodic_length,collision_rate,per_episode_csv,actor_checkpoint
-deep_sets_mean,12345,curriculum_stage_2_easy_overtake,50,full,,144.557427,177.9,0.74,C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed12345\evaluation_per_episode.csv,C:\Users\milke\groupCoursework\FYP\experiment_runs\deepsets_mean_continuous_stage2_lite_5run_100k_20260510_122548\seed12345\checkpoint_actor.pth

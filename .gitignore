@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Model weights & training artifacts (reproducible — not versioned)
+*.pth
+curriculum_artifacts/
+experiment_runs/
+*.log
+
+# Result/data dumps
+*.csv
+*.json
+
+# Media
+*.mp4
+*.png
+analysis_frames/
+videos/
+video_analysis*/
+
+# Documents
+*.docx
+*.pdf
+~$*
+
+# Editor
+.vscode/
+.idea/
